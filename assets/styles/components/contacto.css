@@ -1,0 +1,170 @@
+/* =========================================================
+   contacto.css — sección "Contacto rápido"
+   CTA de WhatsApp centrada, fondo color primario.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECCIÓN
+   Fondo terracota (--color-primario) para que destaque
+   visualmente entre las secciones de fondo neutro.
+--------------------------------------------------------- */
+
+.contacto-rapido {
+  background-color: var(--color-primario);
+  padding: var(--espacio-16) 0;
+  text-align: center;
+}
+
+.contacto-rapido__inner {
+  max-width: var(--ancho-angosto);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-6);
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULOS
+   Blanco para contrastar con el fondo terracota.
+--------------------------------------------------------- */
+
+.contacto-rapido__titulo {
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-blanco);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.contacto-rapido__subtitulo {
+  font-size: var(--texto-md);
+  color: rgba(255, 255, 255, 0.88);  /* blanco ligeramente suavizado */
+  line-height: var(--linea-normal);
+  margin: 0;
+  max-width: 480px;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÓN WHATSAPP
+   Verde oficial de WhatsApp (#25D366) para reconocimiento
+   inmediato. Tamaño grande, ícono a la izquierda del texto.
+--------------------------------------------------------- */
+
+.contacto-rapido__boton-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) var(--espacio-8);
+  background-color: #25D366;        /* verde oficial WhatsApp */
+  color: var(--color-blanco);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-md);
+  font-weight: var(--peso-semibold);
+  text-decoration: none;
+  border-radius: var(--radio-full);  /* cápsula redondeada */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+  transition:
+    background-color  var(--transicion-rapida),
+    transform         var(--transicion-rapida),
+    box-shadow        var(--transicion-rapida);
+}
+
+.contacto-rapido__boton-wa:hover,
+.contacto-rapido__boton-wa:focus-visible {
+  background-color: #1EBE57;        /* verde más oscuro al hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  outline: none;
+}
+
+.contacto-rapido__boton-wa:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+/* Focus ring accesible para navegación por teclado */
+.contacto-rapido__boton-wa:focus-visible {
+  outline: 3px solid var(--color-blanco);
+  outline-offset: 3px;
+}
+
+.contacto-rapido__wa-icono {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-blanco);
+  flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   DATOS SECUNDARIOS (teléfono y mail)
+   Más chicos y con menor opacidad — apoyan al botón principal,
+   no compiten con él.
+--------------------------------------------------------- */
+
+.contacto-rapido__secundario {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contacto-rapido__dato {
+  font-size: var(--texto-sm);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+}
+
+.contacto-rapido__dato:hover {
+  color: var(--color-blanco);
+  text-decoration: underline;
+}
+
+.contacto-rapido__separador {
+  font-size: var(--texto-sm);
+  color: rgba(255, 255, 255, 0.40);
+  user-select: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .contacto-rapido {
+    padding: var(--espacio-12) 0;
+  }
+
+  .contacto-rapido__inner {
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-5);
+  }
+
+  .contacto-rapido__titulo {
+    font-size: var(--texto-2xl);
+  }
+
+  /* En mobile el separador · se oculta y los datos se apilan */
+  .contacto-rapido__secundario {
+    flex-direction: column;
+    gap: var(--espacio-2);
+  }
+
+  .contacto-rapido__separador {
+    display: none;
+  }
+
+  .contacto-rapido__boton-wa {
+    width: 100%;
+    justify-content: center;
+  }
+}

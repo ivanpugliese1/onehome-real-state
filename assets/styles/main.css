@@ -11,9 +11,10 @@
 /* --- Componentes (agregar cuando se creen) --- */
 @import './components/header.css';
 @import './components/hero.css';
-/* @import './components/footer.css'; */
+@import './components/footer.css';
 @import './components/cards.css';
 @import './components/features.css';
+@import './components/contacto.css';
 /* @import './components/boton.css'; */
 /* @import './components/formulario.css'; */
 
