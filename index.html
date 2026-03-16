@@ -199,14 +199,293 @@
             </p>
           </header>
 
-          <!-- Las cards se generan dinámicamente con assets/components/card-propiedad.js -->
+          <!-- TODO: reemplazar con renderizado dinámico desde card-propiedad.js -->
           <ul
             id="lista-propiedades-destacadas"
             class="propiedades-destacadas__lista"
             role="list"
             aria-label="Propiedades destacadas"
           >
-            <!-- card-propiedad.js inserta los <li> acá -->
+
+            <!-- Card 1 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/casa1/400/300"
+                    alt="Casa 3 ambientes en Palermo, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">Casa 3 ambientes en Palermo</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Palermo, CABA
+                  </p>
+                  <p class="card-propiedad__precio">USD 280.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <!-- Ícono: ambientes / cama -->
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      3 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <!-- Ícono: baños / ducha -->
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      2 baños
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <!-- Ícono: superficie / m² -->
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      120 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 2 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/depto2/400/300"
+                    alt="Departamento 2 ambientes en Recoleta, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">Departamento 2 ambientes en Recoleta</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Recoleta, CABA
+                  </p>
+                  <p class="card-propiedad__precio">USD 145.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      2 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      1 baño
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      65 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 3 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/ph3/400/300"
+                    alt="PH 4 ambientes en Belgrano, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">PH 4 ambientes en Belgrano</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Belgrano, CABA
+                  </p>
+                  <p class="card-propiedad__precio">USD 380.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      4 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      3 baños
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      180 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 4 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/mono4/400/300"
+                    alt="Monoambiente en San Telmo, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">Monoambiente en San Telmo</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    San Telmo, CABA
+                  </p>
+                  <p class="card-propiedad__precio">USD 85.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      1 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      1 baño
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      38 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 5 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/casa5/400/300"
+                    alt="Casa 5 ambientes en Tigre, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">Casa 5 ambientes en Tigre</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Tigre, GBA Norte
+                  </p>
+                  <p class="card-propiedad__precio">USD 320.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      5 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      2 baños
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      220 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 6 -->
+            <li>
+              <article class="card-propiedad">
+                <div class="card-propiedad__imagen">
+                  <img
+                    src="https://picsum.photos/seed/local6/400/300"
+                    alt="Local comercial en Microcentro, Buenos Aires"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-propiedad__info">
+                  <h3 class="card-propiedad__titulo">Local comercial en Microcentro</h3>
+                  <p class="card-propiedad__ubicacion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Microcentro, CABA
+                  </p>
+                  <p class="card-propiedad__precio">USD 195.000</p>
+                  <ul class="card-propiedad__datos" role="list" aria-label="Características">
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+                      </svg>
+                      1 amb.
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 10H7V7c0-.55.45-1 1-1s1 .45 1 1h2c0-1.65-1.35-3-3-3S5 5.35 5 7v3H3c-.55 0-1 .45-1 1v2c0 2.63 1.67 4.86 4 5.65V21h2v-2h8v2h2v-2.35c2.33-.79 4-3.02 4-5.65v-2c0-.55-.45-1-1-1zm-1 3c0 2.21-1.79 4-4 4H8c-2.21 0-4-1.79-4-4v-1h16v1z"/>
+                      </svg>
+                      1 baño
+                    </li>
+                    <li class="card-propiedad__dato">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z"/>
+                      </svg>
+                      95 m²
+                    </li>
+                  </ul>
+                  <a href="/pages/ficha.html" class="card-propiedad__boton">Ver más</a>
+                </div>
+              </article>
+            </li>
+
           </ul>
 
           <div class="propiedades-destacadas__pie">
@@ -233,60 +512,59 @@
 
           <ul class="por-que-elegirnos__lista" role="list">
 
-            <li class="por-que-elegirnos__item">
+            <!-- Experiencia -->
+            <li>
               <article class="ventaja">
-                <figure class="ventaja__icono">
-                  <img
-                    src="/assets/images/icons/experiencia.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    aria-hidden="true"
-                  />
-                </figure>
-                <h3 class="ventaja__titulo">Experiencia comprobada</h3>
-                <p class="ventaja__descripcion">
-                  Más de 500 operaciones exitosas en los últimos 10 años,
-                  con clientes satisfechos en todo el país.
-                </p>
+                <div class="ventaja__icono" aria-hidden="true">
+                  <!-- Ícono: trofeo / medalla — representa experiencia y trayectoria -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.29 5 8zm14 0c0 1.29-.84 2.4-2 2.82V7h2v1z"/>
+                  </svg>
+                </div>
+                <h3 class="ventaja__titulo">Experiencia</h3>
+                <p class="ventaja__descripcion">+500 operaciones exitosas en 10 años de trayectoria.</p>
               </article>
             </li>
 
-            <li class="por-que-elegirnos__item">
+            <!-- Confianza -->
+            <li>
               <article class="ventaja">
-                <figure class="ventaja__icono">
-                  <img
-                    src="/assets/images/icons/asesoramiento.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    aria-hidden="true"
-                  />
-                </figure>
-                <h3 class="ventaja__titulo">Asesoramiento personalizado</h3>
-                <p class="ventaja__descripcion">
-                  Te guiamos en cada paso del proceso: valuación, tasación,
-                  negociación y escritura.
-                </p>
+                <div class="ventaja__icono" aria-hidden="true">
+                  <!-- Ícono: escudo con check — representa confianza y seguridad -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                  </svg>
+                </div>
+                <h3 class="ventaja__titulo">Confianza</h3>
+                <p class="ventaja__descripcion">Operaciones seguras con respaldo legal en cada paso.</p>
               </article>
             </li>
 
-            <li class="por-que-elegirnos__item">
+            <!-- Atención -->
+            <li>
               <article class="ventaja">
-                <figure class="ventaja__icono">
-                  <img
-                    src="/assets/images/icons/seguridad.svg"
-                    alt=""
-                    width="48"
-                    height="48"
-                    aria-hidden="true"
-                  />
-                </figure>
-                <h3 class="ventaja__titulo">Operaciones seguras</h3>
-                <p class="ventaja__descripcion">
-                  Trabajamos con escribanías de confianza y asesoramiento
-                  legal en todas las operaciones.
-                </p>
+                <div class="ventaja__icono" aria-hidden="true">
+                  <!-- Ícono: auricular / soporte — representa atención personalizada -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                  </svg>
+                </div>
+                <h3 class="ventaja__titulo">Atención</h3>
+                <p class="ventaja__descripcion">Un asesor dedicado te acompaña desde la búsqueda hasta la firma.</p>
+              </article>
+            </li>
+
+            <!-- Resultados -->
+            <li>
+              <article class="ventaja">
+                <div class="ventaja__icono" aria-hidden="true">
+                  <!-- Ícono: tendencia al alza — representa resultados y crecimiento -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                  </svg>
+                </div>
+                <h3 class="ventaja__titulo">Resultados</h3>
+                <p class="ventaja__descripcion">Cerramos al mejor precio, en el menor tiempo posible.</p>
               </article>
             </li>
 

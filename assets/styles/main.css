@@ -12,7 +12,8 @@
 @import './components/header.css';
 @import './components/hero.css';
 /* @import './components/footer.css'; */
-/* @import './components/card-propiedad.css'; */
+@import './components/cards.css';
+@import './components/features.css';
 /* @import './components/boton.css'; */
 /* @import './components/formulario.css'; */
 
