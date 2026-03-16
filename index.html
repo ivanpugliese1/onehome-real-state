@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO primario -->
+    <title>OneHome Inmobiliaria | Propiedades en Argentina</title>
+    <meta
+      name="description"
+      content="OneHome Inmobiliaria: encontrá tu propiedad ideal en Argentina. Casas, departamentos y locales en venta y alquiler. Asesoramiento personalizado."
+    />
+
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OneHome Inmobiliaria" />
+    <meta
+      property="og:description"
+      content="Encontrá tu propiedad ideal en Argentina. Casas, departamentos y locales en venta y alquiler."
+    />
+    <meta property="og:image" content="/assets/images/og-home.jpg" />
+    <meta property="og:url" content="https://onehome.com.ar/" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Datos estructurados Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "OneHome Inmobiliaria",
+        "url": "https://onehome.com.ar",
+        "logo": "/assets/images/logo.png",
+        "description": "Inmobiliaria en Argentina especializada en compra, venta y alquiler de propiedades.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AR",
+          "addressLocality": "Buenos Aires"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@onehome.com.ar",
+          "telephone": "+54-11-0000-0000"
+        }
+      }
+    </script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/assets/styles/base/reset.css" />
+    <link rel="stylesheet" href="/assets/styles/base/variables.css" />
+    <link rel="stylesheet" href="/assets/styles/pages/home.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png" />
+  </head>
+
+  <body>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+      <div class="header__inner">
+
+        <!-- Logo -->
+        <a href="/" class="header__logo" aria-label="OneHome Inmobiliaria — inicio">
+          <img
+            src="/assets/images/logo.png"
+            alt="Logo OneHome Inmobiliaria"
+            width="160"
+            height="48"
+          />
+        </a>
+
+        <!-- Navegación principal -->
+        <nav class="header__nav" aria-label="Navegación principal">
+          <ul class="header__nav-list" role="list">
+            <li><a href="/" class="header__nav-link" aria-current="page">Inicio</a></li>
+            <li><a href="/pages/propiedades.html" class="header__nav-link">Propiedades</a></li>
+            <li><a href="/pages/vender.html" class="header__nav-link">Vender</a></li>
+            <li><a href="/pages/nosotros.html" class="header__nav-link">Nosotros</a></li>
+          </ul>
+        </nav>
+
+        <!-- Redes sociales en header -->
+        <ul class="header__social" role="list" aria-label="Redes sociales">
+          <li>
+            <a
+              href="https://instagram.com/onehome"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguinos en Instagram"
+            >
+              <img
+                src="/assets/images/icons/instagram.svg"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://facebook.com/onehome"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguinos en Facebook"
+            >
+              <img
+                src="/assets/images/icons/facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/541100000000"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contactanos por WhatsApp"
+            >
+              <img
+                src="/assets/images/icons/whatsapp.svg"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="contenido-principal">
+
+      <!-- ---- HERO ---- -->
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div class="hero__inner">
+
+          <!-- Imagen a la izquierda -->
+          <figure class="hero__imagen">
+            <img
+              src="/assets/images/hero-propiedad.jpg"
+              alt="Hermosa casa moderna con jardín disponible en OneHome"
+              width="640"
+              height="480"
+            />
+          </figure>
+
+          <!-- Contenido a la derecha -->
+          <div class="hero__contenido">
+            <h1 id="hero-titulo" class="hero__titulo">
+              Encontrá la propiedad de tus sueños
+            </h1>
+            <p class="hero__subtitulo">
+              En OneHome te acompañamos en cada paso: desde la búsqueda hasta
+              la firma. Propiedades en venta y alquiler en todo el país.
+            </p>
+            <div class="hero__acciones">
+              <a href="/pages/propiedades.html" class="boton boton--primario">
+                Ver propiedades
+              </a>
+              <a href="/pages/vender.html" class="boton boton--secundario">
+                Quiero vender
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ---- PROPIEDADES DESTACADAS ---- -->
+      <section class="propiedades-destacadas" aria-labelledby="destacadas-titulo">
+        <div class="propiedades-destacadas__inner">
+
+          <header class="seccion-header">
+            <h2 id="destacadas-titulo" class="seccion-header__titulo">
+              Propiedades destacadas
+            </h2>
+            <p class="seccion-header__descripcion">
+              Una selección de las mejores oportunidades del mercado.
+            </p>
+          </header>
+
+          <!-- Las cards se generan dinámicamente con assets/components/card-propiedad.js -->
+          <ul
+            id="lista-propiedades-destacadas"
+            class="propiedades-destacadas__lista"
+            role="list"
+            aria-label="Propiedades destacadas"
+          >
+            <!-- card-propiedad.js inserta los <li> acá -->
+          </ul>
+
+          <div class="propiedades-destacadas__pie">
+            <a href="/pages/propiedades.html" class="boton boton--terciario">
+              Ver todas las propiedades
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ---- POR QUÉ ELEGIRNOS ---- -->
+      <section class="por-que-elegirnos" aria-labelledby="elegirnos-titulo">
+        <div class="por-que-elegirnos__inner">
+
+          <header class="seccion-header">
+            <h2 id="elegirnos-titulo" class="seccion-header__titulo">
+              ¿Por qué elegirnos?
+            </h2>
+            <p class="seccion-header__descripcion">
+              Más de 10 años acompañando a familias a encontrar su hogar ideal.
+            </p>
+          </header>
+
+          <ul class="por-que-elegirnos__lista" role="list">
+
+            <li class="por-que-elegirnos__item">
+              <article class="ventaja">
+                <figure class="ventaja__icono">
+                  <img
+                    src="/assets/images/icons/experiencia.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    aria-hidden="true"
+                  />
+                </figure>
+                <h3 class="ventaja__titulo">Experiencia comprobada</h3>
+                <p class="ventaja__descripcion">
+                  Más de 500 operaciones exitosas en los últimos 10 años,
+                  con clientes satisfechos en todo el país.
+                </p>
+              </article>
+            </li>
+
+            <li class="por-que-elegirnos__item">
+              <article class="ventaja">
+                <figure class="ventaja__icono">
+                  <img
+                    src="/assets/images/icons/asesoramiento.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    aria-hidden="true"
+                  />
+                </figure>
+                <h3 class="ventaja__titulo">Asesoramiento personalizado</h3>
+                <p class="ventaja__descripcion">
+                  Te guiamos en cada paso del proceso: valuación, tasación,
+                  negociación y escritura.
+                </p>
+              </article>
+            </li>
+
+            <li class="por-que-elegirnos__item">
+              <article class="ventaja">
+                <figure class="ventaja__icono">
+                  <img
+                    src="/assets/images/icons/seguridad.svg"
+                    alt=""
+                    width="48"
+                    height="48"
+                    aria-hidden="true"
+                  />
+                </figure>
+                <h3 class="ventaja__titulo">Operaciones seguras</h3>
+                <p class="ventaja__descripcion">
+                  Trabajamos con escribanías de confianza y asesoramiento
+                  legal en todas las operaciones.
+                </p>
+              </article>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- ---- CONTACTO RÁPIDO ---- -->
+      <section class="contacto-rapido" aria-labelledby="contacto-titulo">
+        <div class="contacto-rapido__inner">
+
+          <header class="seccion-header">
+            <h2 id="contacto-titulo" class="seccion-header__titulo">
+              ¿Querés que te contactemos?
+            </h2>
+            <p class="seccion-header__descripcion">
+              Completá el formulario y un asesor se pondrá en contacto a la brevedad.
+            </p>
+          </header>
+
+          <!--
+            La validación frontend la maneja assets/utils/validaciones.js
+            El envío lo maneja assets/services/contacto.js (a crear)
+          -->
+          <form
+            id="formulario-contacto"
+            class="contacto-rapido__form"
+            novalidate
+            aria-label="Formulario de contacto rápido"
+          >
+
+            <div class="form__campo">
+              <label for="contacto-nombre" class="form__label">
+                Nombre completo <span class="form__obligatorio" aria-label="obligatorio">*</span>
+              </label>
+              <input
+                type="text"
+                id="contacto-nombre"
+                name="nombre"
+                class="form__input"
+                placeholder="Ej: María González"
+                autocomplete="name"
+                required
+                aria-required="true"
+                aria-describedby="contacto-nombre-error"
+              />
+              <span id="contacto-nombre-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form__campo">
+              <label for="contacto-email" class="form__label">
+                Email <span class="form__obligatorio" aria-label="obligatorio">*</span>
+              </label>
+              <input
+                type="email"
+                id="contacto-email"
+                name="email"
+                class="form__input"
+                placeholder="Ej: maria@email.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+                aria-describedby="contacto-email-error"
+              />
+              <span id="contacto-email-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form__campo">
+              <label for="contacto-telefono" class="form__label">
+                Teléfono <span class="form__obligatorio" aria-label="obligatorio">*</span>
+              </label>
+              <input
+                type="tel"
+                id="contacto-telefono"
+                name="telefono"
+                class="form__input"
+                placeholder="Ej: +54 11 1234-5678"
+                autocomplete="tel"
+                required
+                aria-required="true"
+                aria-describedby="contacto-telefono-error"
+              />
+              <span id="contacto-telefono-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form__campo form__campo--completo">
+              <label for="contacto-mensaje" class="form__label">
+                Mensaje <span class="form__obligatorio" aria-label="obligatorio">*</span>
+              </label>
+              <textarea
+                id="contacto-mensaje"
+                name="mensaje"
+                class="form__textarea"
+                rows="4"
+                placeholder="Contanos qué propiedad estás buscando o en qué podemos ayudarte..."
+                required
+                aria-required="true"
+                aria-describedby="contacto-mensaje-error"
+              ></textarea>
+              <span id="contacto-mensaje-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form__campo form__campo--completo">
+              <button type="submit" class="boton boton--primario boton--grande">
+                Enviar consulta
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+
+        <!-- Logo y descripción -->
+        <div class="footer__marca">
+          <a href="/" aria-label="OneHome Inmobiliaria — inicio">
+            <img
+              src="/assets/images/logo-blanco.png"
+              alt="Logo OneHome Inmobiliaria"
+              width="140"
+              height="42"
+            />
+          </a>
+          <p class="footer__descripcion">
+            Tu aliado de confianza para comprar, vender o alquilar propiedades en Argentina.
+          </p>
+        </div>
+
+        <!-- Navegación del footer -->
+        <nav class="footer__nav" aria-label="Navegación del footer">
+          <h3 class="footer__nav-titulo">Páginas</h3>
+          <ul class="footer__nav-lista" role="list">
+            <li><a href="/" class="footer__nav-link">Inicio</a></li>
+            <li><a href="/pages/propiedades.html" class="footer__nav-link">Propiedades</a></li>
+            <li><a href="/pages/vender.html" class="footer__nav-link">Vender</a></li>
+            <li><a href="/pages/nosotros.html" class="footer__nav-link">Nosotros</a></li>
+          </ul>
+        </nav>
+
+        <!-- Datos de contacto -->
+        <address class="footer__contacto">
+          <h3 class="footer__contacto-titulo">Contacto</h3>
+          <ul class="footer__contacto-lista" role="list">
+            <li>
+              <a href="tel:+541100000000" class="footer__contacto-link">
+                +54 11 0000-0000
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@onehome.com.ar" class="footer__contacto-link">
+                info@onehome.com.ar
+              </a>
+            </li>
+            <li class="footer__contacto-direccion">
+              Av. Corrientes 1234, Piso 5, CABA, Argentina
+            </li>
+          </ul>
+        </address>
+
+        <!-- Redes sociales en footer -->
+        <div class="footer__social">
+          <h3 class="footer__social-titulo">Seguinos</h3>
+          <ul class="footer__social-lista" role="list">
+            <li>
+              <a
+                href="https://instagram.com/onehome"
+                class="footer__social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="OneHome en Instagram"
+              >
+                <img
+                  src="/assets/images/icons/instagram.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                />
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://facebook.com/onehome"
+                class="footer__social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="OneHome en Facebook"
+              >
+                <img
+                  src="/assets/images/icons/facebook.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                />
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/541100000000"
+                class="footer__social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="OneHome en WhatsApp"
+              >
+                <img
+                  src="/assets/images/icons/whatsapp.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                />
+                WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Pie legal -->
+      <div class="footer__legal">
+        <p class="footer__copyright">
+          &copy; <span id="anio-actual"></span> OneHome Inmobiliaria. Todos los derechos reservados.
+        </p>
+      </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/components/header.js"></script>
+    <script src="/assets/components/footer.js"></script>
+    <script src="/assets/components/card-propiedad.js"></script>
+    <script src="/assets/services/propiedades.js"></script>
+    <script src="/assets/utils/validaciones.js"></script>
+    <!-- Actualiza el año del copyright automáticamente -->
+    <script>
+      document.getElementById('anio-actual').textContent = new Date().getFullYear();
+    </script>
+
+  </body>
+</html>
