@@ -1,0 +1,193 @@
+/* =========================================================
+   Tipografía base — OneHome Inmobiliaria
+   Importa Inter desde Google Fonts (se agrega en el <head>)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   FUENTE EXTERNA
+   Se recomienda agregar en el <head> ANTES del main.css:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   BASE DEL DOCUMENTO
+--------------------------------------------------------- */
+
+html {
+  font-size: 100%; /* 16px — base para los rem */
+}
+
+body {
+  font-family:  var(--fuente-principal);
+  font-size:    var(--texto-base);
+  font-weight:  var(--peso-normal);
+  line-height:  var(--linea-normal);
+  color:        var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+
+/* ---------------------------------------------------------
+   JERARQUÍA DE TÍTULOS
+   Escala descendente: h1 grande → h6 pequeño.
+   Los estilos son un punto de partida; cada componente
+   puede sobreescribirlos con clases BEM propias.
+--------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:  var(--fuente-principal);
+  font-weight:  var(--peso-bold);
+  line-height:  var(--linea-apretada);
+  color:        var(--color-secundario);
+}
+
+h1 {
+  font-size: var(--texto-4xl);  /* 48px */
+}
+
+h2 {
+  font-size: var(--texto-3xl);  /* 36px */
+}
+
+h3 {
+  font-size: var(--texto-xl);   /* 24px */
+}
+
+h4 {
+  font-size: var(--texto-lg);   /* 20px */
+  font-weight: var(--peso-semibold);
+}
+
+h5 {
+  font-size: var(--texto-md);   /* 18px */
+  font-weight: var(--peso-semibold);
+}
+
+h6 {
+  font-size: var(--texto-base); /* 16px */
+  font-weight: var(--peso-medio);
+}
+
+
+/* ---------------------------------------------------------
+   PÁRRAFOS Y TEXTO
+--------------------------------------------------------- */
+
+p {
+  font-size:   var(--texto-base);
+  line-height: var(--linea-suelta);
+  color:       var(--color-texto);
+}
+
+/* Párrafo más pequeño (pie de formulario, notas legales) */
+small,
+.texto-sm {
+  font-size: var(--texto-sm);
+  color:     var(--color-texto-suave);
+}
+
+/* Texto de apoyo / subtítulos de sección */
+.texto-suave {
+  color: var(--color-texto-suave);
+}
+
+/* Resaltado de precio u otro dato importante */
+strong,
+b {
+  font-weight: var(--peso-semibold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+
+a {
+  color:              var(--color-primario);
+  text-decoration:    none;
+  transition:         color var(--transicion-rapida);
+}
+
+a:hover,
+a:focus-visible {
+  color:           var(--color-primario-hover);
+  text-decoration: underline;
+}
+
+/* Foco visible para accesibilidad con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline:        2px solid var(--color-primario);
+  outline-offset: 3px;
+  border-radius:  var(--radio-sm);
+}
+
+
+/* ---------------------------------------------------------
+   LISTAS
+   Por defecto las listas descriptivas conservan sus estilos.
+   Las listas de navegación/UI usan role="list" y se resetean
+   en reset.css.
+--------------------------------------------------------- */
+
+ul:not([role]),
+ol:not([role]) {
+  padding-left:  var(--espacio-6);
+  line-height:   var(--linea-suelta);
+}
+
+li {
+  margin-bottom: var(--espacio-1);
+}
+
+
+/* ---------------------------------------------------------
+   BLOCKQUOTES Y CITAS
+--------------------------------------------------------- */
+
+blockquote {
+  border-left:  4px solid var(--color-primario-claro);
+  padding-left: var(--espacio-6);
+  margin:       var(--espacio-6) 0;
+  font-style:   italic;
+  color:        var(--color-texto-suave);
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — ajustes para pantallas chicas
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--texto-3xl);  /* 36px en mobile */
+  }
+
+  h2 {
+    font-size: var(--texto-2xl);  /* 30px en mobile */
+  }
+
+  h3 {
+    font-size: var(--texto-lg);   /* 20px en mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: var(--texto-2xl);  /* 30px en pantallas muy chicas */
+  }
+
+  h2 {
+    font-size: var(--texto-xl);   /* 24px */
+  }
+}

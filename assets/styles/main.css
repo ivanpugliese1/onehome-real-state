@@ -1,0 +1,22 @@
+/* =========================================================
+   main.css — punto de entrada de todos los estilos
+   El orden importa: reset → variables → tipografía → componentes → páginas
+   ========================================================= */
+
+/* --- Capa base --- */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/typography.css';
+
+/* --- Componentes (agregar cuando se creen) --- */
+/* @import './components/header.css'; */
+/* @import './components/footer.css'; */
+/* @import './components/card-propiedad.css'; */
+/* @import './components/boton.css'; */
+/* @import './components/formulario.css'; */
+
+/* --- Páginas (agregar cuando se creen) --- */
+/* @import './pages/home.css'; */
+/* @import './pages/propiedades.css'; */
+/* @import './pages/vender.css'; */
+/* @import './pages/nosotros.css'; */

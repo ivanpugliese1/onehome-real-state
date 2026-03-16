@@ -1,0 +1,100 @@
+/* =========================================================
+   Reset moderno
+   Basado en Josh Comeau's CSS Reset + buenas prácticas 2024
+   ========================================================= */
+
+/* 1. Box-sizing universal — evita que padding/border rompan el layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Elimina márgenes y padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Base del documento */
+html {
+  /* Mejora el scroll en anclas y smooth-scroll por JS */
+  scroll-behavior: smooth;
+  /* Evita que el texto se agrande en mobile al rotar */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 4. Body base */
+body {
+  /* Hereda fuente de variables.css */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  /* Evita scroll horizontal no deseado */
+  overflow-x: hidden;
+  /* Mejora el renderizado de fuentes en WebKit */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. Imágenes responsivas por defecto */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Herencia de fuente en formularios (los navegadores no lo hacen por defecto) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Evita que texto largo rompa el layout */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Listas sin bullets cuando no tienen rol semántico */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* 9. Links heredan el color del contexto */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 10. Botones sin estilos nativos del navegador */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 11. Ocultar visualmente pero mantener accesibilidad (clase utilitaria) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

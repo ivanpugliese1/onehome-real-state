@@ -1,0 +1,166 @@
+/* =========================================================
+   Variables globales — Design tokens de OneHome Inmobiliaria
+   ========================================================= */
+
+:root {
+
+  /* ---------------------------------------------------------
+     COLORES
+     Paleta cálida y profesional para inmobiliaria argentina.
+     Terracota como identidad + azul marino para confianza.
+  --------------------------------------------------------- */
+
+  /* Primario — terracota cálido, transmite calidez y hogar */
+  --color-primario:        #C07230;
+  --color-primario-hover:  #A85E22;
+  --color-primario-claro:  #F0D5B8;
+  --color-primario-suave:  #FBF0E6;
+
+  /* Secundario — azul marino profundo, profesionalismo y confianza */
+  --color-secundario:        #1E3A5F;
+  --color-secundario-hover:  #152B47;
+  --color-secundario-claro:  #3A5F8A;
+
+  /* Acento — dorado cálido, para destacar precios y badges */
+  --color-acento:        #D4A849;
+  --color-acento-claro:  #F5E4A8;
+
+  /* Estado — feedback de acciones del usuario */
+  --color-exito:    #2D7A4F;
+  --color-error:    #C0392B;
+  --color-aviso:    #D4A849;
+  --color-info:     #2A7BAF;
+
+  /* Neutros — grises y blancos para fondo y texto */
+  --color-blanco:        #FFFFFF;
+  --color-fondo:         #FAF8F5;    /* blanco cálido, no frío */
+  --color-fondo-alt:     #F0EDE8;    /* sección alternada */
+  --color-borde:         #DDD8D0;
+  --color-gris-claro:    #E8E4DE;
+  --color-gris-medio:    #9B958C;
+  --color-gris-oscuro:   #4A4640;
+  --color-texto:         #2A2520;    /* casi negro con tono cálido */
+  --color-texto-suave:   #6B6460;    /* texto secundario / placeholders */
+  --color-negro:         #1A1614;
+
+
+  /* ---------------------------------------------------------
+     TIPOGRAFÍA
+     Inter — moderna, muy legible en pantalla, gratuita.
+     Si el usuario no carga la fuente, cae a system-ui.
+  --------------------------------------------------------- */
+
+  /* Familias */
+  --fuente-principal:  'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fuente-alternativa: Georgia, 'Times New Roman', serif; /* para citas o highlights */
+
+  /* Escala tipográfica (fluid type — base 16px) */
+  --texto-xs:   0.75rem;   /*  12px */
+  --texto-sm:   0.875rem;  /*  14px */
+  --texto-base: 1rem;      /*  16px */
+  --texto-md:   1.125rem;  /*  18px */
+  --texto-lg:   1.25rem;   /*  20px */
+  --texto-xl:   1.5rem;    /*  24px */
+  --texto-2xl:  1.875rem;  /*  30px */
+  --texto-3xl:  2.25rem;   /*  36px */
+  --texto-4xl:  3rem;      /*  48px */
+
+  /* Pesos */
+  --peso-normal:     400;
+  --peso-medio:      500;
+  --peso-semibold:   600;
+  --peso-bold:       700;
+
+  /* Interlineado */
+  --linea-apretada:  1.2;
+  --linea-normal:    1.5;
+  --linea-suelta:    1.75;
+
+
+  /* ---------------------------------------------------------
+     ESPACIADO
+     Escala de 4px — consistencia en padding y gaps.
+  --------------------------------------------------------- */
+
+  --espacio-1:   0.25rem;  /*   4px */
+  --espacio-2:   0.5rem;   /*   8px */
+  --espacio-3:   0.75rem;  /*  12px */
+  --espacio-4:   1rem;     /*  16px */
+  --espacio-5:   1.25rem;  /*  20px */
+  --espacio-6:   1.5rem;   /*  24px */
+  --espacio-8:   2rem;     /*  32px */
+  --espacio-10:  2.5rem;   /*  40px */
+  --espacio-12:  3rem;     /*  48px */
+  --espacio-16:  4rem;     /*  64px */
+  --espacio-20:  5rem;     /*  80px */
+  --espacio-24:  6rem;     /*  96px */
+
+
+  /* ---------------------------------------------------------
+     LAYOUT
+  --------------------------------------------------------- */
+
+  /* Ancho máximo del contenido */
+  --ancho-contenido:  1200px;
+  --ancho-angosto:    800px;
+
+  /* Breakpoints (para usar en media queries con @media) */
+  --bp-mobile:   480px;
+  --bp-tablet:   768px;
+  --bp-desktop:  1024px;
+  --bp-wide:     1280px;
+
+
+  /* ---------------------------------------------------------
+     BORDES Y RADIOS
+  --------------------------------------------------------- */
+
+  --radio-sm:    4px;
+  --radio-md:    8px;
+  --radio-lg:    12px;
+  --radio-xl:    16px;
+  --radio-full:  9999px;   /* pastillas / badges redondeados */
+
+  --borde-base: 1px solid var(--color-borde);
+
+
+  /* ---------------------------------------------------------
+     SOMBRAS
+     Basadas en sombras cálidas que armonizan con la paleta.
+  --------------------------------------------------------- */
+
+  --sombra-sm:
+    0 1px 2px rgba(42, 37, 32, 0.06),
+    0 1px 3px rgba(42, 37, 32, 0.10);
+
+  --sombra-md:
+    0 4px 6px  rgba(42, 37, 32, 0.06),
+    0 2px 4px  rgba(42, 37, 32, 0.08);
+
+  --sombra-lg:
+    0 10px 15px rgba(42, 37, 32, 0.08),
+    0  4px  6px rgba(42, 37, 32, 0.06);
+
+  --sombra-xl:
+    0 20px 25px rgba(42, 37, 32, 0.10),
+    0  8px 10px rgba(42, 37, 32, 0.06);
+
+  /* Sombra para cards de propiedades — sutil con toque cálido */
+  --sombra-card:
+    0 2px 8px  rgba(192, 114, 48, 0.08),
+    0 1px 3px  rgba(42,  37, 32, 0.12);
+
+  --sombra-card-hover:
+    0 8px 24px rgba(192, 114, 48, 0.16),
+    0 2px 8px  rgba(42,  37, 32, 0.10);
+
+
+  /* ---------------------------------------------------------
+     TRANSICIONES
+  --------------------------------------------------------- */
+
+  --transicion-rapida:  150ms ease;
+  --transicion-normal:  250ms ease;
+  --transicion-suave:   400ms ease;
+
+}
