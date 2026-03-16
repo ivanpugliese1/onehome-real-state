@@ -5,20 +5,22 @@
 
 /* ---------------------------------------------------------
    HEADER PRINCIPAL — desktop
+   backdrop-filter para efecto glass sobre el contenido.
 --------------------------------------------------------- */
 
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-blanco);
+  background-color: rgba(253, 250, 246, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: var(--borde-base);
-  /* Sin sombra por defecto — se activa con JS al hacer scroll */
   box-shadow: none;
   transition: box-shadow var(--transicion-normal);
 }
 
-/* Clase que agrega JS cuando el usuario scrollea */
+/* Sombra que agrega JS al hacer scroll */
 .header.scrolled {
   box-shadow: var(--sombra-md);
 }
@@ -41,7 +43,7 @@
 .header__logo {
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* evita que se achique si el nav ocupa mucho lugar */
+  flex-shrink: 0;
 }
 
 .header__logo img {
@@ -56,7 +58,7 @@
 --------------------------------------------------------- */
 
 .header__nav {
-  flex: 1; /* ocupa el espacio disponible entre logo y social */
+  flex: 1;
   display: flex;
   justify-content: center;
 }
@@ -76,12 +78,11 @@
   color: var(--color-texto);
   text-decoration: none;
   padding: var(--espacio-2) 0;
-  /* Posición relativa para el pseudo-elemento de subrayado */
   position: relative;
   transition: color var(--transicion-rapida);
 }
 
-/* Subrayado animado que aparece en hover y link activo */
+/* Subrayado animado */
 .header__nav-link::after {
   content: '';
   position: absolute;
@@ -105,16 +106,13 @@
 
 
 /* ---------------------------------------------------------
-   ÍCONOS DE REDES SOCIALES
+   CONTROLES — redes sociales + toggle de tema
 --------------------------------------------------------- */
 
-.header__social {
+.header__controles {
   display: flex;
-  list-style: none;
-  gap: var(--espacio-2);
-  margin: 0;
-  padding: 0;
   align-items: center;
+  gap: var(--espacio-2);
   flex-shrink: 0;
 }
 
@@ -132,19 +130,26 @@
   background-color: var(--color-primario-suave);
 }
 
-.header__social-link img {
+.header__social-icono {
   display: block;
   width: 22px;
   height: 22px;
+  fill: currentColor;
 }
 
 
 /* ---------------------------------------------------------
-   BOTÓN CONTACTO MOBILE
-   Solo visible en pantallas chicas — oculto en desktop
+   BOTÓN CONTACTO — visible solo en mobile
 --------------------------------------------------------- */
 
 .header__contacto-mobile {
+  display: none;
+}
+
+
+/* El botón hamburguesa no se usa — la navegación mobile
+   se maneja con el nav inferior (.nav-mobile). */
+.header__menu-btn {
   display: none;
 }
 
@@ -165,16 +170,21 @@
 
 @media (max-width: 768px) {
 
-  /* Header simplificado: solo logo + botón contacto */
+  /* Header simplificado */
   .header__inner {
     padding: var(--espacio-3) var(--espacio-4);
-    gap: 0;
+    gap: var(--espacio-3);
   }
 
   /* Ocultar nav y redes sociales en mobile */
   .header__nav,
-  .header__social {
+  .header__controles .header__social-link {
     display: none;
+  }
+
+  /* El wrapper de controles se empuja a la derecha */
+  .header__contacto-mobile {
+    margin-left: auto;
   }
 
   /* Mostrar botón de contacto */
@@ -198,7 +208,6 @@
     background-color: var(--color-primario-hover);
   }
 
-
   /* ---------------------------------------------------------
      Barra de navegación inferior mobile
   --------------------------------------------------------- */
@@ -212,8 +221,7 @@
     z-index: 100;
     background-color: var(--color-blanco);
     border-top: var(--borde-base);
-    /* Sombra hacia arriba para separar visualmente del contenido */
-    box-shadow: 0 -2px 8px rgba(42, 37, 32, 0.08);
+    box-shadow: 0 -2px 8px rgba(46, 31, 21, 0.08);
   }
 
   .nav-mobile__list {
@@ -250,13 +258,12 @@
     fill: currentColor;
   }
 
-  /* Link activo o en hover: resalta con el color primario */
   .nav-mobile__link:hover,
   .nav-mobile__link[aria-current="page"] {
     color: var(--color-primario);
   }
 
-  /* Compensar la altura de la barra para que no tape el contenido del footer */
+  /* Compensar la barra inferior para que no tape el footer */
   body {
     padding-bottom: 64px;
   }

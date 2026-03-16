@@ -1,12 +1,12 @@
 /* =========================================================
    features.css — sección "¿Por qué elegirnos?"
-   Diseño minimalista de 4 columnas con íconos SVG simples.
+   Grilla 2x2 con borde izquierdo terracota — look editorial.
    ========================================================= */
 
 
 /* ---------------------------------------------------------
    SECCIÓN
-   Fondo blanco para contrastar con el fondo-alt de las cards.
+   Fondo cálido alternado para separar visualmente de las cards.
 --------------------------------------------------------- */
 
 .por-que-elegirnos {
@@ -23,13 +23,13 @@
 
 /* ---------------------------------------------------------
    GRILLA DE FEATURES
-   4 columnas en desktop, 2 en tablet, 1 en mobile.
-   list-style: none porque usamos <ul> por semántica.
+   2x2 en desktop — más espaciosa que 4 cols, más premium.
+   2 cols en tablet, 1 en mobile.
 --------------------------------------------------------- */
 
 .por-que-elegirnos__lista {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--espacio-6);
   list-style: none;
   padding: 0;
@@ -38,52 +38,50 @@
 
 
 /* ---------------------------------------------------------
-   VENTAJA (cada feature)
-   Tarjeta minimalista: sin sombra pronunciada, borde suave.
-   Centrada para dar un look limpio y simétrico.
+   VENTAJA
+   Borde izquierdo terracota como elemento decorativo.
+   Diseño horizontal: texto a la derecha del borde.
 --------------------------------------------------------- */
 
 .ventaja {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--espacio-8) var(--espacio-5);
-  border-radius: var(--radio-lg);
+  gap: var(--espacio-3);
+  padding: var(--espacio-8);
+  border-radius: var(--radio-xl);
   border: var(--borde-base);
+  border-left: 3px solid var(--color-primario);
   background-color: var(--color-fondo);
   transition:
-    border-color  var(--transicion-normal),
-    box-shadow    var(--transicion-normal);
+    box-shadow    var(--transicion-normal),
+    border-color  var(--transicion-normal);
 }
 
 .ventaja:hover {
-  border-color: var(--color-primario-claro);
   box-shadow: var(--sombra-md);
+  border-left-color: var(--color-primario-hover);
 }
 
 
 /* ---------------------------------------------------------
-   ÍCONO SVG
-   Círculo de fondo con el color primario suave para enmarcar
-   el ícono sin que sea demasiado llamativo.
+   ÍCONO
+   Círculo pequeño en crema con ícono terracota.
 --------------------------------------------------------- */
 
 .ventaja__icono {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radio-full);
   background-color: var(--color-primario-suave);
-  margin-bottom: var(--espacio-5);
   flex-shrink: 0;
 }
 
 .ventaja__icono svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: var(--color-primario);
 }
 
@@ -93,17 +91,19 @@
 --------------------------------------------------------- */
 
 .ventaja__titulo {
-  font-size: var(--texto-base);
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
   font-weight: var(--peso-semibold);
   color: var(--color-secundario);
-  margin-bottom: var(--espacio-2);
   line-height: var(--linea-apretada);
+  margin: 0;
 }
 
 .ventaja__descripcion {
-  font-size: var(--texto-sm);
+  font-size: var(--texto-base);
   color: var(--color-texto-suave);
   line-height: var(--linea-normal);
+  margin: 0;
 }
 
 
@@ -111,7 +111,7 @@
    RESPONSIVE
    ========================================================= */
 
-/* Tablet — 2 columnas */
+/* Tablet — se mantiene 2 cols */
 @media (max-width: 1024px) {
   .por-que-elegirnos__lista {
     grid-template-columns: repeat(2, 1fr);
@@ -133,15 +133,7 @@
     gap: var(--espacio-4);
   }
 
-  /* En mobile alineamos a la izquierda para mejor lectura */
   .ventaja {
-    flex-direction: row;
-    text-align: left;
-    gap: var(--espacio-5);
-    padding: var(--espacio-5);
-  }
-
-  .ventaja__icono {
-    margin-bottom: 0;
+    padding: var(--espacio-6);
   }
 }

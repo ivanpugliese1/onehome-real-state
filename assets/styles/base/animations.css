@@ -1,0 +1,30 @@
+/* animations.css — estilos para animaciones de entrada al viewport
+   Trabaja en conjunto con assets/js/utils/animations.js
+
+   Flujo:
+   1. JS agrega .js-animar al elemento → estado inicial (invisible, desplazado)
+   2. IntersectionObserver detecta que entró al viewport
+   3. JS agrega .js-visible → transición al estado final (visible, en posición)
+
+   prefers-reduced-motion: respeta la preferencia de accesibilidad del sistema operativo
+*/
+
+.js-animar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js-animar.js-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Usuarios que prefieren menos movimiento: mostramos el elemento sin animación */
+@media (prefers-reduced-motion: reduce) {
+  .js-animar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

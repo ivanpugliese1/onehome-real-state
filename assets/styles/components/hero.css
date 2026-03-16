@@ -5,17 +5,15 @@
 
 /* ---------------------------------------------------------
    CONTENEDOR HERO
-   min-height 90vh para ocupar casi toda la pantalla.
-   flex + align-items center para centrar verticalmente
-   cuando el contenido es más corto que la ventana.
+   min-height 100vh, fondo cálido.
+   flex + align-items stretch para que imagen llene la altura.
 --------------------------------------------------------- */
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   background-color: var(--color-fondo);
-  padding: var(--espacio-16) 0;
 }
 
 /* Grid de dos columnas: texto | imagen */
@@ -23,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--espacio-12);
-  align-items: center;
+  align-items: stretch;
   max-width: var(--ancho-contenido);
   margin: 0 auto;
   padding: 0 var(--espacio-6);
@@ -39,34 +37,140 @@
   display: flex;
   flex-direction: column;
   gap: var(--espacio-6);
+  justify-content: center;
+  padding: var(--espacio-4) 0 var(--espacio-16) 0;
+}
+
+/* Pill tag sobre el título */
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  align-self: flex-start;
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  background-color: var(--color-primario-suave);
+  border: 1px solid var(--color-primario-claro);
+  padding: var(--espacio-2) var(--espacio-4);
+  border-radius: var(--radio-full);
+}
+
+/* Wrapper flex para título + badge */
+.hero__titulo-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-5);
 }
 
 .hero__titulo {
-  font-size: var(--texto-4xl);       /* 48px — hereda bold de typography.css */
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: var(--texto-5xl);
+  font-weight: var(--peso-semibold);
   line-height: var(--linea-apretada);
-  color: var(--color-secundario);    /* azul marino */
-  /* Resaltar la última palabra con el color primario se puede hacer desde el HTML con <em> */
+  color: var(--color-secundario);
+}
+
+/* Keyword en itálica terracota */
+.hero__titulo em {
+  font-style: italic;
+  color: var(--color-primario);
+}
+
+/* Badge circular — años de trayectoria */
+.hero__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radio-full);
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  margin-top: var(--espacio-2);
+}
+
+.hero__badge-numero {
+  font-family: var(--font-heading);
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-bold);
+  line-height: 1;
+}
+
+.hero__badge-texto {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .hero__subtitulo {
-  font-size: var(--texto-md);        /* 18px */
+  font-size: var(--texto-md);
   line-height: var(--linea-suelta);
   color: var(--color-texto-suave);
-  max-width: 480px;                  /* evitar líneas demasiado largas */
+  max-width: 480px;
 }
 
 /* Wrapper de los dos botones CTA */
 .hero__acciones {
   display: flex;
   gap: var(--espacio-4);
-  flex-wrap: wrap;                   /* en pantallas angostas se apilan sin romper layout */
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------
+   FILA DE ESTADÍSTICAS
+   Tres métricas separadas por líneas verticales sutiles.
+--------------------------------------------------------- */
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-6);
+  padding-top: var(--espacio-4);
+  border-top: var(--borde-base);
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__stat-numero {
+  font-family: var(--font-heading);
+  font-size: var(--texto-2xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-primario);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+  font-weight: var(--peso-medio);
+}
+
+/* Separadores verticales entre stats */
+.hero__stat-sep {
+  width: 1px;
+  height: 32px;
+  background-color: var(--color-borde);
+  flex-shrink: 0;
 }
 
 
 /* ---------------------------------------------------------
    BOTONES CTA
-   Estos estilos deberían vivir en components/boton.css
-   cuando se cree ese archivo. Por ahora se definen acá.
+   Los estilos generales de .boton viven aquí hasta que se
+   cree components/boton.css.
 --------------------------------------------------------- */
 
 .boton {
@@ -104,7 +208,7 @@
   text-decoration:  none;
 }
 
-/* Secundario — borde azul marino, fondo transparente */
+/* Secundario — borde marrón profundo, fondo transparente */
 .boton--secundario {
   background-color: transparent;
   color:            var(--color-secundario);
@@ -117,7 +221,7 @@
   text-decoration:  none;
 }
 
-/* Terciario — solo texto con subrayado (para "ver todas") */
+/* Terciario — solo texto con subrayado */
 .boton--terciario {
   background-color: transparent;
   color:            var(--color-primario);
@@ -142,22 +246,24 @@
 
 /* ---------------------------------------------------------
    LADO DERECHO — imagen de la propiedad
+   Radio asimétrico para look premium.
 --------------------------------------------------------- */
 
 .hero__imagen {
-  margin: 0;   /* reset del margen por defecto de <figure> */
-  /* Sombra decorativa desplazada para dar profundidad */
-  filter: drop-shadow(0 16px 40px rgba(42, 37, 32, 0.18));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 20px 48px rgba(46, 31, 21, 0.20));
 }
 
 .hero__imagen img {
   display: block;
   width: 100%;
-  height: auto;
-  /* Relación de aspecto para que la imagen no se deforme */
-  aspect-ratio: 4 / 3;
+  height: 80vh;
+  max-height: 680px;
   object-fit: cover;
-  border-radius: var(--radio-xl);
+  /* Radio asimétrico — diseño editorial */
+  border-radius: 24px 24px 80px 24px;
 }
 
 
@@ -165,33 +271,41 @@
    RESPONSIVE
    ========================================================= */
 
-/* Tablet — columnas más justas */
+/* Tablet */
 @media (max-width: 1024px) {
   .hero__inner {
     gap: var(--espacio-8);
   }
 
   .hero__titulo {
-    font-size: var(--texto-3xl);  /* 36px */
+    font-size: var(--texto-4xl);
   }
 }
 
 /* Mobile — apilado: texto arriba, imagen abajo */
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;              /* en mobile no forzamos 90vh */
-    padding: var(--espacio-12) 0;
+    min-height: auto;
+    padding: var(--espacio-4) 0 var(--espacio-10) 0;
   }
 
   .hero__inner {
-    grid-template-columns: 1fr;   /* una sola columna */
+    grid-template-columns: 1fr;
     gap: var(--espacio-8);
     padding: 0 var(--espacio-4);
-    /* El orden en el DOM ya es correcto: contenido primero, imagen después */
+  }
+
+  .hero__contenido {
+    text-align: left;
+    gap: var(--espacio-5);
   }
 
   .hero__titulo {
-    font-size: var(--texto-2xl);  /* 30px — typography.css ya lo define, reforzamos */
+    font-size: var(--texto-3xl);
+  }
+
+  .hero__badge {
+    display: none;
   }
 
   .hero__subtitulo {
@@ -199,23 +313,16 @@
     max-width: none;
   }
 
-  .hero__acciones {
-    flex-direction: column;        /* botones en columna en pantallas muy chicas */
+  .hero__stats {
+    gap: var(--espacio-4);
+  }
+
+  .hero__stat-numero {
+    font-size: var(--texto-xl);
   }
 
   .hero__imagen img {
-    aspect-ratio: 16 / 9;         /* más panorámico en mobile para no ocupar tanta altura */
-  }
-}
-
-/* Pantallas muy chicas */
-@media (max-width: 480px) {
-  .hero__acciones {
-    flex-direction: column;
-  }
-
-  .boton {
-    width: 100%;                   /* botones full-width en pantallas pequeñas */
-    justify-content: center;
+    height: 260px;
+    border-radius: 16px 16px 48px 16px;
   }
 }

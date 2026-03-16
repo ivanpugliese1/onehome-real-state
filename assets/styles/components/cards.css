@@ -5,8 +5,6 @@
 
 /* ---------------------------------------------------------
    SECCIÓN PROPIEDADES DESTACADAS
-   Wrapper de la sección con fondo alternado para separar
-   visualmente del hero.
 --------------------------------------------------------- */
 
 .propiedades-destacadas {
@@ -26,11 +24,23 @@
   margin-bottom: var(--espacio-10);
 }
 
+.seccion-header__eyebrow {
+  display: inline-block;
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-3);
+}
+
 .seccion-header__titulo {
-  font-size: var(--texto-3xl);
-  font-weight: var(--peso-bold);
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
   color: var(--color-secundario);
   margin-bottom: var(--espacio-3);
+  line-height: var(--linea-apretada);
 }
 
 .seccion-header__descripcion {
@@ -51,7 +61,6 @@
 /* ---------------------------------------------------------
    GRILLA DE CARDS
    3 columnas en desktop, 2 en tablet, 1 en mobile.
-   list-style: none porque usamos <ul> por semántica.
 --------------------------------------------------------- */
 
 .propiedades-destacadas__lista {
@@ -66,13 +75,12 @@
 
 /* ---------------------------------------------------------
    CARD DE PROPIEDAD
-   Imagen arriba, información abajo.
-   Hover con sombra pronunciada y leve escala.
+   Imagen con overlays (badge tipo + corazón), info abajo.
 --------------------------------------------------------- */
 
 .card-propiedad {
   background-color: var(--color-blanco);
-  border-radius: var(--radio-lg);
+  border-radius: var(--radio-xl);
   border: var(--borde-base);
   box-shadow: var(--sombra-card);
   overflow: hidden;
@@ -84,15 +92,13 @@
 }
 
 .card-propiedad:hover {
-  transform: scale(1.025);
+  transform: translateY(-4px);
   box-shadow: var(--sombra-card-hover);
 }
 
 
 /* ---------------------------------------------------------
-   IMAGEN SUPERIOR
-   Altura fija para que todas las cards queden alineadas
-   en la grilla. object-fit: cover para no deformar.
+   IMAGEN + OVERLAYS
 --------------------------------------------------------- */
 
 .card-propiedad__imagen {
@@ -100,6 +106,7 @@
   height: 220px;
   overflow: hidden;
   flex-shrink: 0;
+  position: relative;
 }
 
 .card-propiedad__imagen img {
@@ -107,7 +114,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Leve zoom en hover — combinado con el scale del card */
   transition: transform var(--transicion-suave);
 }
 
@@ -115,11 +121,62 @@
   transform: scale(1.04);
 }
 
+/* Pill badge de tipo: Venta / Alquiler */
+.card-propiedad__tipo {
+  position: absolute;
+  top: var(--espacio-3);
+  left: var(--espacio-3);
+  padding: var(--espacio-1) var(--espacio-3);
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radio-full);
+}
+
+/* Botón corazón — guardar favorito */
+.card-propiedad__favorito {
+  position: absolute;
+  top: var(--espacio-3);
+  right: var(--espacio-3);
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: var(--radio-full);
+  background-color: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--transicion-rapida),
+    transform        var(--transicion-rapida);
+}
+
+.card-propiedad__favorito:hover {
+  background-color: var(--color-blanco);
+  transform: scale(1.10);
+}
+
+.card-propiedad__favorito svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-gris-medio);
+  transition: fill var(--transicion-rapida);
+}
+
+.card-propiedad__favorito:hover svg,
+.card-propiedad__favorito--activo svg {
+  fill: var(--color-primario);
+}
+
 
 /* ---------------------------------------------------------
    INFORMACIÓN DE LA PROPIEDAD
-   flex: 1 para que todas las cards tengan la misma altura
-   dentro de la grilla, empujando el botón hacia abajo.
 --------------------------------------------------------- */
 
 .card-propiedad__info {
@@ -127,53 +184,52 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-
-.card-propiedad__titulo {
-  font-size: var(--texto-md);
-  font-weight: var(--peso-semibold);
-  color: var(--color-secundario);
-  margin-bottom: var(--espacio-2);
-  line-height: var(--linea-apretada);
+  gap: var(--espacio-2);
 }
 
 .card-propiedad__ubicacion {
   font-size: var(--texto-sm);
-  color: var(--color-gris-medio);
-  margin-bottom: var(--espacio-3);
+  color: var(--color-texto-suave);
   display: flex;
   align-items: center;
   gap: var(--espacio-1);
+  margin: 0;
 }
 
-/* Ícono de pin de ubicación */
-.card-propiedad__ubicacion svg {
-  width: 14px;
-  height: 14px;
-  fill: var(--color-gris-medio);
-  flex-shrink: 0;
-}
-
-.card-propiedad__precio {
+.card-propiedad__titulo {
+  font-family: var(--font-heading);
   font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+/* Precio en Cormorant — elegante y legible */
+.card-propiedad__precio {
+  font-family: var(--font-heading);
+  font-size: var(--texto-2xl);
   font-weight: var(--peso-bold);
   color: var(--color-primario);
-  margin-bottom: var(--espacio-4);
+  margin: 0;
+  line-height: 1.2;
 }
 
 
 /* ---------------------------------------------------------
-   DATOS: AMBIENTES, BAÑOS, M²
-   Separados por una línea superior del precio.
-   flex: 1 empuja el botón "ver más" al fondo de la card.
+   DATOS: emojis + texto
+   Borde superior que separa del precio.
+   flex: 1 empuja las acciones hacia abajo.
 --------------------------------------------------------- */
 
 .card-propiedad__datos {
   display: flex;
-  gap: var(--espacio-5);
+  gap: var(--espacio-4);
   padding-top: var(--espacio-4);
   border-top: var(--borde-base);
-  margin-bottom: var(--espacio-5);
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
   flex: 1;
   align-items: flex-start;
 }
@@ -181,11 +237,12 @@
 .card-propiedad__dato {
   display: flex;
   align-items: center;
-  gap: var(--espacio-2);
+  gap: var(--espacio-1);
   font-size: var(--texto-sm);
-  color: var(--color-gris-oscuro);
+  color: var(--color-texto-suave);
 }
 
+/* Iconos SVG legacy — solo por compatibilidad */
 .card-propiedad__dato svg {
   width: 16px;
   height: 16px;
@@ -195,17 +252,74 @@
 
 
 /* ---------------------------------------------------------
-   BOTÓN VER MÁS
-   Ocupa todo el ancho disponible para fácil click en mobile.
+   ACCIONES — dos botones: ver ficha + WhatsApp
 --------------------------------------------------------- */
 
+.card-propiedad__acciones {
+  display: flex;
+  gap: var(--espacio-3);
+  margin-top: var(--espacio-2);
+}
+
+.card-propiedad__btn-ficha {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacio-2) var(--espacio-4);
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-radius: var(--radio-full);
+  font-family: var(--fuente-principal);
+  font-weight: var(--peso-semibold);
+  font-size: var(--texto-sm);
+  text-decoration: none;
+  transition:
+    background-color var(--transicion-rapida),
+    box-shadow       var(--transicion-rapida);
+}
+
+.card-propiedad__btn-ficha:hover {
+  background-color: var(--color-primario-hover);
+  box-shadow: var(--sombra-sm);
+  text-decoration: none;
+}
+
+/* Botón WhatsApp — cuadrado redondeado con ícono */
+.card-propiedad__btn-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  background-color: #25D366;
+  border-radius: var(--radio-full);
+  text-decoration: none;
+  transition:
+    background-color var(--transicion-rapida),
+    transform        var(--transicion-rapida);
+}
+
+.card-propiedad__btn-wa:hover {
+  background-color: #1EBE57;
+  transform: scale(1.06);
+}
+
+.card-propiedad__btn-wa svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-blanco);
+}
+
+/* Botón legacy — por compatibilidad */
 .card-propiedad__boton {
   display: block;
   text-align: center;
   padding: var(--espacio-3) var(--espacio-4);
   background-color: var(--color-primario);
   color: var(--color-blanco);
-  border-radius: var(--radio-md);
+  border-radius: var(--radio-full);
   font-family: var(--fuente-principal);
   font-weight: var(--peso-semibold);
   font-size: var(--texto-sm);
@@ -249,6 +363,6 @@
   }
 
   .seccion-header__titulo {
-    font-size: var(--texto-2xl);
+    font-size: var(--texto-3xl);
   }
 }

@@ -1,26 +1,681 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nosotros | OneHome Inmobiliaria</title>
-  <meta name="description" content="Conocé al equipo de OneHome Inmobiliaria." />
 
-  <link rel="stylesheet" href="../assets/styles/base/reset.css" />
-  <link rel="stylesheet" href="../assets/styles/base/variables.css" />
-  <link rel="stylesheet" href="../assets/styles/pages/nosotros.css" />
+  <!-- SEO primario -->
+  <title>Quiénes somos | OneHome Inmobiliaria</title>
+  <meta name="description"
+    content="Conocé el equipo de OneHome Inmobiliaria: más de 15 años acompañando a familias argentinas en la compra, venta y alquiler de propiedades. Transparencia, compromiso y cercanía." />
+
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quiénes somos | OneHome Inmobiliaria" />
+  <meta property="og:description"
+    content="Conocé el equipo de OneHome: más de 15 años acompañando a familias en la compra, venta y alquiler de propiedades en Argentina." />
+  <meta property="og:image" content="/assets/images/og-nosotros.jpg" />
+  <meta property="og:url" content="https://onehome.com.ar/pages/nosotros.html" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Datos estructurados Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Quiénes somos — OneHome Inmobiliaria",
+      "url": "https://onehome.com.ar/pages/nosotros.html",
+      "description": "Conocé el equipo y la historia de OneHome Inmobiliaria.",
+      "publisher": {
+        "@type": "RealEstateAgent",
+        "name": "OneHome Inmobiliaria",
+        "url": "https://onehome.com.ar",
+        "logo": "/assets/images/logo.png"
+      }
+    }
+  </script>
+
+  <!-- Fuentes: Cormorant Garamond (títulos) + DM Sans (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../assets/styles/main.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/icons/favicon.png" />
 </head>
+
 <body>
 
-  <div id="header"></div>
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="header__inner">
 
-  <main>
-    <!-- Contenido sobre la inmobiliaria -->
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="OneHome Inmobiliaria — inicio">
+        <img src="../assets/images/logo.png" alt="Logo OneHome Inmobiliaria" width="160" height="48" />
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="header__nav" id="header-nav" aria-label="Navegación principal">
+        <ul class="header__nav-list" role="list">
+          <li><a href="/" class="header__nav-link">Inicio</a></li>
+          <li><a href="/pages/propiedades.html" class="header__nav-link">Propiedades</a></li>
+          <li><a href="/pages/vender.html" class="header__nav-link">Vender</a></li>
+          <li><a href="/pages/nosotros.html" class="header__nav-link" aria-current="page">Nosotros</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón contacto — visible solo en mobile -->
+      <a href="/pages/contacto.html" class="header__contacto-mobile" aria-label="Ir al formulario de contacto">
+        Contacto
+      </a>
+
+      <!-- Controles: redes sociales + toggle de tema -->
+      <div class="header__controles" aria-label="Acciones del header">
+
+        <a href="https://instagram.com/onehome" class="header__social-link" target="_blank" rel="noopener noreferrer"
+          aria-label="Seguinos en Instagram">
+          <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+            focusable="false">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+          </svg>
+        </a>
+
+        <a href="https://wa.me/541100000000" class="header__social-link" target="_blank" rel="noopener noreferrer"
+          aria-label="Contactanos por WhatsApp">
+          <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+            focusable="false">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+          </svg>
+        </a>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro">
+          <svg class="theme-toggle__sol" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+          </svg>
+          <svg class="theme-toggle__luna" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+          </svg>
+        </button>
+
+      </div><!-- /.header__controles -->
+
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="contenido-principal">
+
+    <!-- ---- HERO INTERNO ---- -->
+    <section class="hero-interno" aria-labelledby="nosotros-titulo">
+      <div class="hero-interno__inner">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb__lista" role="list">
+            <li class="breadcrumb__item">
+              <a href="/" class="breadcrumb__link">Inicio</a>
+            </li>
+            <li class="breadcrumb__sep" aria-hidden="true">›</li>
+            <li class="breadcrumb__item breadcrumb__item--actual" aria-current="page">
+              Nosotros
+            </li>
+          </ol>
+        </nav>
+
+        <h1 id="nosotros-titulo" class="hero-interno__titulo">
+          Quiénes <em>somos</em>
+        </h1>
+
+        <p class="hero-interno__subtitulo">
+          Más de 15 años acompañando a familias argentinas a encontrar el hogar que merecen.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ---- HISTORIA ---- -->
+    <section class="historia" aria-labelledby="historia-titulo">
+      <div class="historia__inner">
+
+        <!-- Narrativa + imagen en dos columnas -->
+        <div class="historia__contenido">
+
+          <div class="historia__narrativa">
+            <p class="seccion-header__eyebrow">Nuestra historia</p>
+            <h2 id="historia-titulo" class="historia__titulo">
+              Empezamos con una oficina y muchas ganas
+            </h2>
+            <p>
+              En 2009, Martina García fundó OneHome con una visión clara: darles a los argentinos
+              un servicio inmobiliario honesto, cálido y sin sorpresas. Desde un pequeño local en
+              Palermo, construimos paso a paso la confianza de cientos de familias.
+            </p>
+            <p>
+              Hoy somos un equipo de profesionales especializados en el mercado porteño, con
+              presencia en CABA y el Gran Buenos Aires. Cada operación es para nosotros una
+              responsabilidad personal: nos importa que tu historia tenga un buen final.
+            </p>
+            <p>
+              Trabajamos con seriedad, pero también con cercanía. Porque entendemos que comprar
+              o vender una propiedad es una de las decisiones más importantes de la vida.
+            </p>
+          </div>
+
+          <figure class="historia__imagen">
+            <img
+              src="https://picsum.photos/seed/onehome-team/600/450"
+              alt="Equipo de OneHome Inmobiliaria en nuestras oficinas de Palermo, Buenos Aires"
+              width="600"
+              height="450"
+              loading="lazy" />
+          </figure>
+
+        </div>
+
+        <!-- Timeline de hitos -->
+        <div class="timeline" aria-label="Hitos importantes de OneHome">
+
+          <article class="timeline__item">
+            <div class="timeline__marcador">
+              <span class="timeline__anio">2009</span>
+              <span class="timeline__punto" aria-hidden="true"></span>
+            </div>
+            <div class="timeline__contenido">
+              <h3 class="timeline__titulo">Fundación</h3>
+              <p class="timeline__descripcion">
+                Martina García abre las puertas de OneHome en Palermo con un equipo de tres
+                personas y el compromiso de asesorar con honestidad.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__marcador">
+              <span class="timeline__anio">2015</span>
+              <span class="timeline__punto" aria-hidden="true"></span>
+            </div>
+            <div class="timeline__contenido">
+              <h3 class="timeline__titulo">Expansión</h3>
+              <p class="timeline__descripcion">
+                Segunda sede en Zona Norte y un equipo que ya supera los 12 asesores.
+                Alcanzamos las 200 operaciones exitosas.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__marcador">
+              <span class="timeline__anio">2020</span>
+              <span class="timeline__punto" aria-hidden="true"></span>
+            </div>
+            <div class="timeline__contenido">
+              <h3 class="timeline__titulo">Digital</h3>
+              <p class="timeline__descripcion">
+                Lanzamos nuestra plataforma digital. Recorridos virtuales, firma electrónica
+                y atención remota sin detener ni una operación durante la pandemia.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__marcador">
+              <span class="timeline__anio">2024</span>
+              <span class="timeline__punto" aria-hidden="true"></span>
+            </div>
+            <div class="timeline__contenido">
+              <h3 class="timeline__titulo">Reconocimiento</h3>
+              <p class="timeline__descripcion">
+                +500 operaciones cerradas. Reconocidos como una de las 10 mejores inmobiliarias
+                de CABA por la Cámara Inmobiliaria Argentina.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---- MISIÓN Y VISIÓN ---- -->
+    <section class="mision-vision" aria-label="Misión y visión de OneHome">
+      <div class="mision-vision__inner">
+
+        <div class="mision-vision__grid">
+
+          <!-- Misión -->
+          <article class="mision-vision__card" aria-labelledby="mision-titulo">
+            <div class="mision-vision__icono" aria-hidden="true">
+              <!-- Ícono: objetivo/brújula -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+              </svg>
+            </div>
+            <h2 id="mision-titulo" class="mision-vision__titulo">Misión</h2>
+            <p class="mision-vision__texto">
+              Acompañar a cada persona en el proceso de compra, venta o alquiler de su propiedad
+              con transparencia, profesionalismo y calidez humana, garantizando una experiencia
+              sin estrés, de principio a fin.
+            </p>
+          </article>
+
+          <!-- Visión -->
+          <article class="mision-vision__card mision-vision__card--vision" aria-labelledby="vision-titulo">
+            <div class="mision-vision__icono" aria-hidden="true">
+              <!-- Ícono: estrella/visión -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+            <h2 id="vision-titulo" class="mision-vision__titulo">Visión</h2>
+            <p class="mision-vision__texto">
+              Ser la inmobiliaria de referencia en Argentina por nuestra ética, innovación y
+              compromiso con las familias. Creemos que cada hogar es una historia, y queremos
+              ser parte de las mejores.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- EQUIPO ---- -->
+    <section class="equipo" aria-labelledby="equipo-titulo">
+      <div class="equipo__inner">
+
+        <header class="seccion-header">
+          <p class="seccion-header__eyebrow">Las personas detrás de OneHome</p>
+          <h2 id="equipo-titulo" class="seccion-header__titulo">Nuestro equipo</h2>
+          <p class="seccion-header__descripcion">
+            Profesionales apasionados por el sector inmobiliario, comprometidos con cada cliente.
+          </p>
+        </header>
+
+        <ul class="equipo__lista" role="list">
+
+          <!-- Integrante 1 -->
+          <li>
+            <article class="equipo__card">
+              <figure class="equipo__foto">
+                <img
+                  src="https://picsum.photos/seed/martina-garcia/300/300"
+                  alt="Martina García, Directora General de OneHome Inmobiliaria"
+                  width="300"
+                  height="300"
+                  loading="lazy" />
+              </figure>
+              <div class="equipo__info">
+                <h3 class="equipo__nombre">Martina García</h3>
+                <p class="equipo__cargo">Directora General</p>
+                <p class="equipo__descripcion">
+                  Fundadora de OneHome. Con 20 años en el mercado inmobiliario argentino,
+                  es reconocida por su capacidad de negociación y su ética inquebrantable.
+                </p>
+                <div class="equipo__redes">
+                  <a href="https://linkedin.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn de Martina García">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a href="https://instagram.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram de Martina García">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- Integrante 2 -->
+          <li>
+            <article class="equipo__card">
+              <figure class="equipo__foto">
+                <img
+                  src="https://picsum.photos/seed/lucas-rodriguez/300/300"
+                  alt="Lucas Rodríguez, Asesor Senior de OneHome Inmobiliaria"
+                  width="300"
+                  height="300"
+                  loading="lazy" />
+              </figure>
+              <div class="equipo__info">
+                <h3 class="equipo__nombre">Lucas Rodríguez</h3>
+                <p class="equipo__cargo">Asesor Senior</p>
+                <p class="equipo__descripcion">
+                  Especialista en propiedades de alta gama en CABA. Lucas lleva 12 años en
+                  OneHome y conoce cada barrio porteño como la palma de su mano.
+                </p>
+                <div class="equipo__redes">
+                  <a href="https://linkedin.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn de Lucas Rodríguez">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a href="https://instagram.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram de Lucas Rodríguez">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- Integrante 3 -->
+          <li>
+            <article class="equipo__card">
+              <figure class="equipo__foto">
+                <img
+                  src="https://picsum.photos/seed/valentina-torres/300/300"
+                  alt="Valentina Torres, Asesora Comercial de OneHome Inmobiliaria"
+                  width="300"
+                  height="300"
+                  loading="lazy" />
+              </figure>
+              <div class="equipo__info">
+                <h3 class="equipo__nombre">Valentina Torres</h3>
+                <p class="equipo__cargo">Asesora Comercial</p>
+                <p class="equipo__descripcion">
+                  Experta en zona norte y GBA. Valentina se destaca por su empatía y su
+                  habilidad para entender lo que cada familia busca más allá de los metros cuadrados.
+                </p>
+                <div class="equipo__redes">
+                  <a href="https://linkedin.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn de Valentina Torres">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  <a href="https://instagram.com" class="equipo__red" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram de Valentina Torres">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ---- VALORES ---- -->
+    <section class="valores" aria-labelledby="valores-titulo">
+      <div class="valores__inner">
+
+        <header class="seccion-header">
+          <p class="seccion-header__eyebrow">Lo que nos define</p>
+          <h2 id="valores-titulo" class="seccion-header__titulo">Nuestros valores</h2>
+          <p class="seccion-header__descripcion">
+            Los principios que guían cada decisión, cada conversación y cada operación que hacemos.
+          </p>
+        </header>
+
+        <ul class="valores__lista" role="list">
+
+          <!-- Transparencia -->
+          <li>
+            <article class="valor">
+              <div class="valor__icono" aria-hidden="true">
+                <!-- Ícono: ojo/visibilidad -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
+              </div>
+              <span class="valor__numero" aria-hidden="true">01</span>
+              <h3 class="valor__titulo">Transparencia</h3>
+              <p class="valor__descripcion">
+                Actuamos con honestidad total. No hay letra chica ni sorpresas al final del proceso.
+                Te explicamos cada paso, cada costo y cada implicancia de la operación antes de
+                avanzar. Preferimos perder una venta antes que perder tu confianza.
+              </p>
+            </article>
+          </li>
+
+          <!-- Compromiso -->
+          <li>
+            <article class="valor">
+              <div class="valor__icono" aria-hidden="true">
+                <!-- Ícono: corazón -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </div>
+              <span class="valor__numero" aria-hidden="true">02</span>
+              <h3 class="valor__titulo">Compromiso</h3>
+              <p class="valor__descripcion">
+                Nos comprometemos con vos desde el primer contacto hasta mucho después del cierre.
+                Porque una operación inmobiliaria no es solo un contrato: es un cambio de vida.
+                Acompañamos cada etapa con la misma dedicación, sin importar el tamaño de la operación.
+              </p>
+            </article>
+          </li>
+
+          <!-- Profesionalismo -->
+          <li>
+            <article class="valor">
+              <div class="valor__icono" aria-hidden="true">
+                <!-- Ícono: certificado/diploma -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+                </svg>
+              </div>
+              <span class="valor__numero" aria-hidden="true">03</span>
+              <h3 class="valor__titulo">Profesionalismo</h3>
+              <p class="valor__descripcion">
+                Nuestro equipo está certificado y en constante capacitación. Conocemos el mercado
+                en profundidad: precios, tendencias, zonas, aspectos legales e impositivos.
+                Ese conocimiento lo ponemos al servicio de tu decisión para que nunca estés solo.
+              </p>
+            </article>
+          </li>
+
+          <!-- Cercanía -->
+          <li>
+            <article class="valor">
+              <div class="valor__icono" aria-hidden="true">
+                <!-- Ícono: personas/comunidad -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                </svg>
+              </div>
+              <span class="valor__numero" aria-hidden="true">04</span>
+              <h3 class="valor__titulo">Cercanía</h3>
+              <p class="valor__descripcion">
+                Somos una inmobiliaria de personas para personas. Sin estructuras rígidas ni
+                tratos fríos. Respondemos rápido, explicamos con paciencia y celebramos con vos
+                cuando encontrás tu hogar. Porque lo que más nos importa es que te sientas bien
+                acompañado en cada momento.
+              </p>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ---- CTA FINAL ---- -->
+    <section class="nosotros-cta" aria-labelledby="nosotros-cta-titulo">
+      <div class="nosotros-cta__inner">
+
+        <p class="nosotros-cta__eyebrow">¿Listo para dar el siguiente paso?</p>
+        <h2 id="nosotros-cta-titulo" class="nosotros-cta__titulo">
+          Hablemos. Sin compromiso.
+        </h2>
+        <p class="nosotros-cta__subtitulo">
+          Tenemos todo el tiempo del mundo para escuchar lo que necesitás y ayudarte a
+          encontrar la mejor opción. El primer contacto es siempre gratuito.
+        </p>
+
+        <div class="nosotros-cta__acciones">
+          <a
+            href="https://wa.me/541100000000?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20OneHome"
+            class="boton boton--primario boton--grande nosotros-cta__btn-wa"
+            target="_blank"
+            rel="noopener noreferrer">
+            <!-- WhatsApp SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            Escribinos por WhatsApp
+          </a>
+          <a href="/pages/contacto.html" class="boton boton--secundario boton--grande nosotros-cta__btn-contacto">
+            Formulario de contacto
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <div id="footer"></div>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
 
-  <script type="module" src="../assets/components/header.js"></script>
-  <script type="module" src="../assets/components/footer.js"></script>
+      <!-- Col 1: Logo y descripción -->
+      <div class="footer__marca">
+        <a href="/" aria-label="OneHome Inmobiliaria — inicio">
+          <img src="../assets/images/logo-blanco.png" alt="Logo OneHome Inmobiliaria" width="140" height="42" />
+        </a>
+        <p class="footer__descripcion">
+          Tu aliado de confianza para comprar, vender o alquilar propiedades en Argentina.
+        </p>
+      </div>
+
+      <!-- Col 2: Navegación -->
+      <nav class="footer__nav" aria-label="Navegación del footer">
+        <h3 class="footer__nav-titulo">Páginas</h3>
+        <ul class="footer__nav-lista" role="list">
+          <li><a href="/" class="footer__nav-link">Inicio</a></li>
+          <li><a href="/pages/propiedades.html" class="footer__nav-link">Propiedades</a></li>
+          <li><a href="/pages/vender.html" class="footer__nav-link">Vender</a></li>
+          <li><a href="/pages/nosotros.html" class="footer__nav-link">Nosotros</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Contacto + redes sociales -->
+      <address class="footer__contacto">
+        <h3 class="footer__contacto-titulo">Contacto</h3>
+        <ul class="footer__contacto-lista" role="list">
+          <li>
+            <a href="tel:+541100000000" class="footer__contacto-link">
+              +54 11 0000-0000
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@onehome.com.ar" class="footer__contacto-link">
+              info@onehome.com.ar
+            </a>
+          </li>
+          <li class="footer__contacto-direccion">
+            Av. Corrientes 1234, Piso 5, CABA, Argentina
+          </li>
+        </ul>
+
+        <h3 class="footer__social-titulo">Seguinos</h3>
+        <ul class="footer__social-lista" role="list">
+          <li>
+            <a href="https://wa.me/549xxxxxxxxxx" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="Contactar por WhatsApp">
+              <svg class="footer__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true" focusable="false">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              </svg>
+              <span class="footer__social-nombre">WhatsApp</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/onehome" class="footer__social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="OneHome en Instagram">
+              <svg class="footer__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true" focusable="false">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+              </svg>
+              <span class="footer__social-nombre">Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </address>
+
+    </div>
+
+    <!-- Barra inferior: copyright -->
+    <div class="footer__legal">
+      <p class="footer__copyright">
+        &copy; 2026 OneHome Inmobiliaria. Todos los derechos reservados.
+      </p>
+    </div>
+
+  </footer>
+
+  <!-- ===================== NAV MOBILE ===================== -->
+  <nav class="nav-mobile" aria-label="Navegación móvil">
+    <ul class="nav-mobile__list" role="list">
+
+      <li class="nav-mobile__item">
+        <a href="/" class="nav-mobile__link" aria-label="Inicio">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          <span>Inicio</span>
+        </a>
+      </li>
+
+      <li class="nav-mobile__item">
+        <a href="/pages/propiedades.html" class="nav-mobile__link" aria-label="Propiedades">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5v-2h2v2zm4 4H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z" />
+          </svg>
+          <span>Propiedades</span>
+        </a>
+      </li>
+
+      <li class="nav-mobile__item">
+        <a href="/pages/vender.html" class="nav-mobile__link" aria-label="Vender">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z" />
+          </svg>
+          <span>Vender</span>
+        </a>
+      </li>
+
+      <li class="nav-mobile__item">
+        <a href="/pages/nosotros.html" class="nav-mobile__link" aria-current="page" aria-label="Nosotros">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg>
+          <span>Nosotros</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- Scripts -->
+  <script type="module" src="../assets/js/main.js"></script>
+
 </body>
+
 </html>

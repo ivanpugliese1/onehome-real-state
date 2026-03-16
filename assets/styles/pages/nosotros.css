@@ -1,0 +1,873 @@
+/* =========================================================
+   nosotros.css — estilos específicos de la página Nosotros
+   ========================================================= */
+
+
+/* =========================================================
+   HERO INTERNO
+   Banner compacto con fondo oscuro, título centrado y breadcrumb.
+   Diferente al hero de home (más pequeño, sin imagen).
+   ========================================================= */
+
+.hero-interno {
+  background-color: var(--color-secundario);
+  padding: var(--espacio-16) 0 var(--espacio-12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textura decorativa: círculo difuminado en el fondo */
+.hero-interno::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  border-radius: var(--radio-full);
+  background: radial-gradient(circle, rgba(173, 190, 164, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-interno__inner {
+  max-width: var(--ancho-angosto);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-5);
+}
+
+.hero-interno__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-5xl);
+  font-weight: var(--peso-semibold);
+  line-height: var(--linea-apretada);
+  color: var(--color-primario-claro);
+  margin: 0;
+}
+
+/* La palabra destacada en sage green */
+.hero-interno__titulo em {
+  font-style: italic;
+  color: var(--color-primario);
+}
+
+.hero-interno__subtitulo {
+  font-size: var(--texto-lg);
+  line-height: var(--linea-suelta);
+  color: rgba(240, 234, 227, 0.75);
+  max-width: 520px;
+  margin: 0;
+}
+
+
+/* ---------------------------------------------------------
+   BREADCRUMB
+--------------------------------------------------------- */
+
+.breadcrumb {
+  width: 100%;
+}
+
+.breadcrumb__lista {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  font-size: var(--texto-sm);
+  color: rgba(240, 234, 227, 0.55);
+}
+
+.breadcrumb__link {
+  color: rgba(240, 234, 227, 0.55);
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.breadcrumb__item--actual {
+  color: var(--color-primario);
+  font-weight: var(--peso-medio);
+}
+
+.breadcrumb__sep {
+  color: rgba(240, 234, 227, 0.35);
+  font-size: var(--texto-sm);
+  user-select: none;
+}
+
+
+/* =========================================================
+   HISTORIA
+   Dos columnas: narrativa + imagen. Timeline horizontal abajo.
+   ========================================================= */
+
+.historia {
+  background-color: var(--color-fondo);
+  padding: var(--espacio-20) 0;
+}
+
+.historia__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+
+/* Grid texto + imagen */
+.historia__contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-12);
+  align-items: center;
+}
+
+.historia__narrativa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-5);
+}
+
+.historia__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  line-height: var(--linea-apretada);
+  color: var(--color-secundario);
+  margin: 0;
+}
+
+.historia__narrativa p {
+  font-size: var(--texto-base);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+/* Imagen con radio asimétrico — mismo estilo que hero de home */
+.historia__imagen {
+  margin: 0;
+}
+
+.historia__imagen img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 24px 80px 24px 24px;
+  box-shadow: var(--sombra-xl);
+}
+
+
+/* ---------------------------------------------------------
+   TIMELINE HORIZONTAL
+   4 hitos conectados por una línea en desktop.
+   Cada item: año (pill) + punto + título + descripción.
+--------------------------------------------------------- */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  padding-top: 0;
+}
+
+/* Línea horizontal que une los puntos */
+.timeline::before {
+  content: '';
+  position: absolute;
+  /* Se ubica a la altura del punto (dentro de .timeline__marcador) */
+  top: calc(var(--espacio-8) + var(--espacio-5));
+  left: 12.5%;
+  width: 75%;
+  height: 2px;
+  background-color: var(--color-primario-claro);
+}
+
+.timeline__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--espacio-4);
+}
+
+.timeline__marcador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-3);
+  margin-bottom: var(--espacio-6);
+}
+
+/* Pill con el año */
+.timeline__anio {
+  display: inline-block;
+  padding: var(--espacio-1) var(--espacio-4);
+  background-color: var(--color-primario-suave);
+  border: 1px solid var(--color-primario-claro);
+  border-radius: var(--radio-full);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-bold);
+  color: var(--color-acento);
+  letter-spacing: 0.04em;
+}
+
+/* Punto circular sobre la línea */
+.timeline__punto {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radio-full);
+  background-color: var(--color-primario);
+  border: 3px solid var(--color-fondo);
+  box-shadow: 0 0 0 2px var(--color-primario);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.timeline__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  margin: 0 0 var(--espacio-2);
+}
+
+.timeline__descripcion {
+  font-size: var(--texto-sm);
+  line-height: var(--linea-normal);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+
+/* =========================================================
+   MISIÓN Y VISIÓN
+   Dos cards grandes, fondo alternado.
+   La card de visión invierte los colores (dark).
+   ========================================================= */
+
+.mision-vision {
+  background-color: var(--color-fondo-alt);
+  padding: var(--espacio-20) 0;
+}
+
+.mision-vision__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+}
+
+.mision-vision__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-6);
+}
+
+.mision-vision__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-5);
+  padding: var(--espacio-12);
+  border-radius: var(--radio-xl);
+  background-color: var(--color-superficie);
+  border: var(--borde-base);
+  transition: box-shadow var(--transicion-normal);
+}
+
+.mision-vision__card:hover {
+  box-shadow: var(--sombra-lg);
+}
+
+/* Variante oscura para Visión */
+.mision-vision__card--vision {
+  background-color: var(--color-secundario);
+  border-color: transparent;
+}
+
+.mision-vision__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radio-lg);
+  background-color: var(--color-primario-suave);
+  flex-shrink: 0;
+}
+
+.mision-vision__icono svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--color-primario);
+}
+
+/* En la card oscura el ícono tiene fondo más sutil */
+.mision-vision__card--vision .mision-vision__icono {
+  background-color: rgba(173, 190, 164, 0.15);
+}
+
+.mision-vision__card--vision .mision-vision__icono svg {
+  fill: var(--color-primario);
+}
+
+.mision-vision__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.mision-vision__card--vision .mision-vision__titulo {
+  color: var(--color-primario-claro);
+}
+
+.mision-vision__texto {
+  font-size: var(--texto-base);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.mision-vision__card--vision .mision-vision__texto {
+  color: rgba(240, 234, 227, 0.75);
+}
+
+
+/* =========================================================
+   EQUIPO
+   Grid de 3 cards. Foto circular en el tope, info abajo.
+   ========================================================= */
+
+.equipo {
+  background-color: var(--color-fondo);
+  padding: var(--espacio-20) 0;
+}
+
+.equipo__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-12);
+}
+
+.equipo__lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipo__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--espacio-8);
+  border-radius: var(--radio-xl);
+  border: var(--borde-base);
+  background-color: var(--color-superficie);
+  transition:
+    box-shadow var(--transicion-normal),
+    transform  var(--transicion-normal);
+}
+
+.equipo__card:hover {
+  box-shadow: var(--sombra-card-hover);
+  transform: translateY(-4px);
+}
+
+.equipo__foto {
+  margin: 0 0 var(--espacio-6);
+  flex-shrink: 0;
+}
+
+.equipo__foto img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radio-full);
+  object-fit: cover;
+  border: 3px solid var(--color-primario-claro);
+  box-shadow: var(--sombra-md);
+}
+
+.equipo__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-3);
+  flex: 1;
+}
+
+.equipo__nombre {
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  margin: 0;
+  line-height: var(--linea-apretada);
+}
+
+.equipo__cargo {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-primario);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.equipo__descripcion {
+  font-size: var(--texto-sm);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+  flex: 1;
+}
+
+/* Íconos de redes sociales */
+.equipo__redes {
+  display: flex;
+  gap: var(--espacio-3);
+  margin-top: var(--espacio-2);
+}
+
+.equipo__red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radio-full);
+  background-color: var(--color-fondo-alt);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-suave);
+  transition:
+    background-color var(--transicion-rapida),
+    border-color     var(--transicion-rapida);
+}
+
+.equipo__red:hover {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  text-decoration: none;
+}
+
+.equipo__red svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-texto-suave);
+  transition: fill var(--transicion-rapida);
+}
+
+.equipo__red:hover svg {
+  fill: var(--color-blanco);
+}
+
+
+/* =========================================================
+   VALORES
+   Grid 2x2 con descripción expandida. Fondo alternado.
+   Número decorativo grande como elemento editorial.
+   ========================================================= */
+
+.valores {
+  background-color: var(--color-fondo-alt);
+  padding: var(--espacio-20) 0;
+}
+
+.valores__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-12);
+}
+
+.valores__lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.valor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  padding: var(--espacio-10);
+  border-radius: var(--radio-xl);
+  background-color: var(--color-superficie);
+  border: var(--borde-base);
+  border-left: 3px solid var(--color-primario);
+  overflow: hidden;
+  transition:
+    box-shadow   var(--transicion-normal),
+    border-color var(--transicion-normal);
+}
+
+.valor:hover {
+  box-shadow: var(--sombra-card-hover);
+  border-left-color: var(--color-acento);
+}
+
+/* Número decorativo grande en el fondo — efecto editorial */
+.valor__numero {
+  position: absolute;
+  top: var(--espacio-4);
+  right: var(--espacio-6);
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: var(--peso-bold);
+  line-height: 1;
+  color: var(--color-primario-suave);
+  pointer-events: none;
+  user-select: none;
+  transition: color var(--transicion-normal);
+}
+
+.valor:hover .valor__numero {
+  color: var(--color-primario-claro);
+}
+
+.valor__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radio-full);
+  background-color: var(--color-primario-suave);
+  flex-shrink: 0;
+}
+
+.valor__icono svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-primario);
+}
+
+.valor__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-2xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.valor__descripcion {
+  font-size: var(--texto-base);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+
+/* =========================================================
+   CTA FINAL
+   Sección de cierre con fondo oscuro y dos botones.
+   ========================================================= */
+
+.nosotros-cta {
+  background-color: var(--color-secundario);
+  padding: var(--espacio-20) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoración de fondo */
+.nosotros-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radio-full);
+  background: radial-gradient(circle, rgba(173, 190, 164, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.nosotros-cta__inner {
+  max-width: var(--ancho-angosto);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-6);
+  position: relative;
+  z-index: 1;
+}
+
+.nosotros-cta__eyebrow {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.nosotros-cta__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  line-height: var(--linea-apretada);
+  color: var(--color-primario-claro);
+  margin: 0;
+}
+
+.nosotros-cta__subtitulo {
+  font-size: var(--texto-md);
+  line-height: var(--linea-suelta);
+  color: rgba(240, 234, 227, 0.65);
+  max-width: 480px;
+  margin: 0;
+}
+
+.nosotros-cta__acciones {
+  display: flex;
+  gap: var(--espacio-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--espacio-2);
+}
+
+/* El botón de WhatsApp tiene ícono inline */
+.nosotros-cta__btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-3);
+}
+
+.nosotros-cta__btn-wa svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* El botón secundario tiene colores invertidos sobre fondo oscuro */
+.nosotros-cta__btn-contacto {
+  color: var(--color-primario-claro);
+  border-color: rgba(232, 221, 208, 0.35);
+}
+
+.nosotros-cta__btn-contacto:hover {
+  background-color: rgba(232, 221, 208, 0.12);
+  border-color: var(--color-primario-claro);
+  color: var(--color-primario-claro);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET (max 1024px)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .historia__contenido {
+    gap: var(--espacio-8);
+  }
+
+  .historia__titulo {
+    font-size: var(--texto-3xl);
+  }
+
+  .hero-interno__titulo {
+    font-size: var(--texto-4xl);
+  }
+
+  .nosotros-cta__titulo {
+    font-size: var(--texto-3xl);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Hero interno */
+  .hero-interno {
+    padding: var(--espacio-12) 0 var(--espacio-10);
+  }
+
+  .hero-interno__titulo {
+    font-size: var(--texto-3xl);
+  }
+
+  .hero-interno__subtitulo {
+    font-size: var(--texto-base);
+  }
+
+  /* Historia */
+  .historia {
+    padding: var(--espacio-12) 0;
+  }
+
+  .historia__inner {
+    gap: var(--espacio-10);
+    padding: 0 var(--espacio-4);
+  }
+
+  .historia__contenido {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-8);
+  }
+
+  .historia__imagen img {
+    height: 260px;
+    border-radius: 16px 48px 16px 16px;
+  }
+
+  /* Timeline — pasa a vertical */
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-6);
+  }
+
+  /* Oculta la línea horizontal del desktop */
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline__item {
+    text-align: left;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--espacio-5);
+    padding: 0;
+  }
+
+  /* En mobile el marcador va a la izquierda, vertical */
+  .timeline__marcador {
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    gap: var(--espacio-2);
+  }
+
+  .timeline__contenido {
+    text-align: left;
+    padding-top: var(--espacio-1);
+  }
+
+  /* Misión y visión */
+  .mision-vision {
+    padding: var(--espacio-12) 0;
+  }
+
+  .mision-vision__inner {
+    padding: 0 var(--espacio-4);
+  }
+
+  .mision-vision__grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  .mision-vision__card {
+    padding: var(--espacio-8);
+  }
+
+  /* Equipo */
+  .equipo {
+    padding: var(--espacio-12) 0;
+  }
+
+  .equipo__inner {
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-8);
+  }
+
+  .equipo__lista {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  /* Valores */
+  .valores {
+    padding: var(--espacio-12) 0;
+  }
+
+  .valores__inner {
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-8);
+  }
+
+  .valores__lista {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  .valor {
+    padding: var(--espacio-8);
+  }
+
+  .valor__numero {
+    font-size: 3.5rem;
+  }
+
+  /* CTA */
+  .nosotros-cta {
+    padding: var(--espacio-12) 0;
+  }
+
+  .nosotros-cta__inner {
+    padding: 0 var(--espacio-4);
+  }
+
+  .nosotros-cta__titulo {
+    font-size: var(--texto-2xl);
+  }
+
+  .nosotros-cta__acciones {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nosotros-cta__btn-wa,
+  .nosotros-cta__btn-contacto {
+    width: 100%;
+    justify-content: center;
+  }
+}

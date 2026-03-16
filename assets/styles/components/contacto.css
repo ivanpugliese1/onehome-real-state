@@ -1,136 +1,224 @@
 /* =========================================================
-   contacto.css — sección "Contacto rápido"
-   CTA de WhatsApp centrada, fondo color primario.
+   contacto.css — sección de contacto
+   2 columnas: info cards (izq) + formulario (der).
    ========================================================= */
 
 
 /* ---------------------------------------------------------
    SECCIÓN
-   Fondo terracota (--color-primario) para que destaque
-   visualmente entre las secciones de fondo neutro.
+   Fondo crema para contraste suave con el blanco del footer.
 --------------------------------------------------------- */
 
-.contacto-rapido {
-  background-color: var(--color-primario);
+.contacto {
+  background-color: var(--color-fondo);
   padding: var(--espacio-16) 0;
-  text-align: center;
 }
 
-.contacto-rapido__inner {
-  max-width: var(--ancho-angosto);
+.contacto__inner {
+  max-width: var(--ancho-contenido);
   margin: 0 auto;
   padding: 0 var(--espacio-6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--espacio-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-16);
+  align-items: start;
 }
 
 
 /* ---------------------------------------------------------
-   TÍTULOS
-   Blanco para contrastar con el fondo terracota.
+   COLUMNA IZQUIERDA — info de contacto
 --------------------------------------------------------- */
 
-.contacto-rapido__titulo {
-  font-size: var(--texto-3xl);
-  font-weight: var(--peso-bold);
-  color: var(--color-blanco);
+.contacto__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-6);
+}
+
+.contacto__eyebrow {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.contacto__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
   line-height: var(--linea-apretada);
   margin: 0;
 }
 
-.contacto-rapido__subtitulo {
+.contacto__descripcion {
   font-size: var(--texto-md);
-  color: rgba(255, 255, 255, 0.88);  /* blanco ligeramente suavizado */
-  line-height: var(--linea-normal);
+  color: var(--color-texto-suave);
+  line-height: var(--linea-suelta);
   margin: 0;
-  max-width: 480px;
+  max-width: 420px;
 }
 
+/* Cards de info (teléfono, email, dirección) */
+.contacto__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-3);
+}
 
-/* ---------------------------------------------------------
-   BOTÓN WHATSAPP
-   Verde oficial de WhatsApp (#25D366) para reconocimiento
-   inmediato. Tamaño grande, ícono a la izquierda del texto.
---------------------------------------------------------- */
+.contacto__card {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+  padding: var(--espacio-4) var(--espacio-5);
+  background-color: var(--color-fondo-alt);
+  border-radius: var(--radio-lg);
+  border: var(--borde-base);
+}
 
-.contacto-rapido__boton-wa {
+.contacto__card-icono {
+  font-size: var(--texto-xl);
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+
+.contacto__card-label {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-texto-suave);
+  margin: 0 0 2px 0;
+}
+
+.contacto__card-valor {
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+  margin: 0;
+}
+
+a.contacto__card-valor:hover {
+  color: var(--color-primario);
+  text-decoration: underline;
+}
+
+/* Botón WhatsApp */
+.contacto__wa-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--espacio-3);
-  padding: var(--espacio-4) var(--espacio-8);
-  background-color: #25D366;        /* verde oficial WhatsApp */
+  padding: var(--espacio-4) var(--espacio-6);
+  background-color: #25D366;
   color: var(--color-blanco);
   font-family: var(--fuente-principal);
-  font-size: var(--texto-md);
+  font-size: var(--texto-base);
   font-weight: var(--peso-semibold);
   text-decoration: none;
-  border-radius: var(--radio-full);  /* cápsula redondeada */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+  border-radius: var(--radio-full);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  align-self: flex-start;
   transition:
     background-color  var(--transicion-rapida),
     transform         var(--transicion-rapida),
     box-shadow        var(--transicion-rapida);
 }
 
-.contacto-rapido__boton-wa:hover,
-.contacto-rapido__boton-wa:focus-visible {
-  background-color: #1EBE57;        /* verde más oscuro al hover */
+.contacto__wa-btn:hover {
+  background-color: #1EBE57;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
-  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  text-decoration: none;
 }
 
-.contacto-rapido__boton-wa:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
-}
-
-/* Focus ring accesible para navegación por teclado */
-.contacto-rapido__boton-wa:focus-visible {
-  outline: 3px solid var(--color-blanco);
-  outline-offset: 3px;
-}
-
-.contacto-rapido__wa-icono {
-  width: 22px;
-  height: 22px;
+.contacto__wa-icono {
+  width: 20px;
+  height: 20px;
   fill: var(--color-blanco);
   flex-shrink: 0;
 }
 
 
 /* ---------------------------------------------------------
-   DATOS SECUNDARIOS (teléfono y mail)
-   Más chicos y con menor opacidad — apoyan al botón principal,
-   no compiten con él.
+   COLUMNA DERECHA — formulario
 --------------------------------------------------------- */
 
-.contacto-rapido__secundario {
+.contacto__formulario-wrapper {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-xl);
+  border: var(--borde-base);
+  box-shadow: var(--sombra-lg);
+  padding: var(--espacio-8);
+}
+
+.contacto__formulario {
   display: flex;
-  align-items: center;
-  gap: var(--espacio-3);
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--espacio-5);
 }
 
-.contacto-rapido__dato {
+.contacto__campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+}
+
+.contacto__campo label {
   font-size: var(--texto-sm);
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  transition: color var(--transicion-rapida);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto);
 }
 
-.contacto-rapido__dato:hover {
-  color: var(--color-blanco);
-  text-decoration: underline;
+/* Inputs y textarea */
+.contacto__campo input,
+.contacto__campo textarea {
+  width: 100%;
+  padding: var(--espacio-3) var(--espacio-4);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  outline: none;
+  transition:
+    border-color  var(--transicion-rapida),
+    box-shadow    var(--transicion-rapida);
+  box-sizing: border-box;
 }
 
-.contacto-rapido__separador {
-  font-size: var(--texto-sm);
-  color: rgba(255, 255, 255, 0.40);
-  user-select: none;
+.contacto__campo input::placeholder,
+.contacto__campo textarea::placeholder {
+  color: var(--color-gris-medio);
+}
+
+/* Focus con terracota */
+.contacto__campo input:focus,
+.contacto__campo textarea:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(196, 113, 74, 0.15);
+}
+
+.contacto__campo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Mensaje de error de validación */
+.contacto__campo-error {
+  font-size: var(--texto-xs);
+  color: var(--color-error);
+  margin: 0;
+}
+
+/* Botón submit */
+.contacto__formulario .boton {
+  width: 100%;
 }
 
 
@@ -138,33 +226,37 @@
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .contacto__inner {
+    gap: var(--espacio-10);
+  }
+}
 
-  .contacto-rapido {
+@media (max-width: 768px) {
+  .contacto {
     padding: var(--espacio-12) 0;
   }
 
-  .contacto-rapido__inner {
+  .contacto__inner {
+    grid-template-columns: 1fr;
     padding: 0 var(--espacio-4);
-    gap: var(--espacio-5);
+    gap: var(--espacio-8);
   }
 
-  .contacto-rapido__titulo {
-    font-size: var(--texto-2xl);
+  .contacto__titulo {
+    font-size: var(--texto-3xl);
   }
 
-  /* En mobile el separador · se oculta y los datos se apilan */
-  .contacto-rapido__secundario {
-    flex-direction: column;
-    gap: var(--espacio-2);
+  .contacto__descripcion {
+    max-width: none;
   }
 
-  .contacto-rapido__separador {
-    display: none;
-  }
-
-  .contacto-rapido__boton-wa {
-    width: 100%;
+  .contacto__wa-btn {
+    align-self: stretch;
     justify-content: center;
+  }
+
+  .contacto__formulario-wrapper {
+    padding: var(--espacio-6);
   }
 }

@@ -7,8 +7,10 @@
 @import './base/reset.css';
 @import './base/variables.css';
 @import './base/typography.css';
+@import './base/animations.css';
 
 /* --- Componentes (agregar cuando se creen) --- */
+@import './components/theme-toggle.css';
 @import './components/header.css';
 @import './components/hero.css';
 @import './components/footer.css';
@@ -22,4 +24,4 @@
 /* @import './pages/home.css'; */
 /* @import './pages/propiedades.css'; */
 /* @import './pages/vender.css'; */
-/* @import './pages/nosotros.css'; */
+@import './pages/nosotros.css';

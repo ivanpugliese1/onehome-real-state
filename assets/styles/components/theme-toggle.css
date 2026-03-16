@@ -1,0 +1,53 @@
+/* =========================================================
+   theme-toggle.css — botón de cambio de tema (sol / luna)
+   Visible en desktop y mobile dentro del header.
+   ========================================================= */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--radio-full);
+  cursor: pointer;
+  color: var(--color-primario);
+  flex-shrink: 0;
+  transition:
+    background-color var(--transicion-rapida),
+    color            var(--transicion-rapida);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-hover);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  pointer-events: none;
+  /* No ponemos display acá para no sobreescribir las reglas de visibilidad:
+     .theme-toggle svg tiene especificidad 0,1,1 (clase + etiqueta) que gana
+     sobre .theme-toggle__sol con 0,1,0 (clase sola). */
+}
+
+/* ---------------------------------------------------------
+   Light mode: mostrar luna (invita a cambiar a dark)
+   Dark mode:  mostrar sol  (invita a cambiar a light)
+   Usamos .theme-toggle .theme-toggle__xxx (especificidad 0,2,0)
+   para ganarle a .theme-toggle svg (0,1,1).
+--------------------------------------------------------- */
+
+.theme-toggle .theme-toggle__sol  { display: none; }
+.theme-toggle .theme-toggle__luna { display: block; }
+
+[data-theme="dark"] .theme-toggle .theme-toggle__sol  { display: block; }
+[data-theme="dark"] .theme-toggle .theme-toggle__luna { display: none; }
+
+/* El posicionamiento mobile del toggle se maneja en header.css,
+   junto con el resto del layout del header. */

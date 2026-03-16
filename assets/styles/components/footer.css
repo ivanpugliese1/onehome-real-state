@@ -1,26 +1,26 @@
 /* =========================================================
    footer.css — pie de página
-   Desktop: grilla de 4 columnas sobre fondo azul marino.
-   Mobile: logo centrado + iconos sociales + copyright.
+   Desktop: grilla 3 columnas sobre fondo marrón profundo.
+   Mobile: logo centrado + iconos + copyright.
    ========================================================= */
 
 
 /* ---------------------------------------------------------
    FOOTER BASE
-   Fondo --color-secundario (azul marino) — oscuro y profesional,
-   contrasta bien con la sección terracota que lo precede.
+   Fondo --color-secundario (marrón profundo #5C3D2E).
+   Paleta cálida coherente con el resto del sitio.
 --------------------------------------------------------- */
 
 .footer {
   background-color: var(--color-secundario);
-  color: rgba(255, 255, 255, 0.80);   /* texto base: blanco suavizado */
+  color: rgba(255, 255, 255, 0.80);
   font-size: var(--texto-sm);
 }
 
 
 /* ---------------------------------------------------------
-   GRILLA PRINCIPAL — 4 columnas en desktop
-   Columnas: marca | nav | contacto | social
+   GRILLA PRINCIPAL — 3 columnas en desktop
+   Columnas: marca | nav | contacto+social
    La columna de marca es un poco más ancha (1.4fr).
 --------------------------------------------------------- */
 
@@ -29,7 +29,7 @@
   margin: 0 auto;
   padding: var(--espacio-12) var(--espacio-6);
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: var(--espacio-10);
   align-items: start;
 }
@@ -46,19 +46,18 @@
 }
 
 .footer__marca img {
-  /* El logo-blanco.png ya es blanco — sin filtros extra */
   max-width: 140px;
   height: auto;
 }
 
 .footer__descripcion {
   line-height: var(--linea-normal);
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.60);
 }
 
 
 /* ---------------------------------------------------------
-   TÍTULOS DE COLUMNA (compartido entre nav, contacto, social)
+   TÍTULOS DE COLUMNA
 --------------------------------------------------------- */
 
 .footer__nav-titulo,
@@ -67,8 +66,8 @@
   font-size: var(--texto-xs);
   font-weight: var(--peso-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);   /* etiqueta discreta */
+  letter-spacing: 0.10em;
+  color: rgba(255, 255, 255, 0.40);
   margin-bottom: var(--espacio-4);
 }
 
@@ -87,7 +86,7 @@
 }
 
 .footer__nav-link {
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color var(--transicion-rapida);
 }
@@ -98,7 +97,7 @@
 
 
 /* ---------------------------------------------------------
-   COL 3: CONTACTO (address)
+   COL 3: CONTACTO + SOCIAL combinados
    <address> es italic por defecto — lo reseteamos.
 --------------------------------------------------------- */
 
@@ -113,10 +112,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--espacio-3);
+  margin-bottom: var(--espacio-8);
 }
 
 .footer__contacto-link {
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color var(--transicion-rapida);
 }
@@ -126,30 +126,25 @@
 }
 
 .footer__contacto-direccion {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.55);
   line-height: var(--linea-normal);
 }
 
-
-/* ---------------------------------------------------------
-   COL 4: REDES SOCIALES
-   Cada link muestra ícono SVG + nombre de la red.
---------------------------------------------------------- */
-
+/* Social — aparece debajo de contacto en la misma columna */
 .footer__social-lista {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--espacio-4);
+  gap: var(--espacio-3);
 }
 
 .footer__social-link {
   display: inline-flex;
   align-items: center;
   gap: var(--espacio-3);
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color var(--transicion-rapida);
 }
@@ -161,14 +156,13 @@
 .footer__social-icono {
   width: 20px;
   height: 20px;
-  fill: currentColor;   /* hereda el color del link — cambia solo con el hover */
+  fill: currentColor;
   flex-shrink: 0;
 }
 
 
 /* ---------------------------------------------------------
    BARRA INFERIOR: COPYRIGHT
-   Separada del inner con un borde sutil.
 --------------------------------------------------------- */
 
 .footer__legal {
@@ -179,7 +173,7 @@
 
 .footer__copyright {
   font-size: var(--texto-xs);
-  color: rgba(255, 255, 255, 0.40);
+  color: rgba(255, 255, 255, 0.35);
   margin: 0;
 }
 
@@ -196,18 +190,13 @@
   }
 }
 
-/* Mobile — diseño minimalista:
-   solo logo centrado + iconos sociales + copyright.
-   Se ocultan nav y contacto (ya disponibles en el nav mobile
-   y en la sección de contacto rápido). */
+/* Mobile — logo + social + copyright */
 @media (max-width: 768px) {
 
   .footer__inner {
     grid-template-columns: 1fr;
     padding: var(--espacio-8) var(--espacio-4);
     gap: var(--espacio-6);
-
-    /* Centra todas las columnas visibles */
     justify-items: center;
     text-align: center;
   }
@@ -218,12 +207,10 @@
     display: none;
   }
 
-  /* Descripción también se oculta — solo el logo */
   .footer__descripcion {
     display: none;
   }
 
-  /* Social: iconos en fila horizontal, sin texto */
   .footer__social-titulo {
     display: none;
   }
@@ -235,7 +222,7 @@
   }
 
   .footer__social-nombre {
-    display: none;   /* solo iconos en mobile */
+    display: none;
   }
 
   .footer__social-icono {

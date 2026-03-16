@@ -6,75 +6,96 @@
 
   /* ---------------------------------------------------------
      COLORES
-     Paleta cálida y profesional para inmobiliaria argentina.
-     Terracota como identidad + azul marino para confianza.
+     Paleta cálida y premium: terracota + blancos cálidos +
+     marrones profundos. Sin azules — 100% warm tone.
   --------------------------------------------------------- */
 
-  /* Primario — terracota cálido, transmite calidez y hogar */
-  --color-primario:        #C07230;
-  --color-primario-hover:  #A85E22;
-  --color-primario-claro:  #F0D5B8;
-  --color-primario-suave:  #FBF0E6;
+  /* Primario — terracota cálido, identidad visual */
+  --color-primario: #adbea4;
+  --color-primario-hover: #A85A35;
+  --color-primario-claro: #E8DDD0;
+  /* arena clara */
+  --color-primario-suave: #F7F2EB;
+  /* crema */
 
-  /* Secundario — azul marino profundo, profesionalismo y confianza */
-  --color-secundario:        #1E3A5F;
-  --color-secundario-hover:  #152B47;
-  --color-secundario-claro:  #3A5F8A;
+  /* Secundario — marrón profundo, para títulos y UI de peso */
+  --color-secundario: #5C3D2E;
+  --color-secundario-hover: #4A2E1F;
+  --color-secundario-claro: #7A5C4F;
 
-  /* Acento — dorado cálido, para destacar precios y badges */
-  --color-acento:        #D4A849;
-  --color-acento-claro:  #F5E4A8;
+  /* Acento — terracota oscuro, precio y badges */
+  --color-acento: #A85A35;
+  --color-acento-claro: #E8DDD0;
 
   /* Estado — feedback de acciones del usuario */
-  --color-exito:    #2D7A4F;
-  --color-error:    #C0392B;
-  --color-aviso:    #D4A849;
-  --color-info:     #2A7BAF;
+  --color-exito: #2D7A4F;
+  --color-error: #C0392B;
+  --color-aviso: #C4714A;
+  --color-info: #5C3D2E;
 
-  /* Neutros — grises y blancos para fondo y texto */
-  --color-blanco:        #FFFFFF;
-  --color-fondo:         #FAF8F5;    /* blanco cálido, no frío */
-  --color-fondo-alt:     #F0EDE8;    /* sección alternada */
-  --color-borde:         #DDD8D0;
-  --color-gris-claro:    #E8E4DE;
-  --color-gris-medio:    #9B958C;
-  --color-gris-oscuro:   #4A4640;
-  --color-texto:         #2A2520;    /* casi negro con tono cálido */
-  --color-texto-suave:   #6B6460;    /* texto secundario / placeholders */
-  --color-negro:         #1A1614;
+  /* Neutros — escala de blancos cálidos */
+  --color-blanco: #FFFFFF;
+  --color-fondo: #FDFAF6;
+  /* blanco cálido — fondo principal */
+  --color-fondo-alt: #F7F2EB;
+  /* crema — secciones alternadas */
+  --color-borde: #E8DDD0;
+  /* arena — bordes sutiles */
+  --color-gris-claro: #E8DDD0;
+  --color-gris-medio: #7A5C4F;
+  --color-gris-oscuro: #5C3D2E;
+  --color-texto: #2E1F15;
+  /* marrón muy oscuro — texto principal */
+  --color-texto-suave: #7A5C4F;
+  /* marrón medio — texto secundario */
+  --color-negro: #2E1F15;
 
 
   /* ---------------------------------------------------------
      TIPOGRAFÍA
-     Inter — moderna, muy legible en pantalla, gratuita.
-     Si el usuario no carga la fuente, cae a system-ui.
+     Cormorant Garamond — elegante serif para títulos.
+     DM Sans — legible, moderna para cuerpo de texto.
   --------------------------------------------------------- */
 
   /* Familias */
-  --fuente-principal:  'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --fuente-alternativa: Georgia, 'Times New Roman', serif; /* para citas o highlights */
+  --fuente-principal: 'DM Sans', system-ui, -apple-system, sans-serif;
 
-  /* Escala tipográfica (fluid type — base 16px) */
-  --texto-xs:   0.75rem;   /*  12px */
-  --texto-sm:   0.875rem;  /*  14px */
-  --texto-base: 1rem;      /*  16px */
-  --texto-md:   1.125rem;  /*  18px */
-  --texto-lg:   1.25rem;   /*  20px */
-  --texto-xl:   1.5rem;    /*  24px */
-  --texto-2xl:  1.875rem;  /*  30px */
-  --texto-3xl:  2.25rem;   /*  36px */
-  --texto-4xl:  3rem;      /*  48px */
+  /* Aliases semánticos */
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+
+  /* Escala tipográfica (base 16px) */
+  --texto-xs: 0.75rem;
+  /*  12px */
+  --texto-sm: 0.875rem;
+  /*  14px */
+  --texto-base: 1rem;
+  /*  16px */
+  --texto-md: 1.125rem;
+  /*  18px */
+  --texto-lg: 1.25rem;
+  /*  20px */
+  --texto-xl: 1.5rem;
+  /*  24px */
+  --texto-2xl: 1.875rem;
+  /*  30px */
+  --texto-3xl: 2.25rem;
+  /*  36px */
+  --texto-4xl: 3rem;
+  /*  48px */
+  --texto-5xl: 3.75rem;
+  /*  60px */
 
   /* Pesos */
-  --peso-normal:     400;
-  --peso-medio:      500;
-  --peso-semibold:   600;
-  --peso-bold:       700;
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
 
   /* Interlineado */
-  --linea-apretada:  1.2;
-  --linea-normal:    1.5;
-  --linea-suelta:    1.75;
+  --linea-apretada: 1.2;
+  --linea-normal: 1.5;
+  --linea-suelta: 1.75;
 
 
   /* ---------------------------------------------------------
@@ -82,85 +103,182 @@
      Escala de 4px — consistencia en padding y gaps.
   --------------------------------------------------------- */
 
-  --espacio-1:   0.25rem;  /*   4px */
-  --espacio-2:   0.5rem;   /*   8px */
-  --espacio-3:   0.75rem;  /*  12px */
-  --espacio-4:   1rem;     /*  16px */
-  --espacio-5:   1.25rem;  /*  20px */
-  --espacio-6:   1.5rem;   /*  24px */
-  --espacio-8:   2rem;     /*  32px */
-  --espacio-10:  2.5rem;   /*  40px */
-  --espacio-12:  3rem;     /*  48px */
-  --espacio-16:  4rem;     /*  64px */
-  --espacio-20:  5rem;     /*  80px */
-  --espacio-24:  6rem;     /*  96px */
+  --espacio-1: 0.25rem;
+  /*   4px */
+  --espacio-2: 0.5rem;
+  /*   8px */
+  --espacio-3: 0.75rem;
+  /*  12px */
+  --espacio-4: 1rem;
+  /*  16px */
+  --espacio-5: 1.25rem;
+  /*  20px */
+  --espacio-6: 1.5rem;
+  /*  24px */
+  --espacio-8: 2rem;
+  /*  32px */
+  --espacio-10: 2.5rem;
+  /*  40px */
+  --espacio-12: 3rem;
+  /*  48px */
+  --espacio-16: 4rem;
+  /*  64px */
+  --espacio-20: 5rem;
+  /*  80px */
+  --espacio-24: 6rem;
+  /*  96px */
 
 
   /* ---------------------------------------------------------
      LAYOUT
   --------------------------------------------------------- */
 
-  /* Ancho máximo del contenido */
-  --ancho-contenido:  1200px;
-  --ancho-angosto:    800px;
+  --ancho-contenido: 1200px;
+  --ancho-angosto: 800px;
 
-  /* Breakpoints (para usar en media queries con @media) */
-  --bp-mobile:   480px;
-  --bp-tablet:   768px;
-  --bp-desktop:  1024px;
-  --bp-wide:     1280px;
+  /* Breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-wide: 1280px;
 
 
   /* ---------------------------------------------------------
      BORDES Y RADIOS
   --------------------------------------------------------- */
 
-  --radio-sm:    4px;
-  --radio-md:    8px;
-  --radio-lg:    12px;
-  --radio-xl:    16px;
-  --radio-full:  9999px;   /* pastillas / badges redondeados */
+  --radio-sm: 4px;
+  --radio-md: 8px;
+  --radio-lg: 12px;
+  --radio-xl: 16px;
+  --radio-full: 9999px;
 
   --borde-base: 1px solid var(--color-borde);
+
+  /* Superficie — fondo de cards, header y nav */
+  --color-superficie: #FFFFFF;
 
 
   /* ---------------------------------------------------------
      SOMBRAS
-     Basadas en sombras cálidas que armonizan con la paleta.
+     Basadas en el marrón cálido de la paleta.
   --------------------------------------------------------- */
 
   --sombra-sm:
-    0 1px 2px rgba(42, 37, 32, 0.06),
-    0 1px 3px rgba(42, 37, 32, 0.10);
+    0 1px 2px rgba(46, 31, 21, 0.06),
+    0 1px 3px rgba(46, 31, 21, 0.10);
 
   --sombra-md:
-    0 4px 6px  rgba(42, 37, 32, 0.06),
-    0 2px 4px  rgba(42, 37, 32, 0.08);
+    0 4px 6px rgba(46, 31, 21, 0.06),
+    0 2px 4px rgba(46, 31, 21, 0.08);
 
   --sombra-lg:
-    0 10px 15px rgba(42, 37, 32, 0.08),
-    0  4px  6px rgba(42, 37, 32, 0.06);
+    0 10px 15px rgba(46, 31, 21, 0.08),
+    0 4px 6px rgba(46, 31, 21, 0.06);
 
   --sombra-xl:
-    0 20px 25px rgba(42, 37, 32, 0.10),
-    0  8px 10px rgba(42, 37, 32, 0.06);
+    0 20px 25px rgba(46, 31, 21, 0.10),
+    0 8px 10px rgba(46, 31, 21, 0.06);
 
-  /* Sombra para cards de propiedades — sutil con toque cálido */
   --sombra-card:
-    0 2px 8px  rgba(192, 114, 48, 0.08),
-    0 1px 3px  rgba(42,  37, 32, 0.12);
+    0 2px 8px rgba(196, 113, 74, 0.08),
+    0 1px 3px rgba(46, 31, 21, 0.12);
 
   --sombra-card-hover:
-    0 8px 24px rgba(192, 114, 48, 0.16),
-    0 2px 8px  rgba(42,  37, 32, 0.10);
+    0 8px 24px rgba(196, 113, 74, 0.18),
+    0 2px 8px rgba(46, 31, 21, 0.10);
 
 
   /* ---------------------------------------------------------
      TRANSICIONES
   --------------------------------------------------------- */
 
-  --transicion-rapida:  150ms ease;
-  --transicion-normal:  250ms ease;
-  --transicion-suave:   400ms ease;
+  --transicion-rapida: 150ms ease;
+  --transicion-normal: 250ms ease;
+  --transicion-suave: 400ms ease;
 
+}
+
+
+/* =========================================================
+   DARK MODE — sobreescritura de tokens
+   ========================================================= */
+
+[data-theme="dark"] {
+
+  --color-fondo: #1A1410;
+  --color-fondo-alt: #221C17;
+
+  --color-superficie: #2A2118;
+
+  --color-texto: #F0EAE3;
+  --color-texto-suave: #A09080;
+
+  --color-borde: #3D3028;
+  --color-gris-claro: #3D3028;
+  --color-gris-medio: #806050;
+  --color-gris-oscuro: #C0A890;
+
+  --color-primario: #D4814E;
+  --color-primario-hover: #E09060;
+  --color-primario-claro: #5A3A20;
+  --color-primario-suave: #3A2415;
+
+  --color-secundario: #B89070;
+  --color-secundario-hover: #C8A080;
+  --color-secundario-claro: #8A6050;
+
+  --color-acento: #C4714A;
+  --color-acento-claro: #4A2E1A;
+
+  --sombra-sm:
+    0 1px 2px rgba(0, 0, 0, 0.40),
+    0 1px 3px rgba(0, 0, 0, 0.50);
+
+  --sombra-md:
+    0 4px 6px rgba(0, 0, 0, 0.40),
+    0 2px 4px rgba(0, 0, 0, 0.50);
+
+  --sombra-lg:
+    0 10px 15px rgba(0, 0, 0, 0.40),
+    0 4px 6px rgba(0, 0, 0, 0.30);
+
+  --sombra-card:
+    0 2px 8px rgba(0, 0, 0, 0.40),
+    0 1px 3px rgba(0, 0, 0, 0.50);
+
+  --sombra-card-hover:
+    0 8px 24px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.40);
+
+}
+
+
+/* =========================================================
+   DARK MODE — OVERRIDES DE COMPONENTES
+   ========================================================= */
+
+/* Header — mantiene el glass effect en dark mode */
+[data-theme="dark"] .header {
+  background-color: rgba(26, 20, 16, 0.88);
+}
+
+[data-theme="dark"] .nav-mobile {
+  background-color: var(--color-superficie);
+}
+
+[data-theme="dark"] .card-propiedad {
+  background-color: var(--color-superficie);
+}
+
+[data-theme="dark"] .por-que-elegirnos {
+  background-color: var(--color-fondo-alt);
+}
+
+[data-theme="dark"] .footer {
+  background-color: #1A0E08;
+}
+
+[data-theme="dark"] .contacto__formulario-wrapper {
+  background-color: var(--color-superficie);
 }

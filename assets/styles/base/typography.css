@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family:  var(--fuente-principal);
+  font-family:  var(--font-body);
   font-size:    var(--texto-base);
   font-weight:  var(--peso-normal);
   line-height:  var(--linea-normal);
@@ -37,7 +37,7 @@ body {
 --------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family:  var(--fuente-principal);
+  font-family:  var(--font-heading);
   font-weight:  var(--peso-bold);
   line-height:  var(--linea-apretada);
   color:        var(--color-secundario);
