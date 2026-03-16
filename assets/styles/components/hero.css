@@ -1,0 +1,221 @@
+/* =========================================================
+   hero.css — sección hero de la página principal
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENEDOR HERO
+   min-height 90vh para ocupar casi toda la pantalla.
+   flex + align-items center para centrar verticalmente
+   cuando el contenido es más corto que la ventana.
+--------------------------------------------------------- */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-fondo);
+  padding: var(--espacio-16) 0;
+}
+
+/* Grid de dos columnas: texto | imagen */
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-12);
+  align-items: center;
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   LADO IZQUIERDO — contenido textual
+--------------------------------------------------------- */
+
+.hero__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-6);
+}
+
+.hero__titulo {
+  font-size: var(--texto-4xl);       /* 48px — hereda bold de typography.css */
+  line-height: var(--linea-apretada);
+  color: var(--color-secundario);    /* azul marino */
+  /* Resaltar la última palabra con el color primario se puede hacer desde el HTML con <em> */
+}
+
+.hero__subtitulo {
+  font-size: var(--texto-md);        /* 18px */
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  max-width: 480px;                  /* evitar líneas demasiado largas */
+}
+
+/* Wrapper de los dos botones CTA */
+.hero__acciones {
+  display: flex;
+  gap: var(--espacio-4);
+  flex-wrap: wrap;                   /* en pantallas angostas se apilan sin romper layout */
+}
+
+
+/* ---------------------------------------------------------
+   BOTONES CTA
+   Estos estilos deberían vivir en components/boton.css
+   cuando se cree ese archivo. Por ahora se definen acá.
+--------------------------------------------------------- */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semibold);
+  text-decoration: none;
+  padding: var(--espacio-3) var(--espacio-6);
+  border-radius: var(--radio-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transicion-rapida),
+    color            var(--transicion-rapida),
+    border-color     var(--transicion-rapida),
+    box-shadow       var(--transicion-rapida);
+  white-space: nowrap;
+}
+
+/* Primario — terracota sólido */
+.boton--primario {
+  background-color: var(--color-primario);
+  color:            var(--color-blanco);
+  border-color:     var(--color-primario);
+}
+
+.boton--primario:hover {
+  background-color: var(--color-primario-hover);
+  border-color:     var(--color-primario-hover);
+  color:            var(--color-blanco);
+  box-shadow:       var(--sombra-md);
+  text-decoration:  none;
+}
+
+/* Secundario — borde azul marino, fondo transparente */
+.boton--secundario {
+  background-color: transparent;
+  color:            var(--color-secundario);
+  border-color:     var(--color-secundario);
+}
+
+.boton--secundario:hover {
+  background-color: var(--color-secundario);
+  color:            var(--color-blanco);
+  text-decoration:  none;
+}
+
+/* Terciario — solo texto con subrayado (para "ver todas") */
+.boton--terciario {
+  background-color: transparent;
+  color:            var(--color-primario);
+  border-color:     transparent;
+  padding-left:     0;
+  padding-right:    0;
+  text-decoration:  underline;
+  text-underline-offset: 3px;
+}
+
+.boton--terciario:hover {
+  color:           var(--color-primario-hover);
+  text-decoration: underline;
+}
+
+/* Variante grande */
+.boton--grande {
+  font-size:  var(--texto-md);
+  padding:    var(--espacio-4) var(--espacio-8);
+}
+
+
+/* ---------------------------------------------------------
+   LADO DERECHO — imagen de la propiedad
+--------------------------------------------------------- */
+
+.hero__imagen {
+  margin: 0;   /* reset del margen por defecto de <figure> */
+  /* Sombra decorativa desplazada para dar profundidad */
+  filter: drop-shadow(0 16px 40px rgba(42, 37, 32, 0.18));
+}
+
+.hero__imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Relación de aspecto para que la imagen no se deforme */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radio-xl);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Tablet — columnas más justas */
+@media (max-width: 1024px) {
+  .hero__inner {
+    gap: var(--espacio-8);
+  }
+
+  .hero__titulo {
+    font-size: var(--texto-3xl);  /* 36px */
+  }
+}
+
+/* Mobile — apilado: texto arriba, imagen abajo */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;              /* en mobile no forzamos 90vh */
+    padding: var(--espacio-12) 0;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;   /* una sola columna */
+    gap: var(--espacio-8);
+    padding: 0 var(--espacio-4);
+    /* El orden en el DOM ya es correcto: contenido primero, imagen después */
+  }
+
+  .hero__titulo {
+    font-size: var(--texto-2xl);  /* 30px — typography.css ya lo define, reforzamos */
+  }
+
+  .hero__subtitulo {
+    font-size: var(--texto-base);
+    max-width: none;
+  }
+
+  .hero__acciones {
+    flex-direction: column;        /* botones en columna en pantallas muy chicas */
+  }
+
+  .hero__imagen img {
+    aspect-ratio: 16 / 9;         /* más panorámico en mobile para no ocupar tanta altura */
+  }
+}
+
+/* Pantallas muy chicas */
+@media (max-width: 480px) {
+  .hero__acciones {
+    flex-direction: column;
+  }
+
+  .boton {
+    width: 100%;                   /* botones full-width en pantallas pequeñas */
+    justify-content: center;
+  }
+}

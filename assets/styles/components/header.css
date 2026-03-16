@@ -1,0 +1,264 @@
+/* =========================================================
+   header.css — estilos del header y nav mobile
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HEADER PRINCIPAL — desktop
+--------------------------------------------------------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-blanco);
+  border-bottom: var(--borde-base);
+  /* Sin sombra por defecto — se activa con JS al hacer scroll */
+  box-shadow: none;
+  transition: box-shadow var(--transicion-normal);
+}
+
+/* Clase que agrega JS cuando el usuario scrollea */
+.header.scrolled {
+  box-shadow: var(--sombra-md);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: var(--espacio-4) var(--espacio-6);
+  gap: var(--espacio-6);
+}
+
+
+/* ---------------------------------------------------------
+   LOGO
+--------------------------------------------------------- */
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* evita que se achique si el nav ocupa mucho lugar */
+}
+
+.header__logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+
+/* ---------------------------------------------------------
+   NAVEGACIÓN PRINCIPAL
+--------------------------------------------------------- */
+
+.header__nav {
+  flex: 1; /* ocupa el espacio disponible entre logo y social */
+  display: flex;
+  justify-content: center;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--espacio-8);
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-medio);
+  color: var(--color-texto);
+  text-decoration: none;
+  padding: var(--espacio-2) 0;
+  /* Posición relativa para el pseudo-elemento de subrayado */
+  position: relative;
+  transition: color var(--transicion-rapida);
+}
+
+/* Subrayado animado que aparece en hover y link activo */
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primario);
+  transition: width var(--transicion-normal);
+}
+
+.header__nav-link:hover,
+.header__nav-link[aria-current="page"] {
+  color: var(--color-primario);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   ÍCONOS DE REDES SOCIALES
+--------------------------------------------------------- */
+
+.header__social {
+  display: flex;
+  list-style: none;
+  gap: var(--espacio-2);
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radio-full);
+  transition: background-color var(--transicion-rapida);
+}
+
+.header__social-link:hover {
+  background-color: var(--color-primario-suave);
+}
+
+.header__social-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÓN CONTACTO MOBILE
+   Solo visible en pantallas chicas — oculto en desktop
+--------------------------------------------------------- */
+
+.header__contacto-mobile {
+  display: none;
+}
+
+
+/* =========================================================
+   NAV MOBILE — barra fija en la parte inferior
+   Solo visible en pantallas chicas — oculta en desktop
+   ========================================================= */
+
+.nav-mobile {
+  display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — Mobile (hasta 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Header simplificado: solo logo + botón contacto */
+  .header__inner {
+    padding: var(--espacio-3) var(--espacio-4);
+    gap: 0;
+  }
+
+  /* Ocultar nav y redes sociales en mobile */
+  .header__nav,
+  .header__social {
+    display: none;
+  }
+
+  /* Mostrar botón de contacto */
+  .header__contacto-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio-2);
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-family: var(--fuente-principal);
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-semibold);
+    text-decoration: none;
+    padding: var(--espacio-2) var(--espacio-4);
+    border-radius: var(--radio-full);
+    transition: background-color var(--transicion-rapida);
+    white-space: nowrap;
+  }
+
+  .header__contacto-mobile:hover {
+    background-color: var(--color-primario-hover);
+  }
+
+
+  /* ---------------------------------------------------------
+     Barra de navegación inferior mobile
+  --------------------------------------------------------- */
+
+  .nav-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: var(--color-blanco);
+    border-top: var(--borde-base);
+    /* Sombra hacia arriba para separar visualmente del contenido */
+    box-shadow: 0 -2px 8px rgba(42, 37, 32, 0.08);
+  }
+
+  .nav-mobile__list {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-mobile__item {
+    flex: 1;
+  }
+
+  .nav-mobile__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacio-1);
+    padding: var(--espacio-2) var(--espacio-1);
+    text-decoration: none;
+    color: var(--color-gris-medio);
+    font-family: var(--fuente-principal);
+    font-size: var(--texto-xs);
+    font-weight: var(--peso-medio);
+    transition: color var(--transicion-rapida);
+    min-height: 56px;
+  }
+
+  .nav-mobile__link svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  /* Link activo o en hover: resalta con el color primario */
+  .nav-mobile__link:hover,
+  .nav-mobile__link[aria-current="page"] {
+    color: var(--color-primario);
+  }
+
+  /* Compensar la altura de la barra para que no tape el contenido del footer */
+  body {
+    padding-bottom: 64px;
+  }
+
+}

@@ -9,7 +9,8 @@
 @import './base/typography.css';
 
 /* --- Componentes (agregar cuando se creen) --- */
-/* @import './components/header.css'; */
+@import './components/header.css';
+@import './components/hero.css';
 /* @import './components/footer.css'; */
 /* @import './components/card-propiedad.css'; */
 /* @import './components/boton.css'; */
