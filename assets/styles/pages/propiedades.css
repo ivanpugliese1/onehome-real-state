@@ -5,12 +5,15 @@
 
 /* =========================================================
    HERO INTERNO
-   Reutiliza el mismo patrón que nosotros.css
+   Sobreescribe solo la imagen de fondo del .hero-interno
+   definido en nosotros.css. El resto del patrón (overlay,
+   z-index, tipografía) lo hereda de allí.
    ========================================================= */
 
-/* Los estilos .hero-interno, .breadcrumb, etc. ya están
-   definidos en nosotros.css. Si en el futuro se separan,
-   mover esos bloques acá y eliminarlos de nosotros.css. */
+/* Imagen específica para propiedades: vista de fachadas/barrio */
+.hero-interno {
+  background-image: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80');
+}
 
 
 /* =========================================================
@@ -46,11 +49,6 @@
   min-width: 150px;
 }
 
-.filtros__grupo--busqueda {
-  flex: 2;
-  min-width: 220px;
-}
-
 .filtros__label {
   font-size: var(--texto-sm);
   font-weight: var(--peso-medio);
@@ -60,7 +58,7 @@
 
 .filtros__input,
 .filtros__select {
-  padding: var(--espacio-3) var(--espacio-4);
+  padding: var(--espacio-2) var(--espacio-4);
   border: var(--borde-base);
   border-radius: var(--radio-md);
   background-color: var(--color-superficie);
@@ -77,7 +75,7 @@
 .filtros__select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237A5C4F' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B6B7B' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 20px;
@@ -89,7 +87,7 @@
 .filtros__select:focus {
   outline: none;
   border-color: var(--color-acento);
-  box-shadow: 0 0 0 3px rgba(168, 90, 53, 0.15);
+  box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.15);
 }
 
 .filtros__input::placeholder {
@@ -114,7 +112,7 @@
     border-color var(--transicion-rapida);
   white-space: nowrap;
   align-self: flex-end;
-  height: 44px; /* alinea con los inputs */
+  height: 36px; /* alinea con los inputs */
 }
 
 .filtros__btn-limpiar:hover {
@@ -303,7 +301,7 @@
 }
 
 [data-theme="dark"] .filtros__select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23A09080' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%238AAFC8' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
 }
 
 [data-theme="dark"] .filtros__btn-limpiar:hover {
@@ -330,10 +328,6 @@
 @media (max-width: 768px) {
   .filtros {
     position: static; /* en mobile no sticky para no robar espacio */
-  }
-
-  .filtros__grupo--busqueda {
-    flex: 1 0 100%; /* búsqueda ocupa toda la fila */
   }
 
   .filtros__grupo {

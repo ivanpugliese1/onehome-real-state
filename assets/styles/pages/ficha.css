@@ -1,0 +1,552 @@
+/* =========================================================
+   ficha.css — estilos de la página de ficha de propiedad
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENEDOR PRINCIPAL
+--------------------------------------------------------- */
+
+.ficha {
+  padding-bottom: var(--espacio-20);
+  background-color: var(--color-fondo);
+}
+
+
+/* ---------------------------------------------------------
+   BREADCRUMB
+--------------------------------------------------------- */
+
+.ficha__breadcrumb {
+  background-color: var(--color-fondo-alt);
+  border-bottom: var(--borde-base);
+  padding: var(--espacio-4) 0;
+}
+
+.ficha__breadcrumb-inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+}
+
+.ficha__breadcrumb-lista {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.ficha__breadcrumb-link {
+  color: var(--color-texto-suave);
+  font-size: var(--texto-sm);
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+}
+
+.ficha__breadcrumb-link:hover {
+  color: var(--color-primario);
+}
+
+.ficha__breadcrumb-sep {
+  color: var(--color-texto-suave);
+  font-size: var(--texto-sm);
+}
+
+.ficha__breadcrumb-actual {
+  color: var(--color-texto);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+}
+
+
+/* ---------------------------------------------------------
+   FILA SUPERIOR: galería + sidebar en dos columnas
+--------------------------------------------------------- */
+
+.ficha__top-row {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--espacio-6);
+  max-width: var(--ancho-contenido);
+  margin: var(--espacio-8) auto 0;
+  padding: 0 var(--espacio-6);
+  align-items: start;
+}
+
+
+/* ---------------------------------------------------------
+   GALERÍA
+--------------------------------------------------------- */
+
+.ficha__galeria {
+  min-width: 0; /* evita overflow en la celda del grid */
+}
+
+.ficha__galeria-principal {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radio-xl);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-fondo-alt);
+}
+
+.ficha__galeria-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--transicion-suave);
+  display: block;
+}
+
+.ficha__galeria-principal img.transicionando {
+  opacity: 0;
+}
+
+.ficha__miniaturas {
+  display: flex;
+  gap: var(--espacio-3);
+  margin-top: var(--espacio-3);
+  overflow-x: auto;
+  padding-bottom: var(--espacio-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-borde) transparent;
+}
+
+.ficha__miniatura {
+  flex-shrink: 0;
+  width: 100px;
+  height: 72px;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    border-color var(--transicion-rapida),
+    opacity      var(--transicion-rapida);
+  opacity: 0.65;
+}
+
+.ficha__miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ficha__miniatura:hover {
+  opacity: 0.85;
+  border-color: var(--color-primario);
+}
+
+.ficha__miniatura--activa {
+  opacity: 1;
+  border-color: var(--color-primario);
+}
+
+
+/* ---------------------------------------------------------
+   INFO PRINCIPAL — debajo de la fila superior
+--------------------------------------------------------- */
+
+.ficha__contenido {
+  max-width: var(--ancho-contenido);
+  margin: var(--espacio-8) auto 0;
+  padding: 0 var(--espacio-6);
+}
+
+/* Badge venta / alquiler */
+.ficha__badge {
+  display: inline-block;
+  padding: var(--espacio-1) var(--espacio-4);
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: var(--radio-full);
+  margin-bottom: var(--espacio-4);
+}
+
+/* Título h1 */
+.ficha__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-texto);
+  line-height: var(--linea-apretada);
+  margin: 0 0 var(--espacio-4);
+}
+
+/* Ubicación con ícono */
+.ficha__ubicacion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-md);
+  margin-bottom: var(--espacio-6);
+}
+
+.ficha__ubicacion-icono {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-primario);
+  flex-shrink: 0;
+}
+
+/* Descripción */
+.ficha__descripcion {
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  line-height: var(--linea-suelta);
+  margin-bottom: var(--espacio-8);
+}
+
+/* Divisor */
+.ficha__divisor {
+  border: none;
+  border-top: var(--borde-base);
+  margin: var(--espacio-8) 0;
+}
+
+/* Subtítulo de sección */
+.ficha__subtitulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto);
+  margin: 0 0 var(--espacio-5);
+}
+
+/* Características en grid */
+.ficha__caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--espacio-4);
+  margin-bottom: var(--espacio-8);
+}
+
+.ficha__caracteristica {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4);
+  background-color: var(--color-fondo-alt);
+  border: var(--borde-base);
+  border-radius: var(--radio-lg);
+}
+
+.ficha__caracteristica-icono {
+  font-size: var(--texto-xl);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ficha__caracteristica-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ficha__caracteristica-valor {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto);
+  line-height: 1.2;
+}
+
+.ficha__caracteristica-etiqueta {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+  line-height: 1.2;
+}
+
+/* Lista de lo que incluye */
+.ficha__features-lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ficha__feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  font-size: var(--texto-sm);
+  color: var(--color-texto);
+}
+
+.ficha__feature-icono {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-primario);
+  flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   SIDEBAR — columna derecha en la fila superior
+--------------------------------------------------------- */
+
+.ficha__sidebar {
+  position: sticky;
+  top: 90px; /* debajo del header, útil si la galería es alta */
+}
+
+.ficha__sidebar-card {
+  background-color: var(--color-superficie);
+  border: var(--borde-base);
+  border-radius: var(--radio-xl);
+  box-shadow: var(--sombra-lg);
+  padding: var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-5);
+}
+
+/* Precio destacado */
+.ficha__precio {
+  font-family: var(--font-heading);
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-primario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.ficha__expensas {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+  margin: var(--espacio-1) 0 0;
+}
+
+/* Datos clave en grid 2x2 */
+.ficha__datos-clave {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) 0;
+  border-top: var(--borde-base);
+  border-bottom: var(--borde-base);
+}
+
+.ficha__dato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+  align-items: center;
+  text-align: center;
+  padding: var(--espacio-3);
+  background-color: var(--color-fondo-alt);
+  border-radius: var(--radio-md);
+}
+
+.ficha__dato-icono {
+  font-size: var(--texto-xl);
+  line-height: 1;
+}
+
+.ficha__dato-valor {
+  font-size: var(--texto-md);
+  font-weight: var(--peso-bold);
+  color: var(--color-texto);
+  line-height: 1.2;
+}
+
+.ficha__dato-etiqueta {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+  line-height: 1.2;
+}
+
+/* Botón WhatsApp — verde grande */
+.ficha__btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) var(--espacio-6);
+  background-color: #25D366;
+  color: #fff;
+  border-radius: var(--radio-full);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-md);
+  font-weight: var(--peso-bold);
+  text-decoration: none;
+  transition:
+    background-color var(--transicion-rapida),
+    transform        var(--transicion-rapida),
+    box-shadow       var(--transicion-rapida);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ficha__btn-whatsapp:hover {
+  background-color: #1EBE57;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.ficha__btn-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  flex-shrink: 0;
+}
+
+/* Compartir */
+.ficha__compartir {
+  padding-top: var(--espacio-4);
+  border-top: var(--borde-base);
+}
+
+.ficha__compartir-titulo {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto-suave);
+  margin: 0 0 var(--espacio-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ficha__compartir-botones {
+  display: flex;
+  gap: var(--espacio-3);
+}
+
+.ficha__btn-compartir {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-2);
+  padding: var(--espacio-2) var(--espacio-3);
+  border: var(--borde-base);
+  border-radius: var(--radio-md);
+  background-color: var(--color-fondo-alt);
+  color: var(--color-texto);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--transicion-rapida),
+    border-color     var(--transicion-rapida);
+}
+
+.ficha__btn-compartir:hover {
+  background-color: var(--color-borde);
+  border-color: var(--color-primario);
+}
+
+.ficha__btn-compartir svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Feedback al copiar link */
+.ficha__btn-compartir--copiado {
+  background-color: var(--color-exito);
+  color: #fff;
+  border-color: var(--color-exito);
+}
+
+
+/* ---------------------------------------------------------
+   PROPIEDADES RELACIONADAS
+--------------------------------------------------------- */
+
+.ficha__relacionadas {
+  max-width: var(--ancho-contenido);
+  margin: var(--espacio-16) auto 0;
+  padding: 0 var(--espacio-6);
+}
+
+.ficha__relacionadas-titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-2xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto);
+  margin: 0 0 var(--espacio-8);
+}
+
+.ficha__relacionadas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ficha__top-row {
+    grid-template-columns: 1fr; /* galería arriba, sidebar abajo */
+  }
+
+  .ficha__sidebar {
+    position: static;
+  }
+
+  .ficha__galeria-principal {
+    height: 360px;
+  }
+
+  .ficha__relacionadas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ficha__top-row {
+    padding: 0 var(--espacio-4);
+    margin-top: var(--espacio-6);
+  }
+
+  .ficha__contenido {
+    padding: 0 var(--espacio-4);
+  }
+
+  .ficha__galeria-principal {
+    height: 240px;
+  }
+
+  .ficha__titulo {
+    font-size: var(--texto-3xl);
+  }
+
+  .ficha__precio {
+    font-size: var(--texto-2xl);
+  }
+
+  .ficha__features-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha__relacionadas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha__miniatura {
+    width: 80px;
+    height: 60px;
+  }
+}

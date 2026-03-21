@@ -3,25 +3,23 @@
    El orden importa: reset → variables → tipografía → componentes → páginas
    ========================================================= */
 
-/* --- Capa base --- */
+/* === BASE === */
 @import './base/reset.css';
 @import './base/variables.css';
 @import './base/typography.css';
 @import './base/animations.css';
 
-/* --- Componentes (agregar cuando se creen) --- */
+/* === COMPONENTS === */
 @import './components/theme-toggle.css';
 @import './components/header.css';
-@import './components/hero.css';
 @import './components/footer.css';
 @import './components/cards.css';
-@import './components/features.css';
-@import './components/contacto.css';
-/* @import './components/boton.css'; */
-/* @import './components/formulario.css'; */
 
-/* --- Páginas (agregar cuando se creen) --- */
-/* @import './pages/home.css'; */
-@import './pages/propiedades.css';
-/* @import './pages/vender.css'; */
+/* === PAGES === */
+@import './pages/home.css';
+/* nosotros.css primero: define la base de .hero-interno (overlay + z-index) */
 @import './pages/nosotros.css';
+/* propiedades y vender sobreescriben solo el background-image del hero */
+@import './pages/propiedades.css';
+@import './pages/vender.css';
+@import './pages/ficha.css';

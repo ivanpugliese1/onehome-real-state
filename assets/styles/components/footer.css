@@ -45,9 +45,29 @@
   gap: var(--espacio-4);
 }
 
-.footer__marca img {
-  max-width: 140px;
-  height: auto;
+/* Logo textual — reutiliza estructura del header pero en blanco */
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.footer__logo-nombre {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--peso-bold);
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.footer__logo-subtitulo {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: var(--peso-normal);
 }
 
 .footer__descripcion {
@@ -199,6 +219,11 @@
     gap: var(--espacio-6);
     justify-items: center;
     text-align: center;
+  }
+
+  /* Logo centrado en mobile */
+  .footer__logo {
+    align-items: center;
   }
 
   /* Ocultar nav y contacto en mobile */

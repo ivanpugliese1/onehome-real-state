@@ -1,12 +1,3 @@
-/* =========================================================
-   cards.css — card de propiedad y su grilla
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   SECCIÓN PROPIEDADES DESTACADAS
---------------------------------------------------------- */
-
 .propiedades-destacadas {
   background-color: var(--color-fondo-alt);
   padding: var(--espacio-16) 0;
@@ -18,7 +9,6 @@
   padding: 0 var(--espacio-6);
 }
 
-/* Encabezado de sección — se reutiliza en otras secciones */
 .seccion-header {
   text-align: center;
   margin-bottom: var(--espacio-10);
@@ -51,17 +41,10 @@
   line-height: var(--linea-normal);
 }
 
-/* Pie de sección — botón "ver todas" */
 .propiedades-destacadas__pie {
   text-align: center;
   margin-top: var(--espacio-10);
 }
-
-
-/* ---------------------------------------------------------
-   GRILLA DE CARDS
-   3 columnas en desktop, 2 en tablet, 1 en mobile.
---------------------------------------------------------- */
 
 .propiedades-destacadas__lista {
   display: grid;
@@ -72,12 +55,6 @@
   margin: 0;
 }
 
-
-/* ---------------------------------------------------------
-   CARD DE PROPIEDAD
-   Imagen con overlays (badge tipo + corazón), info abajo.
---------------------------------------------------------- */
-
 .card-propiedad {
   background-color: var(--color-blanco);
   border-radius: var(--radio-xl);
@@ -87,19 +64,14 @@
   display: flex;
   flex-direction: column;
   transition:
-    transform    var(--transicion-normal),
-    box-shadow   var(--transicion-normal);
+    transform var(--transicion-normal),
+    box-shadow var(--transicion-normal);
 }
 
 .card-propiedad:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-card-hover);
 }
-
-
-/* ---------------------------------------------------------
-   IMAGEN + OVERLAYS
---------------------------------------------------------- */
 
 .card-propiedad__imagen {
   width: 100%;
@@ -121,7 +93,6 @@
   transform: scale(1.04);
 }
 
-/* Pill badge de tipo: Venta / Alquiler */
 .card-propiedad__tipo {
   position: absolute;
   top: var(--espacio-3);
@@ -137,7 +108,6 @@
   border-radius: var(--radio-full);
 }
 
-/* Botón corazón — guardar favorito */
 .card-propiedad__favorito {
   position: absolute;
   top: var(--espacio-3);
@@ -154,7 +124,7 @@
   justify-content: center;
   transition:
     background-color var(--transicion-rapida),
-    transform        var(--transicion-rapida);
+    transform var(--transicion-rapida);
 }
 
 .card-propiedad__favorito:hover {
@@ -175,10 +145,6 @@
 }
 
 
-/* ---------------------------------------------------------
-   INFORMACIÓN DE LA PROPIEDAD
---------------------------------------------------------- */
-
 .card-propiedad__info {
   padding: var(--espacio-5);
   display: flex;
@@ -197,30 +163,22 @@
 }
 
 .card-propiedad__titulo {
-  font-family: var(--font-heading);
-  font-size: var(--texto-xl);
+  font-family: var(--font-body);
+  font-size: 1.15rem;
   font-weight: var(--peso-semibold);
-  color: var(--color-secundario);
+  color: var(--color-texto);
   line-height: var(--linea-apretada);
   margin: 0;
 }
 
-/* Precio en Cormorant — elegante y legible */
 .card-propiedad__precio {
-  font-family: var(--font-heading);
-  font-size: var(--texto-2xl);
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: var(--peso-bold);
   color: var(--color-primario);
   margin: 0;
   line-height: 1.2;
 }
-
-
-/* ---------------------------------------------------------
-   DATOS: emojis + texto
-   Borde superior que separa del precio.
-   flex: 1 empuja las acciones hacia abajo.
---------------------------------------------------------- */
 
 .card-propiedad__datos {
   display: flex;
@@ -242,18 +200,12 @@
   color: var(--color-texto-suave);
 }
 
-/* Iconos SVG legacy — solo por compatibilidad */
 .card-propiedad__dato svg {
   width: 16px;
   height: 16px;
   fill: var(--color-gris-medio);
   flex-shrink: 0;
 }
-
-
-/* ---------------------------------------------------------
-   ACCIONES — dos botones: ver ficha + WhatsApp
---------------------------------------------------------- */
 
 .card-propiedad__acciones {
   display: flex;
@@ -276,16 +228,16 @@
   text-decoration: none;
   transition:
     background-color var(--transicion-rapida),
-    box-shadow       var(--transicion-rapida);
+    box-shadow var(--transicion-rapida);
 }
 
 .card-propiedad__btn-ficha:hover {
   background-color: var(--color-primario-hover);
+  color: var(--color-blanco);
   box-shadow: var(--sombra-sm);
   text-decoration: none;
 }
 
-/* Botón WhatsApp — cuadrado redondeado con ícono */
 .card-propiedad__btn-wa {
   display: flex;
   align-items: center;
@@ -298,7 +250,7 @@
   text-decoration: none;
   transition:
     background-color var(--transicion-rapida),
-    transform        var(--transicion-rapida);
+    transform var(--transicion-rapida);
 }
 
 .card-propiedad__btn-wa:hover {
@@ -312,7 +264,6 @@
   fill: var(--color-blanco);
 }
 
-/* Botón legacy — por compatibilidad */
 .card-propiedad__boton {
   display: block;
   text-align: center;
@@ -327,28 +278,21 @@
   border: 2px solid var(--color-primario);
   transition:
     background-color var(--transicion-rapida),
-    border-color     var(--transicion-rapida);
+    border-color var(--transicion-rapida);
 }
 
 .card-propiedad__boton:hover {
   background-color: var(--color-primario-hover);
-  border-color:     var(--color-primario-hover);
-  text-decoration:  none;
+  border-color: var(--color-primario-hover);
+  text-decoration: none;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-/* Tablet — 2 columnas */
 @media (max-width: 1024px) {
   .propiedades-destacadas__lista {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile — 1 columna */
 @media (max-width: 768px) {
   .propiedades-destacadas {
     padding: var(--espacio-12) 0;

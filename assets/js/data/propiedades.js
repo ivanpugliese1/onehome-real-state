@@ -17,6 +17,7 @@ export const propiedades = [
     alt: 'Casa 3 ambientes en Palermo, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20la%20casa%20en%20Palermo',
     slug: 'casa-3-ambientes-palermo',
+    featured: true
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ export const propiedades = [
     alt: 'Departamento 2 ambientes en Recoleta, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20el%20departamento%20en%20Recoleta',
     slug: 'departamento-2-ambientes-recoleta',
+    featured: true
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ export const propiedades = [
     alt: 'PH 4 ambientes en Belgrano, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20el%20PH%20en%20Belgrano',
     slug: 'ph-4-ambientes-belgrano',
+    featured: true
   },
   {
     id: 4,
@@ -65,6 +68,7 @@ export const propiedades = [
     alt: 'Monoambiente en San Telmo, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20el%20monoambiente%20en%20San%20Telmo',
     slug: 'monoambiente-san-telmo',
+    featured: true
   },
   {
     id: 5,
@@ -81,6 +85,7 @@ export const propiedades = [
     alt: 'Casa 5 ambientes en Tigre, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20la%20casa%20en%20Tigre',
     slug: 'casa-5-ambientes-tigre',
+    featured: true
   },
   {
     id: 6,
@@ -97,6 +102,7 @@ export const propiedades = [
     alt: 'Local comercial en Microcentro, Buenos Aires',
     waMsg: 'Hola,%20me%20interesa%20el%20local%20en%20Microcentro',
     slug: 'local-comercial-microcentro',
+    featured: true
   },
   {
     id: 7,

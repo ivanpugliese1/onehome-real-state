@@ -1,68 +1,48 @@
-/* =========================================================
-   Variables globales — Design tokens de OneHome Inmobiliaria
-   ========================================================= */
-
 :root {
+  --color-primary: #7a8c6e;
+  --color-primary-dark: #94a786;
+  --color-primary-light: #94a786;
+  --color-accent: #D4B896;
+  --color-accent-dark: #BFA07A;
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #F4F1ED;
+  --color-surface: #FFFFFF;
+  --color-border: #E2DDD6;
+  --color-text: #1A1A2E;
+  --color-text-muted: #6B6B7B;
+  --shadow: 0 4px 24px rgba(26, 43, 61, 0.1);
+  --shadow-lg: 0 12px 48px rgba(27, 58, 92, .16);
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
 
-  /* ---------------------------------------------------------
-     COLORES
-     Paleta cálida y premium: terracota + blancos cálidos +
-     marrones profundos. Sin azules — 100% warm tone.
-  --------------------------------------------------------- */
-
-  /* Primario — terracota cálido, identidad visual */
-  --color-primario: #adbea4;
-  --color-primario-hover: #A85A35;
-  --color-primario-claro: #E8DDD0;
-  /* arena clara */
-  --color-primario-suave: #F7F2EB;
-  /* crema */
-
-  /* Secundario — marrón profundo, para títulos y UI de peso */
-  --color-secundario: #5C3D2E;
-  --color-secundario-hover: #4A2E1F;
-  --color-secundario-claro: #7A5C4F;
-
-  /* Acento — terracota oscuro, precio y badges */
-  --color-acento: #A85A35;
-  --color-acento-claro: #E8DDD0;
+  /* Aliases de compatibilidad — apuntan a la nueva paleta */
+  --color-primario: var(--color-primary);
+  --color-primario-hover: var(--color-primary-dark);
+  --color-primario-claro: var(--color-accent);
+  --color-primario-suave: var(--color-bg-alt);
+  --color-secundario: var(--color-primary);
+  --color-secundario-hover: var(--color-primary-dark);
+  --color-secundario-claro: var(--color-primary-light);
+  --color-acento: var(--color-accent);
+  --color-acento-claro: var(--color-bg-alt);
+  --color-blanco: #FFFFFF;
+  --color-fondo: var(--color-bg);
+  --color-fondo-alt: var(--color-bg-alt);
+  --color-borde: var(--color-border);
+  --color-gris-claro: var(--color-border);
+  --color-gris-medio: var(--color-text-muted);
+  --color-gris-oscuro: var(--color-text);
+  --color-texto: var(--color-text);
+  --color-texto-suave: var(--color-text-muted);
+  --color-negro: var(--color-text);
+  --color-superficie: var(--color-surface);
 
   /* Estado — feedback de acciones del usuario */
   --color-exito: #2D7A4F;
   --color-error: #C0392B;
   --color-aviso: #C4714A;
-  --color-info: #5C3D2E;
+  --color-info: #1B3A5C;
 
-  /* Neutros — escala de blancos cálidos */
-  --color-blanco: #FFFFFF;
-  --color-fondo: #FDFAF6;
-  /* blanco cálido — fondo principal */
-  --color-fondo-alt: #F7F2EB;
-  /* crema — secciones alternadas */
-  --color-borde: #E8DDD0;
-  /* arena — bordes sutiles */
-  --color-gris-claro: #E8DDD0;
-  --color-gris-medio: #7A5C4F;
-  --color-gris-oscuro: #5C3D2E;
-  --color-texto: #2E1F15;
-  /* marrón muy oscuro — texto principal */
-  --color-texto-suave: #7A5C4F;
-  /* marrón medio — texto secundario */
-  --color-negro: #2E1F15;
-
-
-  /* ---------------------------------------------------------
-     TIPOGRAFÍA
-     Cormorant Garamond — elegante serif para títulos.
-     DM Sans — legible, moderna para cuerpo de texto.
-  --------------------------------------------------------- */
-
-  /* Familias */
-  --fuente-principal: 'DM Sans', system-ui, -apple-system, sans-serif;
-
-  /* Aliases semánticos */
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
 
   /* Escala tipográfica (base 16px) */
   --texto-xs: 0.75rem;
@@ -98,11 +78,6 @@
   --linea-suelta: 1.75;
 
 
-  /* ---------------------------------------------------------
-     ESPACIADO
-     Escala de 4px — consistencia en padding y gaps.
-  --------------------------------------------------------- */
-
   --espacio-1: 0.25rem;
   /*   4px */
   --espacio-2: 0.5rem;
@@ -129,23 +104,13 @@
   /*  96px */
 
 
-  /* ---------------------------------------------------------
-     LAYOUT
-  --------------------------------------------------------- */
-
   --ancho-contenido: 1200px;
   --ancho-angosto: 800px;
 
-  /* Breakpoints */
   --bp-mobile: 480px;
   --bp-tablet: 768px;
   --bp-desktop: 1024px;
   --bp-wide: 1280px;
-
-
-  /* ---------------------------------------------------------
-     BORDES Y RADIOS
-  --------------------------------------------------------- */
 
   --radio-sm: 4px;
   --radio-md: 8px;
@@ -155,43 +120,27 @@
 
   --borde-base: 1px solid var(--color-borde);
 
-  /* Superficie — fondo de cards, header y nav */
-  --color-superficie: #FFFFFF;
-
-
-  /* ---------------------------------------------------------
-     SOMBRAS
-     Basadas en el marrón cálido de la paleta.
-  --------------------------------------------------------- */
-
   --sombra-sm:
-    0 1px 2px rgba(46, 31, 21, 0.06),
-    0 1px 3px rgba(46, 31, 21, 0.10);
+    0 1px 2px rgba(27, 58, 92, 0.06),
+    0 1px 3px rgba(27, 58, 92, 0.10);
 
   --sombra-md:
-    0 4px 6px rgba(46, 31, 21, 0.06),
-    0 2px 4px rgba(46, 31, 21, 0.08);
+    0 4px 6px rgba(27, 58, 92, 0.06),
+    0 2px 4px rgba(27, 58, 92, 0.08);
 
   --sombra-lg:
-    0 10px 15px rgba(46, 31, 21, 0.08),
-    0 4px 6px rgba(46, 31, 21, 0.06);
+    0 10px 15px rgba(27, 58, 92, 0.08),
+    0 4px 6px rgba(27, 58, 92, 0.06);
 
   --sombra-xl:
-    0 20px 25px rgba(46, 31, 21, 0.10),
-    0 8px 10px rgba(46, 31, 21, 0.06);
+    0 20px 25px rgba(27, 58, 92, 0.10),
+    0 8px 10px rgba(27, 58, 92, 0.06);
 
   --sombra-card:
-    0 2px 8px rgba(196, 113, 74, 0.08),
-    0 1px 3px rgba(46, 31, 21, 0.12);
+    var(--shadow);
 
   --sombra-card-hover:
-    0 8px 24px rgba(196, 113, 74, 0.18),
-    0 2px 8px rgba(46, 31, 21, 0.10);
-
-
-  /* ---------------------------------------------------------
-     TRANSICIONES
-  --------------------------------------------------------- */
+    var(--shadow-lg);
 
   --transicion-rapida: 150ms ease;
   --transicion-normal: 250ms ease;
@@ -199,37 +148,43 @@
 
 }
 
-
-/* =========================================================
-   DARK MODE — sobreescritura de tokens
-   ========================================================= */
-
 [data-theme="dark"] {
 
-  --color-fondo: #1A1410;
-  --color-fondo-alt: #221C17;
+  /* Paleta dark — tonos oscuros relacionados con el sage green del tema claro */
+  --color-primary: #8FAB7E;
+  --color-primary-dark: #7A9668;
+  --color-primary-light: #A4BE95;
+  --color-accent: #D4B896;
+  --color-accent-dark: #BFA07A;
+  --color-bg: #090E07;
+  --color-bg-alt: #0F1A0C;
+  --color-surface: #162012;
+  --color-border: #223A1C;
+  --color-text: #ECF0E8;
+  --color-text-muted: #879E7F;
+  --shadow: 0 4px 24px rgba(0, 0, 0, .35);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, .45);
 
-  --color-superficie: #2A2118;
-
-  --color-texto: #F0EAE3;
-  --color-texto-suave: #A09080;
-
-  --color-borde: #3D3028;
-  --color-gris-claro: #3D3028;
-  --color-gris-medio: #806050;
-  --color-gris-oscuro: #C0A890;
-
-  --color-primario: #D4814E;
-  --color-primario-hover: #E09060;
-  --color-primario-claro: #5A3A20;
-  --color-primario-suave: #3A2415;
-
-  --color-secundario: #B89070;
-  --color-secundario-hover: #C8A080;
-  --color-secundario-claro: #8A6050;
-
-  --color-acento: #C4714A;
-  --color-acento-claro: #4A2E1A;
+  /* Aliases de compatibilidad — dark */
+  --color-primario: var(--color-primary);
+  --color-primario-hover: var(--color-primary-dark);
+  --color-primario-claro: var(--color-accent);
+  --color-primario-suave: var(--color-bg-alt);
+  --color-secundario: var(--color-primary);
+  --color-secundario-hover: var(--color-primary-dark);
+  --color-secundario-claro: var(--color-primary-light);
+  --color-acento: var(--color-accent);
+  --color-acento-claro: var(--color-bg-alt);
+  --color-fondo: var(--color-bg);
+  --color-fondo-alt: var(--color-bg-alt);
+  --color-borde: var(--color-border);
+  --color-gris-claro: var(--color-border);
+  --color-gris-medio: var(--color-text-muted);
+  --color-gris-oscuro: var(--color-text);
+  --color-texto: var(--color-text);
+  --color-texto-suave: var(--color-text-muted);
+  --color-negro: var(--color-text);
+  --color-superficie: var(--color-surface);
 
   --sombra-sm:
     0 1px 2px rgba(0, 0, 0, 0.40),
@@ -244,23 +199,15 @@
     0 4px 6px rgba(0, 0, 0, 0.30);
 
   --sombra-card:
-    0 2px 8px rgba(0, 0, 0, 0.40),
-    0 1px 3px rgba(0, 0, 0, 0.50);
+    var(--shadow);
 
   --sombra-card-hover:
-    0 8px 24px rgba(0, 0, 0, 0.55),
-    0 2px 8px rgba(0, 0, 0, 0.40);
+    var(--shadow-lg);
 
 }
 
-
-/* =========================================================
-   DARK MODE — OVERRIDES DE COMPONENTES
-   ========================================================= */
-
-/* Header — mantiene el glass effect en dark mode */
 [data-theme="dark"] .header {
-  background-color: rgba(26, 20, 16, 0.88);
+  background-color: rgba(9, 14, 7, 0.94);
 }
 
 [data-theme="dark"] .nav-mobile {
@@ -276,7 +223,7 @@
 }
 
 [data-theme="dark"] .footer {
-  background-color: #1A0E08;
+  background-color: #060A05;
 }
 
 [data-theme="dark"] .contacto__formulario-wrapper {

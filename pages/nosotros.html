@@ -36,18 +36,16 @@
     }
   </script>
 
-  <!-- Fuentes: Cormorant Garamond (títulos) + DM Sans (cuerpo) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <!-- Fuentes: Playfair Display (títulos) + Lato (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="../assets/styles/main.css" />
+  <link rel="stylesheet" href="/assets/styles/main.css" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../assets/images/icons/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png" />
 </head>
 
 <body>
@@ -58,7 +56,8 @@
 
       <!-- Logo -->
       <a href="/" class="header__logo" aria-label="OneHome Inmobiliaria — inicio">
-        <img src="../assets/images/logo.png" alt="Logo OneHome Inmobiliaria" width="160" height="48" />
+        <span class="header__logo-nombre">ONE HOME</span>
+        <span class="header__logo-subtitulo">Consultores Inmobiliarios</span>
       </a>
 
       <!-- Navegación principal -->
@@ -66,7 +65,7 @@
         <ul class="header__nav-list" role="list">
           <li><a href="/" class="header__nav-link">Inicio</a></li>
           <li><a href="/pages/propiedades.html" class="header__nav-link">Propiedades</a></li>
-          <li><a href="/pages/vender.html" class="header__nav-link">Vender</a></li>
+          <li><a href="/pages/vender.html" class="header__nav-link">Vender / Alquilar</a></li>
           <li><a href="/pages/nosotros.html" class="header__nav-link" aria-current="page">Nosotros</a></li>
         </ul>
       </nav>
@@ -79,8 +78,8 @@
       <!-- Controles: redes sociales + toggle de tema -->
       <div class="header__controles" aria-label="Acciones del header">
 
-        <a href="https://instagram.com/onehome" class="header__social-link" target="_blank" rel="noopener noreferrer"
-          aria-label="Seguinos en Instagram">
+        <a href="https://www.instagram.com/onehomeargentina/" class="header__social-link" target="_blank"
+          rel="noopener noreferrer" aria-label="Seguinos en Instagram">
           <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
             focusable="false">
             <path
@@ -88,7 +87,7 @@
           </svg>
         </a>
 
-        <a href="https://wa.me/541100000000" class="header__social-link" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/541133662649" class="header__social-link" target="_blank" rel="noopener noreferrer"
           aria-label="Contactanos por WhatsApp">
           <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
             focusable="false">
@@ -119,19 +118,6 @@
     <!-- ---- HERO INTERNO ---- -->
     <section class="hero-interno" aria-labelledby="nosotros-titulo">
       <div class="hero-interno__inner">
-
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol class="breadcrumb__lista" role="list">
-            <li class="breadcrumb__item">
-              <a href="/" class="breadcrumb__link">Inicio</a>
-            </li>
-            <li class="breadcrumb__sep" aria-hidden="true">›</li>
-            <li class="breadcrumb__item breadcrumb__item--actual" aria-current="page">
-              Nosotros
-            </li>
-          </ol>
-        </nav>
 
         <h1 id="nosotros-titulo" class="hero-interno__titulo">
           Quiénes <em>somos</em>
@@ -180,67 +166,6 @@
               height="450"
               loading="lazy" />
           </figure>
-
-        </div>
-
-        <!-- Timeline de hitos -->
-        <div class="timeline" aria-label="Hitos importantes de OneHome">
-
-          <article class="timeline__item">
-            <div class="timeline__marcador">
-              <span class="timeline__anio">2009</span>
-              <span class="timeline__punto" aria-hidden="true"></span>
-            </div>
-            <div class="timeline__contenido">
-              <h3 class="timeline__titulo">Fundación</h3>
-              <p class="timeline__descripcion">
-                Martina García abre las puertas de OneHome en Palermo con un equipo de tres
-                personas y el compromiso de asesorar con honestidad.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__marcador">
-              <span class="timeline__anio">2015</span>
-              <span class="timeline__punto" aria-hidden="true"></span>
-            </div>
-            <div class="timeline__contenido">
-              <h3 class="timeline__titulo">Expansión</h3>
-              <p class="timeline__descripcion">
-                Segunda sede en Zona Norte y un equipo que ya supera los 12 asesores.
-                Alcanzamos las 200 operaciones exitosas.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__marcador">
-              <span class="timeline__anio">2020</span>
-              <span class="timeline__punto" aria-hidden="true"></span>
-            </div>
-            <div class="timeline__contenido">
-              <h3 class="timeline__titulo">Digital</h3>
-              <p class="timeline__descripcion">
-                Lanzamos nuestra plataforma digital. Recorridos virtuales, firma electrónica
-                y atención remota sin detener ni una operación durante la pandemia.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__marcador">
-              <span class="timeline__anio">2024</span>
-              <span class="timeline__punto" aria-hidden="true"></span>
-            </div>
-            <div class="timeline__contenido">
-              <h3 class="timeline__titulo">Reconocimiento</h3>
-              <p class="timeline__descripcion">
-                +500 operaciones cerradas. Reconocidos como una de las 10 mejores inmobiliarias
-                de CABA por la Cámara Inmobiliaria Argentina.
-              </p>
-            </div>
-          </article>
 
         </div>
 
@@ -523,22 +448,17 @@
           encontrar la mejor opción. El primer contacto es siempre gratuito.
         </p>
 
-        <div class="nosotros-cta__acciones">
-          <a
-            href="https://wa.me/541100000000?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20OneHome"
-            class="boton boton--primario boton--grande nosotros-cta__btn-wa"
-            target="_blank"
-            rel="noopener noreferrer">
-            <!-- WhatsApp SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-            </svg>
-            Escribinos por WhatsApp
-          </a>
-          <a href="/pages/contacto.html" class="boton boton--secundario boton--grande nosotros-cta__btn-contacto">
-            Formulario de contacto
-          </a>
-        </div>
+        <a
+          href="https://wa.me/541100000000?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20OneHome"
+          class="nosotros-cta__btn-wa"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar a OneHome por WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+          </svg>
+          Escribinos por WhatsApp
+        </a>
 
       </div>
     </section>
@@ -548,35 +468,32 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="footer__inner">
-
-      <!-- Col 1: Logo y descripción -->
       <div class="footer__marca">
-        <a href="/" aria-label="OneHome Inmobiliaria — inicio">
-          <img src="../assets/images/logo-blanco.png" alt="Logo OneHome Inmobiliaria" width="140" height="42" />
+        <a href="/" class="footer__logo" aria-label="OneHome Inmobiliaria — inicio">
+          <span class="footer__logo-nombre">ONE HOME</span>
+          <span class="footer__logo-subtitulo">Consultores Inmobiliarios</span>
         </a>
         <p class="footer__descripcion">
           Tu aliado de confianza para comprar, vender o alquilar propiedades en Argentina.
         </p>
       </div>
 
-      <!-- Col 2: Navegación -->
       <nav class="footer__nav" aria-label="Navegación del footer">
         <h3 class="footer__nav-titulo">Páginas</h3>
         <ul class="footer__nav-lista" role="list">
           <li><a href="/" class="footer__nav-link">Inicio</a></li>
           <li><a href="/pages/propiedades.html" class="footer__nav-link">Propiedades</a></li>
-          <li><a href="/pages/vender.html" class="footer__nav-link">Vender</a></li>
+          <li><a href="/pages/vender.html" class="footer__nav-link">Vender / Alquilar</a></li>
           <li><a href="/pages/nosotros.html" class="footer__nav-link">Nosotros</a></li>
         </ul>
       </nav>
 
-      <!-- Col 3: Contacto + redes sociales -->
       <address class="footer__contacto">
         <h3 class="footer__contacto-titulo">Contacto</h3>
         <ul class="footer__contacto-lista" role="list">
           <li>
-            <a href="tel:+541100000000" class="footer__contacto-link">
-              +54 11 0000-0000
+            <a href="tel:+541133662649" class="footer__contacto-link">
+              +54 11 3366 2649
             </a>
           </li>
           <li>
@@ -592,7 +509,7 @@
         <h3 class="footer__social-titulo">Seguinos</h3>
         <ul class="footer__social-lista" role="list">
           <li>
-            <a href="https://wa.me/549xxxxxxxxxx" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/5491133662649" class="footer__social-link" target="_blank" rel="noopener noreferrer"
               aria-label="Contactar por WhatsApp">
               <svg class="footer__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                 aria-hidden="true" focusable="false">
@@ -603,7 +520,7 @@
             </a>
           </li>
           <li>
-            <a href="https://instagram.com/onehome" class="footer__social-link" target="_blank"
+            <a href="https://instagram.com/onehomeargentina" class="footer__social-link" target="_blank"
               rel="noopener noreferrer" aria-label="OneHome en Instagram">
               <svg class="footer__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                 aria-hidden="true" focusable="false">
@@ -624,7 +541,6 @@
         &copy; 2026 OneHome Inmobiliaria. Todos los derechos reservados.
       </p>
     </div>
-
   </footer>
 
   <!-- ===================== NAV MOBILE ===================== -->
@@ -674,7 +590,7 @@
   </nav>
 
   <!-- Scripts -->
-  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js"></script>
 
 </body>
 

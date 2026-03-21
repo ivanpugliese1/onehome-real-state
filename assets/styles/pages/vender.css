@@ -1,0 +1,852 @@
+/* =========================================================
+   vender.css — estilos específicos de la página Vender / Alquilar
+   ========================================================= */
+
+
+/* =========================================================
+   HERO INTERNO
+   Sobreescribe solo la imagen de fondo del .hero-interno
+   definido en nosotros.css. El resto del patrón (overlay,
+   z-index, tipografía) lo hereda de allí.
+   ========================================================= */
+
+/* Imagen específica para vender: firma/negociación/contrato */
+.hero-interno {
+  background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80');
+}
+
+
+/* =========================================================
+   POR QUÉ ELEGIRNOS PARA VENDER
+   Grid de 3 cards con ícono + título + descripción.
+   Fondo blanco sobre fondo crema del hero, alternado.
+   ========================================================= */
+
+.vender-ventajas {
+  background-color: var(--color-fondo);
+  padding: var(--espacio-20) 0;
+}
+
+.vender-ventajas__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-12);
+}
+
+.vender-ventajas__lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card de ventaja */
+.vender-ventaja {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  padding: var(--espacio-8);
+  border-radius: var(--radio-xl);
+  border: var(--borde-base);
+  border-left: 3px solid var(--color-primario);
+  background-color: var(--color-superficie);
+  transition:
+    box-shadow   var(--transicion-normal),
+    transform    var(--transicion-normal),
+    border-color var(--transicion-normal);
+}
+
+.vender-ventaja:hover {
+  box-shadow: var(--sombra-card-hover);
+  transform: translateY(-4px);
+  border-left-color: var(--color-acento);
+}
+
+.vender-ventaja__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radio-full);
+  background-color: var(--color-primario-suave);
+  flex-shrink: 0;
+}
+
+.vender-ventaja__icono svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--color-primario);
+}
+
+.vender-ventaja__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.vender-ventaja__descripcion {
+  font-size: var(--texto-base);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+
+/* =========================================================
+   CÓMO FUNCIONA
+   Timeline vertical de 4 pasos. Número grande decorativo
+   a la izquierda, línea conectora entre pasos.
+   Fondo crema alternado.
+   ========================================================= */
+
+.como-funciona {
+  background-color: var(--color-fondo-alt);
+  padding: var(--espacio-20) 0;
+}
+
+.como-funciona__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-12);
+}
+
+.como-funciona__pasos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Paso individual */
+.como-funciona__paso {
+  display: flex;
+  gap: var(--espacio-5);
+  align-items: flex-start;
+  padding: var(--espacio-8);
+  border-radius: var(--radio-xl);
+  background-color: var(--color-superficie);
+  border: var(--borde-base);
+  transition: box-shadow var(--transicion-normal);
+}
+
+.como-funciona__paso:hover {
+  box-shadow: var(--sombra-md);
+}
+
+/* Número grande decorativo */
+.como-funciona__numero {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-bold);
+  line-height: 1;
+  color: var(--color-primario);
+  min-width: 3rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.como-funciona__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-3);
+}
+
+.como-funciona__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.como-funciona__descripcion {
+  font-size: var(--texto-base);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+
+/* =========================================================
+   FORMULARIO DE TASACIÓN
+   Dos columnas: info a la izquierda, formulario a la derecha.
+   Misma estructura visual que la sección de contacto del home.
+   ========================================================= */
+
+.tasacion {
+  background-color: var(--color-fondo);
+  padding: var(--espacio-20) 0;
+}
+
+.tasacion__inner {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--espacio-16);
+  align-items: start;
+}
+
+/* ---------------------------------------------------------
+   COLUMNA IZQUIERDA — info
+--------------------------------------------------------- */
+
+.tasacion__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-6);
+  position: sticky;
+  top: calc(80px + var(--espacio-8)); /* debajo del header fijo */
+}
+
+.tasacion__eyebrow {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.tasacion__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.tasacion__descripcion {
+  font-size: var(--texto-md);
+  color: var(--color-texto-suave);
+  line-height: var(--linea-suelta);
+  margin: 0;
+}
+
+/* Datos de contacto rápido */
+.tasacion__contacto-rapido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  margin-top: var(--espacio-2);
+}
+
+.tasacion__contacto-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+  padding: var(--espacio-4) var(--espacio-5);
+  background-color: var(--color-fondo-alt);
+  border-radius: var(--radio-lg);
+  border: var(--borde-base);
+}
+
+.tasacion__contacto-icono {
+  font-size: var(--texto-xl);
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.tasacion__contacto-label {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-texto-suave);
+  margin: 0 0 2px;
+}
+
+.tasacion__contacto-valor {
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+  margin: 0;
+  display: block;
+}
+
+.tasacion__contacto-valor:hover {
+  color: var(--color-primario);
+}
+
+/* ---------------------------------------------------------
+   COLUMNA DERECHA — formulario
+--------------------------------------------------------- */
+
+.tasacion__formulario-wrapper {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-xl);
+  border: var(--borde-base);
+  box-shadow: var(--sombra-lg);
+  padding: var(--espacio-8);
+}
+
+.tasacion__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-5);
+}
+
+/* Fila de dos campos lado a lado */
+.tasacion__fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-4);
+}
+
+/* Campo individual */
+.tasacion__campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+}
+
+.tasacion__label {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto);
+}
+
+/* Indicador de campo requerido */
+.tasacion__requerido {
+  color: var(--color-error);
+  margin-left: 2px;
+}
+
+/* Indicador de campo opcional */
+.tasacion__opcional {
+  font-weight: var(--peso-normal);
+  color: var(--color-texto-suave);
+  font-size: var(--texto-xs);
+}
+
+/* Inputs y select */
+.tasacion__input,
+.tasacion__select {
+  width: 100%;
+  padding: var(--espacio-3) var(--espacio-4);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  outline: none;
+  transition:
+    border-color var(--transicion-rapida),
+    box-shadow   var(--transicion-rapida);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.tasacion__select {
+  /* Flecha personalizada */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B6B7B' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--espacio-3) center;
+  background-size: 20px;
+  padding-right: var(--espacio-10);
+  cursor: pointer;
+}
+
+.tasacion__input::placeholder {
+  color: var(--color-gris-medio);
+}
+
+/* Estado focus */
+.tasacion__input:focus,
+.tasacion__select:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.15);
+}
+
+/* Estado error */
+.tasacion__input--error,
+.tasacion__select--error {
+  border-color: var(--color-error);
+}
+
+.tasacion__input--error:focus,
+.tasacion__select--error:focus {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+/* Textarea */
+.tasacion__textarea {
+  width: 100%;
+  padding: var(--espacio-3) var(--espacio-4);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  outline: none;
+  resize: vertical;
+  min-height: 110px;
+  transition:
+    border-color var(--transicion-rapida),
+    box-shadow   var(--transicion-rapida);
+  box-sizing: border-box;
+}
+
+.tasacion__textarea::placeholder {
+  color: var(--color-gris-medio);
+}
+
+.tasacion__textarea:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.15);
+}
+
+/* Mensaje de error de campo */
+.tasacion__campo-error {
+  font-size: var(--texto-xs);
+  color: var(--color-error);
+  margin: 0;
+}
+
+/* Radio buttons de operación */
+.tasacion__radios {
+  display: flex;
+  gap: var(--espacio-3);
+  flex-wrap: wrap;
+  padding: var(--espacio-1) 0;
+}
+
+.tasacion__radio-label {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  cursor: pointer;
+  padding: var(--espacio-2) var(--espacio-4);
+  border-radius: var(--radio-full);
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo);
+  transition:
+    background-color var(--transicion-rapida),
+    border-color     var(--transicion-rapida);
+  user-select: none;
+}
+
+.tasacion__radio-label:has(.tasacion__radio:checked) {
+  background-color: var(--color-primario-suave);
+  border-color: var(--color-primario);
+}
+
+.tasacion__radio {
+  accent-color: var(--color-primario);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.tasacion__radio-texto {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+  color: var(--color-texto);
+}
+
+/* Botón submit */
+.tasacion__btn-enviar {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--espacio-2);
+}
+
+/* Mensaje de éxito */
+.tasacion__exito {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) var(--espacio-5);
+  background-color: rgba(45, 122, 79, 0.08);
+  border: 1px solid rgba(45, 122, 79, 0.3);
+  border-radius: var(--radio-lg);
+  margin-top: var(--espacio-2);
+}
+
+.tasacion__exito-icono {
+  font-size: var(--texto-xl);
+  color: var(--color-exito);
+  flex-shrink: 0;
+}
+
+.tasacion__exito-texto {
+  font-size: var(--texto-base);
+  color: var(--color-exito);
+  font-weight: var(--peso-medio);
+  margin: 0;
+  line-height: var(--linea-normal);
+}
+
+
+/* =========================================================
+   CTA WHATSAPP
+   Sección oscura de cierre con botón de WhatsApp verde.
+   Mismo patrón visual que nosotros-cta.
+   ========================================================= */
+
+.vender-cta {
+  background-color: var(--color-fondo-alt);
+  padding: var(--espacio-20) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoración de fondo */
+.vender-cta::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  border-radius: var(--radio-full);
+  background: radial-gradient(circle, rgba(212, 184, 150, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vender-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radio-full);
+  background: radial-gradient(circle, rgba(212, 184, 150, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.vender-cta__inner {
+  max-width: var(--ancho-angosto);
+  margin: 0 auto;
+  padding: 0 var(--espacio-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-6);
+  position: relative;
+  z-index: 1;
+}
+
+.vender-cta__eyebrow {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.vender-cta__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  line-height: var(--linea-apretada);
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.vender-cta__subtitulo {
+  font-size: var(--texto-md);
+  line-height: var(--linea-suelta);
+  color: var(--color-texto-suave);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* Botón WhatsApp verde */
+.vender-cta__btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) var(--espacio-8);
+  background-color: #25D366;
+  color: var(--color-blanco);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-md);
+  font-weight: var(--peso-semibold);
+  text-decoration: none;
+  border-radius: var(--radio-full);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color var(--transicion-rapida),
+    transform        var(--transicion-rapida),
+    box-shadow       var(--transicion-rapida);
+}
+
+.vender-cta__btn-wa:hover {
+  background-color: #1EBE57;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32);
+  text-decoration: none;
+  color: var(--color-blanco);
+}
+
+.vender-cta__btn-wa svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SECCION HEADER (eyebrow + título + descripción)
+   Reutilizado en varias secciones.
+   Si no está definido en otro CSS, lo declaramos acá.
+   ========================================================= */
+
+.seccion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--espacio-3);
+}
+
+.seccion-header__eyebrow {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.seccion-header__titulo {
+  font-family: var(--font-heading);
+  font-size: var(--texto-4xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-secundario);
+  line-height: var(--linea-apretada);
+  margin: 0;
+}
+
+.seccion-header__descripcion {
+  font-size: var(--texto-md);
+  color: var(--color-texto-suave);
+  line-height: var(--linea-suelta);
+  max-width: 560px;
+  margin: 0;
+}
+
+
+/* =========================================================
+   BOTONES — estilos base si no están en otro componente
+   ========================================================= */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-2);
+  padding: var(--espacio-3) var(--espacio-6);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semibold);
+  text-decoration: none;
+  border-radius: var(--radio-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transicion-rapida),
+    border-color     var(--transicion-rapida),
+    color            var(--transicion-rapida),
+    transform        var(--transicion-rapida);
+}
+
+.boton--primario {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-color: var(--color-primario);
+}
+
+.boton--primario:hover {
+  background-color: var(--color-primario-hover);
+  border-color: var(--color-primario-hover);
+  transform: translateY(-1px);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--color-secundario);
+  border-color: var(--color-secundario);
+}
+
+.boton--secundario:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+.boton--grande {
+  padding: var(--espacio-4) var(--espacio-8);
+  font-size: var(--texto-md);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET (max 1024px)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .vender-ventajas__lista {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-4);
+  }
+
+  .como-funciona__pasos {
+    gap: var(--espacio-4);
+  }
+
+  .tasacion__inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--espacio-10);
+  }
+
+  .tasacion__titulo {
+    font-size: var(--texto-3xl);
+  }
+
+  .vender-cta__titulo {
+    font-size: var(--texto-3xl);
+  }
+
+  .seccion-header__titulo {
+    font-size: var(--texto-3xl);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Ventajas */
+  .vender-ventajas {
+    padding: var(--espacio-12) 0;
+  }
+
+  .vender-ventajas__inner {
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-8);
+  }
+
+  .vender-ventajas__lista {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  .vender-ventaja {
+    padding: var(--espacio-6);
+  }
+
+  /* Cómo funciona */
+  .como-funciona {
+    padding: var(--espacio-12) 0;
+  }
+
+  .como-funciona__inner {
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-8);
+  }
+
+  .como-funciona__pasos {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  .como-funciona__paso {
+    padding: var(--espacio-6);
+  }
+
+  .como-funciona__numero {
+    font-size: var(--texto-3xl);
+    min-width: 2.5rem;
+  }
+
+  /* Tasación */
+  .tasacion {
+    padding: var(--espacio-12) 0;
+  }
+
+  .tasacion__inner {
+    grid-template-columns: 1fr;
+    padding: 0 var(--espacio-4);
+    gap: var(--espacio-8);
+  }
+
+  /* En mobile la info no es sticky */
+  .tasacion__info {
+    position: static;
+  }
+
+  .tasacion__titulo {
+    font-size: var(--texto-2xl);
+  }
+
+  .tasacion__fila {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+  }
+
+  .tasacion__formulario-wrapper {
+    padding: var(--espacio-6);
+  }
+
+  .tasacion__radios {
+    gap: var(--espacio-2);
+  }
+
+  /* CTA WhatsApp */
+  .vender-cta {
+    padding: var(--espacio-12) 0;
+  }
+
+  .vender-cta__inner {
+    padding: 0 var(--espacio-4);
+  }
+
+  .vender-cta__titulo {
+    font-size: var(--texto-2xl);
+  }
+
+  .vender-cta__btn-wa {
+    width: 100%;
+    justify-content: center;
+    padding: var(--espacio-4) var(--espacio-6);
+  }
+
+  /* Seccion header */
+  .seccion-header__titulo {
+    font-size: var(--texto-2xl);
+  }
+}

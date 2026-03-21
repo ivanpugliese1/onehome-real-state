@@ -5,35 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO primario -->
-  <title>Propiedades en venta y alquiler | OneHome Inmobiliaria</title>
-  <meta name="description"
-    content="Explorá todas las propiedades en venta y alquiler de OneHome Inmobiliaria. Casas, departamentos, PH y locales en CABA y GBA. Filtros por tipo, dormitorios y precio." />
+  <!-- SEO primario (el JS actualiza estos valores dinámicamente) -->
+  <title>Ficha de propiedad | OneHome Inmobiliaria</title>
+  <meta name="description" content="Detalle de propiedad en OneHome Inmobiliaria." />
+  <link rel="canonical" href="https://onehome.com.ar/pages/ficha.html" />
 
-  <!-- Open Graph para redes sociales -->
+  <!-- Open Graph para redes sociales (actualizados por JS) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Propiedades en venta y alquiler | OneHome" />
-  <meta property="og:description"
-    content="Explorá casas, departamentos, PH y locales en venta y alquiler en Argentina. Encontrá tu propiedad ideal con OneHome Inmobiliaria." />
-  <meta property="og:image" content="/assets/images/og-propiedades.jpg" />
-  <meta property="og:url" content="https://onehome.com.ar/pages/propiedades.html" />
+  <meta property="og:title" content="Propiedad | OneHome Inmobiliaria" />
+  <meta property="og:description" content="Detalle de propiedad en OneHome Inmobiliaria." />
+  <meta property="og:image" content="/assets/images/og-default.jpg" />
+  <meta property="og:url" content="https://onehome.com.ar/pages/ficha.html" />
   <meta property="og:locale" content="es_AR" />
 
-  <!-- Datos estructurados Schema.org -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Propiedades en venta y alquiler — OneHome Inmobiliaria",
-      "url": "https://onehome.com.ar/pages/propiedades.html",
-      "description": "Listado completo de propiedades en venta y alquiler en Argentina.",
-      "publisher": {
-        "@type": "RealEstateAgent",
-        "name": "OneHome Inmobiliaria",
-        "url": "https://onehome.com.ar",
-        "logo": "/assets/images/logo.png"
-      }
-    }
+  <!-- Datos estructurados Schema.org — contenido generado por JS -->
+  <script id="json-ld" type="application/ld+json">
+    {}
   </script>
 
   <!-- Fuentes: Playfair Display (títulos) + Lato (cuerpo) -->
@@ -42,10 +29,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="/assets/styles/main.css" />
+  <link rel="stylesheet" href="../assets/styles/main.css" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png" />
+  <link rel="icon" type="image/png" href="../assets/images/icons/favicon.png" />
 </head>
 
 <body>
@@ -78,8 +65,8 @@
       <!-- Controles: redes sociales + toggle de tema -->
       <div class="header__controles" aria-label="Acciones del header">
 
-        <a href="https://www.instagram.com/onehomeargentina/" class="header__social-link" target="_blank"
-          rel="noopener noreferrer" aria-label="Seguinos en Instagram">
+        <a href="https://instagram.com/onehome" class="header__social-link" target="_blank" rel="noopener noreferrer"
+          aria-label="Seguinos en Instagram">
           <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
             focusable="false">
             <path
@@ -87,7 +74,7 @@
           </svg>
         </a>
 
-        <a href="https://wa.me/541133662649" class="header__social-link" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/541100000000" class="header__social-link" target="_blank" rel="noopener noreferrer"
           aria-label="Contactanos por WhatsApp">
           <svg class="header__social-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
             focusable="false">
@@ -106,107 +93,16 @@
               d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
           </svg>
         </button>
-      </div>
+
+      </div><!-- /.header__controles -->
+
     </div>
   </header>
 
   <!-- ===================== MAIN ===================== -->
-  <main id="contenido-principal">
-
-    <!-- ---- HERO INTERNO ---- -->
-    <section class="hero-interno" aria-labelledby="propiedades-titulo">
-      <div class="hero-interno__inner">
-
-        <h1 id="propiedades-titulo" class="hero-interno__titulo">
-          Nuestras <em>propiedades</em>
-        </h1>
-
-        <p class="hero-interno__subtitulo">
-          Encontrá tu próximo hogar entre más de 500 propiedades en venta y alquiler en Argentina.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- ---- FILTROS ---- -->
-    <section class="filtros" aria-label="Filtros de búsqueda">
-      <div class="filtros__inner">
-
-        <!-- Tipo: Venta / Alquiler -->
-        <div class="filtros__grupo">
-          <label for="filtro-tipo" class="filtros__label">Tipo</label>
-          <select id="filtro-tipo" class="filtros__select" aria-label="Filtrar por tipo">
-            <option value="todos">Todos</option>
-            <option value="Venta">Venta</option>
-            <option value="Alquiler">Alquiler</option>
-          </select>
-        </div>
-
-        <!-- Dormitorios -->
-        <div class="filtros__grupo">
-          <label for="filtro-dormitorios" class="filtros__label">Dormitorios</label>
-          <select id="filtro-dormitorios" class="filtros__select" aria-label="Filtrar por cantidad de dormitorios">
-            <option value="todos">Todos</option>
-            <option value="1">1 dormitorio</option>
-            <option value="2">2 dormitorios</option>
-            <option value="3">3 dormitorios</option>
-            <option value="4">4 o más</option>
-          </select>
-        </div>
-
-        <!-- Precio (solo para ventas en USD) -->
-        <div class="filtros__grupo">
-          <label for="filtro-precio" class="filtros__label">Precio venta</label>
-          <select id="filtro-precio" class="filtros__select" aria-label="Filtrar por rango de precio">
-            <option value="todos">Cualquier precio</option>
-            <option value="hasta-200">Hasta USD 200.000</option>
-            <option value="200-400">USD 200.000 – 400.000</option>
-            <option value="mas-400">Más de USD 400.000</option>
-          </select>
-        </div>
-
-        <!-- Limpiar filtros -->
-        <button id="btn-limpiar" class="filtros__btn-limpiar" type="button" aria-label="Limpiar todos los filtros">
-          Limpiar filtros
-        </button>
-
-      </div>
-    </section>
-
-    <!-- ---- LISTADO DE PROPIEDADES ---- -->
-    <section class="listado" id="listado" aria-labelledby="listado-titulo">
-      <div class="listado__inner">
-
-        <!-- Encabezado con contador -->
-        <div class="listado__header">
-          <h2 id="listado-titulo" class="sr-only">Listado de propiedades</h2>
-          <p id="contador-propiedades" class="listado__contador" aria-live="polite" aria-atomic="true"></p>
-        </div>
-
-        <!-- Grid de cards (renderizado dinámicamente por JS) -->
-        <ul id="grid-propiedades" class="propiedades-grid" role="list" aria-label="Propiedades disponibles">
-          <!-- Las cards se insertan acá por propiedades-page.js -->
-        </ul>
-
-        <!-- Estado sin resultados (oculto por defecto) -->
-        <div id="sin-resultados" class="sin-resultados" hidden aria-live="polite">
-          <span class="sin-resultados__icono" aria-hidden="true">🏚️</span>
-          <h3 class="sin-resultados__titulo">Sin resultados</h3>
-          <p class="sin-resultados__texto">
-            No encontramos propiedades con los filtros seleccionados.<br />
-            Probá con otros criterios o limpiá los filtros.
-          </p>
-          <button class="boton boton--primario" type="button" onclick="document.getElementById('btn-limpiar').click()">
-            Ver todas las propiedades
-          </button>
-        </div>
-
-        <!-- Paginación (renderizada dinámicamente por JS) -->
-        <nav id="paginacion" class="paginacion" aria-label="Paginación de propiedades" hidden></nav>
-
-      </div>
-    </section>
-
+  <!-- Todo el contenido de la ficha es generado dinámicamente por ficha-page.js -->
+  <main class="ficha" id="ficha-main" aria-label="Ficha de propiedad">
+    <!-- JS monta acá: breadcrumb, galería, layout, formulario, relacionadas -->
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -301,7 +197,7 @@
       </li>
 
       <li class="nav-mobile__item">
-        <a href="/pages/propiedades.html" class="nav-mobile__link" aria-current="page" aria-label="Propiedades">
+        <a href="/pages/propiedades.html" class="nav-mobile__link" aria-label="Propiedades">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5v-2h2v2zm4 4H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z" />
@@ -333,8 +229,8 @@
     </ul>
   </nav>
 
-  <!-- Script de la página (reemplaza main.js, ya incluye initTheme/Scroll/etc.) -->
-  <script type="module" src="/assets/js/pages/propiedades-page.js"></script>
+  <!-- Script de la página -->
+  <script type="module" src="../assets/js/pages/ficha-page.js"></script>
 
 </body>
 

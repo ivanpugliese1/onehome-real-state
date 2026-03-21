@@ -27,8 +27,8 @@
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   fill: currentColor;
   pointer-events: none;
   /* No ponemos display acá para no sobreescribir las reglas de visibilidad:
