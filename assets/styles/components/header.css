@@ -219,6 +219,7 @@
   }
 
   .header__contacto-mobile:hover {
+    color: var(--color-blanco);
     background-color: var(--color-primario-hover);
   }
 
