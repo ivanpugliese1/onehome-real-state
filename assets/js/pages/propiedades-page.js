@@ -90,7 +90,7 @@ function renderizar() {
   } else {
     gridEl.hidden = false;
     sinResultadosEl.hidden = true;
-    gridEl.innerHTML = slice.map(cardHTML).join('');
+    gridEl.innerHTML = slice.map(p => cardHTML(p, 'ficha.html')).join('');
   }
 
   // Texto informativo del contador

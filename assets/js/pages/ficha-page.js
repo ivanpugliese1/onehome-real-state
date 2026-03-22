@@ -494,7 +494,7 @@ function renderRelacionadas(p) {
             <li class="card-propiedad__dato">📐 ${rel.superficie} m²</li>
           </ul>
           <div class="card-propiedad__acciones">
-            <a href="/pages/ficha.html?id=${rel.id}" class="card-propiedad__btn-ficha">Ver ficha</a>
+            <a href="ficha.html?id=${rel.id}" class="card-propiedad__btn-ficha">Ver ficha</a>
             <a href="https://wa.me/${WA_NUMERO}?text=${waMsg}"
               class="card-propiedad__btn-wa" target="_blank" rel="noopener noreferrer"
               aria-label="Consultar por WhatsApp">
