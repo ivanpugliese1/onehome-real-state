@@ -1,33 +1,13 @@
-/* =========================================================
-   propiedades.css — estilos de la página de listado
-   ========================================================= */
-
-
-/* =========================================================
-   HERO INTERNO
-   Sobreescribe solo la imagen de fondo del .hero-interno
-   definido en nosotros.css. El resto del patrón (overlay,
-   z-index, tipografía) lo hereda de allí.
-   ========================================================= */
-
-/* Imagen específica para propiedades: vista de fachadas/barrio */
 .hero-interno {
   background-image: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80');
 }
-
-
-/* =========================================================
-   FILTROS
-   Barra de búsqueda + selects alineados horizontalmente.
-   En mobile se apilan en 1 columna.
-   ========================================================= */
 
 .filtros {
   background-color: var(--color-fondo-alt);
   border-bottom: var(--borde-base);
   padding: var(--espacio-8) 0;
   position: sticky;
-  top: 72px; /* altura del header */
+  top: 72px;
   z-index: 90;
 }
 
@@ -71,7 +51,6 @@
   width: 100%;
 }
 
-/* Select: flecha personalizada */
 .filtros__select {
   appearance: none;
   -webkit-appearance: none;
@@ -95,7 +74,6 @@
   opacity: 0.7;
 }
 
-/* Botón limpiar filtros */
 .filtros__btn-limpiar {
   padding: var(--espacio-3) var(--espacio-5);
   border: 1px solid var(--color-borde);
@@ -112,7 +90,7 @@
     border-color var(--transicion-rapida);
   white-space: nowrap;
   align-self: flex-end;
-  height: 36px; /* alinea con los inputs */
+  height: 36px;
 }
 
 .filtros__btn-limpiar:hover {
@@ -120,12 +98,6 @@
   color: var(--color-acento);
   border-color: var(--color-acento);
 }
-
-
-/* =========================================================
-   LISTADO
-   Sección principal con contador, grid y paginación.
-   ========================================================= */
 
 .listado {
   padding: var(--espacio-12) 0 var(--espacio-20);
@@ -144,7 +116,7 @@
   margin-bottom: var(--espacio-8);
   flex-wrap: wrap;
   gap: var(--espacio-3);
-  min-height: 1.5rem; /* evita el salto de layout cuando el contador es vacío */
+  min-height: 1.5rem;
 }
 
 .listado__contador {
@@ -152,12 +124,6 @@
   color: var(--color-texto-suave);
   font-style: italic;
 }
-
-
-/* =========================================================
-   GRID DE PROPIEDADES
-   3 columnas → 2 tablet → 1 mobile
-   ========================================================= */
 
 .propiedades-grid {
   display: grid;
@@ -179,12 +145,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-
-/* =========================================================
-   SIN RESULTADOS
-   Estado vacío cuando ninguna propiedad pasa el filtro.
-   ========================================================= */
 
 .sin-resultados {
   text-align: center;
@@ -212,12 +172,6 @@
   margin: 0 auto var(--espacio-6);
   line-height: var(--linea-suelta);
 }
-
-
-/* =========================================================
-   PAGINACIÓN
-   Botones de navegación + números de página + ellipsis.
-   ========================================================= */
 
 .paginacion {
   display: flex;
@@ -283,11 +237,6 @@
   user-select: none;
 }
 
-
-/* =========================================================
-   DARK MODE
-   ========================================================= */
-
 [data-theme="dark"] .filtros {
   background-color: var(--color-fondo-alt);
   border-bottom-color: var(--color-borde);
@@ -320,14 +269,9 @@
   color: var(--color-blanco);
 }
 
-
-/* =========================================================
-   RESPONSIVE FILTROS
-   ========================================================= */
-
 @media (max-width: 768px) {
   .filtros {
-    position: static; /* en mobile no sticky para no robar espacio */
+    position: static;
   }
 
   .filtros__grupo {

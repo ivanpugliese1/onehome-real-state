@@ -1,18 +1,12 @@
-// vender-page.js — lógica de la página Vender / Alquilar
-// Maneja validación del formulario de tasación gratuita
-
 import { initTheme } from '../utils/theme.js';
 import { initScroll } from '../utils/scroll.js';
 import { initAnimations } from '../utils/animations.js';
 import { initNav } from '../utils/nav.js';
 
-// Inicializar utilidades compartidas (igual que otras páginas)
 initTheme();
 initScroll();
 initAnimations();
 initNav();
-
-// ── Formulario de tasación ────────────────────────────────────────────────────
 
 const form = document.getElementById('form-tasacion');
 
@@ -26,25 +20,20 @@ if (form) {
     }
   });
 
-  // Limpiar error al modificar un campo
   form.querySelectorAll('.tasacion__input, .tasacion__select, .tasacion__textarea').forEach((campo) => {
     campo.addEventListener('input', () => limpiarErrorCampo(campo));
   });
 }
 
-// ── Validación ────────────────────────────────────────────────────────────────
-
 function validarForm() {
   let valido = true;
 
-  // Nombre
   const nombre = document.getElementById('tasacion-nombre');
   if (!nombre.value.trim()) {
     mostrarError(nombre, 'tasacion-nombre-error', 'El nombre es obligatorio.');
     valido = false;
   }
 
-  // Email
   const email = document.getElementById('tasacion-email');
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email.value.trim()) {
@@ -55,7 +44,6 @@ function validarForm() {
     valido = false;
   }
 
-  // Teléfono (acepta formatos argentinos: 11 5678-1234, +54 9 11 etc.)
   const telefono = document.getElementById('tasacion-telefono');
   const regexTel = /^[\d\s\+\-\(\)]{7,20}$/;
   if (!telefono.value.trim()) {
@@ -66,21 +54,18 @@ function validarForm() {
     valido = false;
   }
 
-  // Tipo de propiedad
   const tipo = document.getElementById('tasacion-tipo');
   if (!tipo.value) {
     mostrarError(tipo, 'tasacion-tipo-error', 'Seleccioná el tipo de propiedad.');
     valido = false;
   }
 
-  // Dirección
   const direccion = document.getElementById('tasacion-direccion');
   if (!direccion.value.trim()) {
     mostrarError(direccion, 'tasacion-direccion-error', 'La dirección es obligatoria.');
     valido = false;
   }
 
-  // Operación (radio buttons)
   const operacion = form.querySelector('input[name="operacion"]:checked');
   if (!operacion) {
     const errorEl = document.getElementById('tasacion-operacion-error');
@@ -93,8 +78,6 @@ function validarForm() {
 
   return valido;
 }
-
-// ── Helpers de UI ─────────────────────────────────────────────────────────────
 
 function mostrarError(campo, idError, mensaje) {
   campo.classList.add('tasacion__input--error');

@@ -1,21 +1,7 @@
-/* =========================================================
-   ficha.css — estilos de la página de ficha de propiedad
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   CONTENEDOR PRINCIPAL
---------------------------------------------------------- */
-
 .ficha {
   padding-bottom: var(--espacio-20);
   background-color: var(--color-fondo);
 }
-
-
-/* ---------------------------------------------------------
-   BREADCRUMB
---------------------------------------------------------- */
 
 .ficha__breadcrumb {
   background-color: var(--color-fondo-alt);
@@ -61,11 +47,6 @@
   font-weight: var(--peso-medio);
 }
 
-
-/* ---------------------------------------------------------
-   FILA SUPERIOR: galería + sidebar en dos columnas
---------------------------------------------------------- */
-
 .ficha__top-row {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -76,13 +57,8 @@
   align-items: start;
 }
 
-
-/* ---------------------------------------------------------
-   GALERÍA
---------------------------------------------------------- */
-
 .ficha__galeria {
-  min-width: 0; /* evita overflow en la celda del grid */
+  min-width: 0;
 }
 
 .ficha__galeria-principal {
@@ -147,18 +123,12 @@
   border-color: var(--color-primario);
 }
 
-
-/* ---------------------------------------------------------
-   INFO PRINCIPAL — debajo de la fila superior
---------------------------------------------------------- */
-
 .ficha__contenido {
   max-width: var(--ancho-contenido);
   margin: var(--espacio-8) auto 0;
   padding: 0 var(--espacio-6);
 }
 
-/* Badge venta / alquiler */
 .ficha__badge {
   display: inline-block;
   padding: var(--espacio-1) var(--espacio-4);
@@ -172,7 +142,6 @@
   margin-bottom: var(--espacio-4);
 }
 
-/* Título h1 */
 .ficha__titulo {
   font-family: var(--font-heading);
   font-size: var(--texto-4xl);
@@ -182,7 +151,6 @@
   margin: 0 0 var(--espacio-4);
 }
 
-/* Ubicación con ícono */
 .ficha__ubicacion {
   display: flex;
   align-items: center;
@@ -199,7 +167,6 @@
   flex-shrink: 0;
 }
 
-/* Descripción */
 .ficha__descripcion {
   font-size: var(--texto-base);
   color: var(--color-texto);
@@ -207,14 +174,12 @@
   margin-bottom: var(--espacio-8);
 }
 
-/* Divisor */
 .ficha__divisor {
   border: none;
   border-top: var(--borde-base);
   margin: var(--espacio-8) 0;
 }
 
-/* Subtítulo de sección */
 .ficha__subtitulo {
   font-family: var(--font-heading);
   font-size: var(--texto-xl);
@@ -223,7 +188,6 @@
   margin: 0 0 var(--espacio-5);
 }
 
-/* Características en grid */
 .ficha__caracteristicas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -266,7 +230,6 @@
   line-height: 1.2;
 }
 
-/* Lista de lo que incluye */
 .ficha__features-lista {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -291,14 +254,9 @@
   flex-shrink: 0;
 }
 
-
-/* ---------------------------------------------------------
-   SIDEBAR — columna derecha en la fila superior
---------------------------------------------------------- */
-
 .ficha__sidebar {
   position: sticky;
-  top: 90px; /* debajo del header, útil si la galería es alta */
+  top: 90px;
 }
 
 .ficha__sidebar-card {
@@ -312,7 +270,6 @@
   gap: var(--espacio-5);
 }
 
-/* Precio destacado */
 .ficha__precio {
   font-family: var(--font-heading);
   font-size: var(--texto-3xl);
@@ -328,7 +285,6 @@
   margin: var(--espacio-1) 0 0;
 }
 
-/* Datos clave en grid 2x2 */
 .ficha__datos-clave {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -367,7 +323,6 @@
   line-height: 1.2;
 }
 
-/* Botón WhatsApp — verde grande */
 .ficha__btn-whatsapp {
   display: flex;
   align-items: center;
@@ -403,7 +358,6 @@
   flex-shrink: 0;
 }
 
-/* Compartir */
 .ficha__compartir {
   padding-top: var(--espacio-4);
   border-top: var(--borde-base);
@@ -455,17 +409,11 @@
   flex-shrink: 0;
 }
 
-/* Feedback al copiar link */
 .ficha__btn-compartir--copiado {
   background-color: var(--color-exito);
   color: #fff;
   border-color: var(--color-exito);
 }
-
-
-/* ---------------------------------------------------------
-   PROPIEDADES RELACIONADAS
---------------------------------------------------------- */
 
 .ficha__relacionadas {
   max-width: var(--ancho-contenido);
@@ -490,15 +438,9 @@
   margin: 0;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .ficha__top-row {
-    grid-template-columns: 1fr; /* galería arriba, sidebar abajo */
+    grid-template-columns: 1fr;
   }
 
   .ficha__sidebar {
@@ -514,7 +456,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .ficha__top-row {
     padding: 0 var(--espacio-4);

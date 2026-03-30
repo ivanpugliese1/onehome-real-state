@@ -1,5 +1,3 @@
-// nav.js — marca el link activo en la barra de navegación mobile
-
 export function initNav() {
   const links = document.querySelectorAll('.nav-mobile__link');
   const rutaActual = window.location.pathname;

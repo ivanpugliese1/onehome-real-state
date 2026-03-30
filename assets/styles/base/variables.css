@@ -15,7 +15,6 @@
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Aliases de compatibilidad — apuntan a la nueva paleta */
   --color-primario: var(--color-primary);
   --color-primario-hover: var(--color-primary-dark);
   --color-primario-claro: var(--color-accent);
@@ -37,72 +36,43 @@
   --color-negro: var(--color-text);
   --color-superficie: var(--color-surface);
 
-  /* Estado — feedback de acciones del usuario */
   --color-exito: #2D7A4F;
   --color-error: #C0392B;
   --color-aviso: #C4714A;
   --color-info: #1B3A5C;
 
-
-  /* Escala tipográfica (base 16px) */
   --texto-xs: 0.75rem;
-  /*  12px */
   --texto-sm: 0.875rem;
-  /*  14px */
   --texto-base: 1rem;
-  /*  16px */
   --texto-md: 1.125rem;
-  /*  18px */
   --texto-lg: 1.25rem;
-  /*  20px */
   --texto-xl: 1.5rem;
-  /*  24px */
   --texto-2xl: 1.875rem;
-  /*  30px */
   --texto-3xl: 2.25rem;
-  /*  36px */
   --texto-4xl: 3rem;
-  /*  48px */
   --texto-5xl: 3.75rem;
-  /*  60px */
 
-  /* Pesos */
   --peso-normal: 400;
   --peso-medio: 500;
   --peso-semibold: 600;
   --peso-bold: 700;
 
-  /* Interlineado */
   --linea-apretada: 1.2;
   --linea-normal: 1.5;
   --linea-suelta: 1.75;
 
-
   --espacio-1: 0.25rem;
-  /*   4px */
   --espacio-2: 0.5rem;
-  /*   8px */
   --espacio-3: 0.75rem;
-  /*  12px */
   --espacio-4: 1rem;
-  /*  16px */
   --espacio-5: 1.25rem;
-  /*  20px */
   --espacio-6: 1.5rem;
-  /*  24px */
   --espacio-8: 2rem;
-  /*  32px */
   --espacio-10: 2.5rem;
-  /*  40px */
   --espacio-12: 3rem;
-  /*  48px */
   --espacio-16: 4rem;
-  /*  64px */
   --espacio-20: 5rem;
-  /*  80px */
   --espacio-24: 6rem;
-  /*  96px */
-
 
   --ancho-contenido: 1200px;
   --ancho-angosto: 800px;
@@ -145,12 +115,9 @@
   --transicion-rapida: 150ms ease;
   --transicion-normal: 250ms ease;
   --transicion-suave: 400ms ease;
-
 }
 
 [data-theme="dark"] {
-
-  /* Paleta dark — tonos oscuros relacionados con el sage green del tema claro */
   --color-primary: #8FAB7E;
   --color-primary-dark: #7A9668;
   --color-primary-light: #A4BE95;
@@ -165,7 +132,6 @@
   --shadow: 0 4px 24px rgba(0, 0, 0, .35);
   --shadow-lg: 0 12px 48px rgba(0, 0, 0, .45);
 
-  /* Aliases de compatibilidad — dark */
   --color-primario: var(--color-primary);
   --color-primario-hover: var(--color-primary-dark);
   --color-primario-claro: var(--color-accent);
@@ -203,7 +169,6 @@
 
   --sombra-card-hover:
     var(--shadow-lg);
-
 }
 
 [data-theme="dark"] .header {

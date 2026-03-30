@@ -1,26 +1,6 @@
-/* =========================================================
-   vender.css — estilos específicos de la página Vender / Alquilar
-   ========================================================= */
-
-
-/* =========================================================
-   HERO INTERNO
-   Sobreescribe solo la imagen de fondo del .hero-interno
-   definido en nosotros.css. El resto del patrón (overlay,
-   z-index, tipografía) lo hereda de allí.
-   ========================================================= */
-
-/* Imagen específica para vender: firma/negociación/contrato */
 .hero-interno {
   background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80');
 }
-
-
-/* =========================================================
-   POR QUÉ ELEGIRNOS PARA VENDER
-   Grid de 3 cards con ícono + título + descripción.
-   Fondo blanco sobre fondo crema del hero, alternado.
-   ========================================================= */
 
 .vender-ventajas {
   background-color: var(--color-fondo);
@@ -45,7 +25,6 @@
   margin: 0;
 }
 
-/* Card de ventaja */
 .vender-ventaja {
   display: flex;
   flex-direction: column;
@@ -100,14 +79,6 @@
   margin: 0;
 }
 
-
-/* =========================================================
-   CÓMO FUNCIONA
-   Timeline vertical de 4 pasos. Número grande decorativo
-   a la izquierda, línea conectora entre pasos.
-   Fondo crema alternado.
-   ========================================================= */
-
 .como-funciona {
   background-color: var(--color-fondo-alt);
   padding: var(--espacio-20) 0;
@@ -131,7 +102,6 @@
   margin: 0;
 }
 
-/* Paso individual */
 .como-funciona__paso {
   display: flex;
   gap: var(--espacio-5);
@@ -147,7 +117,6 @@
   box-shadow: var(--sombra-md);
 }
 
-/* Número grande decorativo */
 .como-funciona__numero {
   font-family: var(--font-heading);
   font-size: var(--texto-4xl);
@@ -181,13 +150,6 @@
   margin: 0;
 }
 
-
-/* =========================================================
-   FORMULARIO DE TASACIÓN
-   Dos columnas: info a la izquierda, formulario a la derecha.
-   Misma estructura visual que la sección de contacto del home.
-   ========================================================= */
-
 .tasacion {
   background-color: var(--color-fondo);
   padding: var(--espacio-20) 0;
@@ -203,16 +165,12 @@
   align-items: start;
 }
 
-/* ---------------------------------------------------------
-   COLUMNA IZQUIERDA — info
---------------------------------------------------------- */
-
 .tasacion__info {
   display: flex;
   flex-direction: column;
   gap: var(--espacio-6);
   position: sticky;
-  top: calc(80px + var(--espacio-8)); /* debajo del header fijo */
+  top: calc(80px + var(--espacio-8));
 }
 
 .tasacion__eyebrow {
@@ -240,7 +198,6 @@
   margin: 0;
 }
 
-/* Datos de contacto rápido */
 .tasacion__contacto-rapido {
   display: flex;
   flex-direction: column;
@@ -288,10 +245,6 @@
   color: var(--color-primario);
 }
 
-/* ---------------------------------------------------------
-   COLUMNA DERECHA — formulario
---------------------------------------------------------- */
-
 .tasacion__formulario-wrapper {
   background-color: var(--color-blanco);
   border-radius: var(--radio-xl);
@@ -306,14 +259,12 @@
   gap: var(--espacio-5);
 }
 
-/* Fila de dos campos lado a lado */
 .tasacion__fila {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--espacio-4);
 }
 
-/* Campo individual */
 .tasacion__campo {
   display: flex;
   flex-direction: column;
@@ -326,20 +277,17 @@
   color: var(--color-texto);
 }
 
-/* Indicador de campo requerido */
 .tasacion__requerido {
   color: var(--color-error);
   margin-left: 2px;
 }
 
-/* Indicador de campo opcional */
 .tasacion__opcional {
   font-weight: var(--peso-normal);
   color: var(--color-texto-suave);
   font-size: var(--texto-xs);
 }
 
-/* Inputs y select */
 .tasacion__input,
 .tasacion__select {
   width: 100%;
@@ -360,7 +308,6 @@
 }
 
 .tasacion__select {
-  /* Flecha personalizada */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B6B7B' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--espacio-3) center;
@@ -373,14 +320,12 @@
   color: var(--color-gris-medio);
 }
 
-/* Estado focus */
 .tasacion__input:focus,
 .tasacion__select:focus {
   border-color: var(--color-primario);
   box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.15);
 }
 
-/* Estado error */
 .tasacion__input--error,
 .tasacion__select--error {
   border-color: var(--color-error);
@@ -391,7 +336,6 @@
   box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
 }
 
-/* Textarea */
 .tasacion__textarea {
   width: 100%;
   padding: var(--espacio-3) var(--espacio-4);
@@ -419,14 +363,12 @@
   box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.15);
 }
 
-/* Mensaje de error de campo */
 .tasacion__campo-error {
   font-size: var(--texto-xs);
   color: var(--color-error);
   margin: 0;
 }
 
-/* Radio buttons de operación */
 .tasacion__radios {
   display: flex;
   gap: var(--espacio-3);
@@ -467,14 +409,12 @@
   color: var(--color-texto);
 }
 
-/* Botón submit */
 .tasacion__btn-enviar {
   width: 100%;
   justify-content: center;
   margin-top: var(--espacio-2);
 }
 
-/* Mensaje de éxito */
 .tasacion__exito {
   display: flex;
   align-items: center;
@@ -500,13 +440,6 @@
   line-height: var(--linea-normal);
 }
 
-
-/* =========================================================
-   CTA WHATSAPP
-   Sección oscura de cierre con botón de WhatsApp verde.
-   Mismo patrón visual que nosotros-cta.
-   ========================================================= */
-
 .vender-cta {
   background-color: var(--color-fondo-alt);
   padding: var(--espacio-20) 0;
@@ -515,7 +448,6 @@
   overflow: hidden;
 }
 
-/* Decoración de fondo */
 .vender-cta::before {
   content: '';
   position: absolute;
@@ -579,7 +511,6 @@
   margin: 0;
 }
 
-/* Botón WhatsApp verde */
 .vender-cta__btn-wa {
   display: inline-flex;
   align-items: center;
@@ -613,13 +544,6 @@
   fill: currentColor;
   flex-shrink: 0;
 }
-
-
-/* =========================================================
-   SECCION HEADER (eyebrow + título + descripción)
-   Reutilizado en varias secciones.
-   Si no está definido en otro CSS, lo declaramos acá.
-   ========================================================= */
 
 .seccion-header {
   display: flex;
@@ -655,11 +579,6 @@
   max-width: 560px;
   margin: 0;
 }
-
-
-/* =========================================================
-   BOTONES — estilos base si no están en otro componente
-   ========================================================= */
 
 .boton {
   display: inline-flex;
@@ -709,11 +628,6 @@
   font-size: var(--texto-md);
 }
 
-
-/* =========================================================
-   RESPONSIVE — TABLET (max 1024px)
-   ========================================================= */
-
 @media (max-width: 1024px) {
 
   .vender-ventajas__lista {
@@ -743,14 +657,8 @@
   }
 }
 
-
-/* =========================================================
-   RESPONSIVE — MOBILE (max 768px)
-   ========================================================= */
-
 @media (max-width: 768px) {
 
-  /* Ventajas */
   .vender-ventajas {
     padding: var(--espacio-12) 0;
   }
@@ -769,7 +677,6 @@
     padding: var(--espacio-6);
   }
 
-  /* Cómo funciona */
   .como-funciona {
     padding: var(--espacio-12) 0;
   }
@@ -793,7 +700,6 @@
     min-width: 2.5rem;
   }
 
-  /* Tasación */
   .tasacion {
     padding: var(--espacio-12) 0;
   }
@@ -804,7 +710,6 @@
     gap: var(--espacio-8);
   }
 
-  /* En mobile la info no es sticky */
   .tasacion__info {
     position: static;
   }
@@ -826,7 +731,6 @@
     gap: var(--espacio-2);
   }
 
-  /* CTA WhatsApp */
   .vender-cta {
     padding: var(--espacio-12) 0;
   }
@@ -845,7 +749,6 @@
     padding: var(--espacio-4) var(--espacio-6);
   }
 
-  /* Seccion header */
   .seccion-header__titulo {
     font-size: var(--texto-2xl);
   }

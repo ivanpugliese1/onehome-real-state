@@ -4,60 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO primario (el JS actualiza estos valores dinámicamente) -->
   <title>Ficha de propiedad | OneHome Inmobiliaria</title>
   <meta name="description" content="Detalle de propiedad en OneHome Inmobiliaria." />
   <link rel="canonical" href="https://onehome.com.ar/pages/ficha.html" />
-
-  <!-- Open Graph para redes sociales (actualizados por JS) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Propiedad | OneHome Inmobiliaria" />
   <meta property="og:description" content="Detalle de propiedad en OneHome Inmobiliaria." />
   <meta property="og:image" content="/assets/images/og-default.jpg" />
   <meta property="og:url" content="https://onehome.com.ar/pages/ficha.html" />
   <meta property="og:locale" content="es_AR" />
-
-  <!-- Datos estructurados Schema.org — contenido generado por JS -->
   <script id="json-ld" type="application/ld+json">
     {}
   </script>
-
-  <!-- Fuentes: Playfair Display (títulos) + Lato (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles/main.css" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/images/icons/favicon.png" />
 </head>
 
 <body>
-
-  <!-- ===================== HEADER ===================== -->
   <header class="header">
     <div class="header__inner">
-
-      <!-- Logo -->
-      <a href="" class="header__logo" aria-label="OneHome Inmobiliaria — inicio">
+      <a href="../index.html" class="header__logo" aria-label="OneHome Inmobiliaria — inicio">
         <span class="header__logo-nombre">ONE HOME</span>
         <span class="header__logo-subtitulo">Consultores Inmobiliarios</span>
       </a>
 
-      <!-- Navegación principal -->
       <nav class="header__nav" id="header-nav" aria-label="Navegación principal">
         <ul class="header__nav-list" role="list">
-          <li><a href="" class="header__nav-link">Inicio</a></li>
+          <li><a href="../index.html" class="header__nav-link">Inicio</a></li>
           <li><a href="propiedades.html" class="header__nav-link" aria-current="page">Propiedades</a></li>
           <li><a href="vender.html" class="header__nav-link">Vender / Alquilar</a></li>
           <li><a href="nosotros.html" class="header__nav-link">Nosotros</a></li>
         </ul>
       </nav>
 
-      <!-- Controles: redes sociales + toggle de tema -->
       <div class="header__controles" aria-label="Acciones del header">
 
         <a href="https://instagram.com/onehome" class="header__social-link" target="_blank" rel="noopener noreferrer"
@@ -89,22 +73,19 @@
           </svg>
         </button>
 
-      </div><!-- /.header__controles -->
+      </div>
 
     </div>
   </header>
 
-  <!-- ===================== MAIN ===================== -->
-  <!-- Todo el contenido de la ficha es generado dinámicamente por ficha-page.js -->
   <main class="ficha" id="ficha-main" aria-label="Ficha de propiedad">
-    <!-- JS monta acá: breadcrumb, galería, layout, formulario, relacionadas -->
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__marca">
-        <a href="" class="footer__logo" aria-label="OneHome Inmobiliaria — inicio">
+        <a href="../index.html" class="footer__logo" aria-label="OneHome Inmobiliaria — inicio">
           <span class="footer__logo-nombre">ONE HOME</span>
           <span class="footer__logo-subtitulo">Consultores Inmobiliarios</span>
         </a>
@@ -116,7 +97,7 @@
       <nav class="footer__nav" aria-label="Navegación del footer">
         <h3 class="footer__nav-titulo">Páginas</h3>
         <ul class="footer__nav-lista" role="list">
-          <li><a href="" class="footer__nav-link">Inicio</a></li>
+          <li><a href="../index.html" class="footer__nav-link">Inicio</a></li>
           <li><a href="propiedades.html" class="footer__nav-link">Propiedades</a></li>
           <li><a href="vender.html" class="footer__nav-link">Vender / Alquilar</a></li>
           <li><a href="nosotros.html" class="footer__nav-link">Nosotros</a></li>
@@ -170,7 +151,6 @@
 
     </div>
 
-    <!-- Barra inferior: copyright -->
     <div class="footer__legal">
       <p class="footer__copyright">
         &copy; 2026 OneHome Inmobiliaria. Todos los derechos reservados.
@@ -178,12 +158,11 @@
     </div>
   </footer>
 
-  <!-- ===================== NAV MOBILE ===================== -->
   <nav class="nav-mobile" aria-label="Navegación móvil">
     <ul class="nav-mobile__list" role="list">
 
       <li class="nav-mobile__item">
-        <a href="" class="nav-mobile__link" aria-label="Inicio">
+        <a href="../index.html" class="nav-mobile__link" aria-label="Inicio">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
           </svg>
@@ -224,7 +203,6 @@
     </ul>
   </nav>
 
-  <!-- Script de la página -->
   <script type="module" src="../assets/js/pages/ficha-page.js"></script>
 
 </body>

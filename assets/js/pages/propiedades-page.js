@@ -1,6 +1,3 @@
-// propiedades-page.js — lógica de la página de listado de propiedades
-// Maneja filtros, paginación y renderizado dinámico de cards
-
 import { propiedades } from '../data/propiedades.js';
 import { initTheme } from '../utils/theme.js';
 import { initScroll } from '../utils/scroll.js';
@@ -8,16 +5,13 @@ import { initAnimations } from '../utils/animations.js';
 import { initNav } from '../utils/nav.js';
 import { cardHTML } from '../components/state-card.js';
 
-// Inicializar utilidades compartidas (igual que main.js)
 initTheme();
 initScroll();
 initAnimations();
 initNav();
 
-// ── Constantes ───────────────────────────────────────────────────────────────
 const POR_PAGINA = 6;
 
-// ── Estado de la app ─────────────────────────────────────────────────────────
 let filtros = {
   tipo: 'todos',
   dormitorios: 'todos',
@@ -26,20 +20,15 @@ let filtros = {
 let paginaActual = 1;
 let esPrimerRender = true;
 
-// ── Referencias DOM ───────────────────────────────────────────────────────────
 const gridEl = document.getElementById('grid-propiedades');
 const contadorEl = document.getElementById('contador-propiedades');
 const paginacionEl = document.getElementById('paginacion');
 const sinResultadosEl = document.getElementById('sin-resultados');
 
-// ── Filtrado ──────────────────────────────────────────────────────────────────
-
 function propiedadesFiltradas() {
   return propiedades.filter((p) => {
-    // Tipo (Venta / Alquiler)
     if (filtros.tipo !== 'todos' && p.tipo !== filtros.tipo) return false;
 
-    // Dormitorios (4 = "4 o más")
     if (filtros.dormitorios !== 'todos') {
       const dorms = parseInt(filtros.dormitorios, 10);
       if (filtros.dormitorios === '4') {
@@ -49,8 +38,6 @@ function propiedadesFiltradas() {
       }
     }
 
-    // Precio — solo filtra propiedades en USD (ventas);
-    // las de alquiler en ARS pasan este filtro siempre
     if (filtros.precio !== 'todos' && p.moneda === 'USD') {
       const [min, max] = rangoPrecio(filtros.precio);
       if (p.precioNum < min || p.precioNum > max) return false;
@@ -69,20 +56,16 @@ function rangoPrecio(opcion) {
   }
 }
 
-// ── Renderizado principal ─────────────────────────────────────────────────────
-
 function renderizar() {
   const lista = propiedadesFiltradas();
   const totalPaginas = Math.max(1, Math.ceil(lista.length / POR_PAGINA));
 
-  // Si la página actual quedó fuera de rango (ej: al filtrar), ir a la 1
   if (paginaActual > totalPaginas) paginaActual = 1;
 
   const inicio = (paginaActual - 1) * POR_PAGINA;
   const fin = inicio + POR_PAGINA;
   const slice = lista.slice(inicio, fin);
 
-  // Grid de cards
   if (lista.length === 0) {
     gridEl.innerHTML = '';
     gridEl.hidden = true;
@@ -93,7 +76,6 @@ function renderizar() {
     gridEl.innerHTML = slice.map(p => cardHTML(p, 'ficha.html')).join('');
   }
 
-  // Texto informativo del contador
   if (lista.length > 0) {
     const desde = inicio + 1;
     const hasta = Math.min(fin, lista.length);
@@ -104,16 +86,11 @@ function renderizar() {
     contadorEl.textContent = '';
   }
 
-  // Paginación
   renderPaginacion(totalPaginas);
 
-  // Actualizar URL (replaceState en el primer render para no romper el historial)
   actualizarURL(esPrimerRender);
   esPrimerRender = false;
 }
-
-
-// ── Paginación ────────────────────────────────────────────────────────────────
 
 function renderPaginacion(totalPaginas) {
   if (totalPaginas <= 1) {
@@ -123,7 +100,6 @@ function renderPaginacion(totalPaginas) {
   }
   paginacionEl.hidden = false;
 
-  // Ventana deslizante: siempre incluye primera, última y ±2 alrededor de la actual
   const paginasVisibles = [];
   for (let i = 1; i <= totalPaginas; i++) {
     if (
@@ -135,7 +111,6 @@ function renderPaginacion(totalPaginas) {
     }
   }
 
-  // Construir botones insertando "…" donde haya saltos
   const items = [];
   for (let j = 0; j < paginasVisibles.length; j++) {
     if (j > 0 && paginasVisibles[j] - paginasVisibles[j - 1] > 1) {
@@ -170,21 +145,17 @@ function renderPaginacion(totalPaginas) {
     </button>
   `;
 
-  // Delegación de eventos en el contenedor de paginación
   paginacionEl.querySelectorAll('[data-pagina]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const nueva = parseInt(btn.dataset.pagina, 10);
       if (!isNaN(nueva) && nueva >= 1 && nueva <= totalPaginas) {
         paginaActual = nueva;
         renderizar();
-        // Scroll suave al inicio de la sección de listado
         document.getElementById('listado').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 }
-
-// ── URL y navegación con historial ────────────────────────────────────────────
 
 function actualizarURL(reemplazar = false) {
   const params = new URLSearchParams();
@@ -214,7 +185,6 @@ function leerURLParams() {
   filtros.precio = params.get('precio') || 'todos';
 }
 
-// Soporte para botón atrás/adelante del navegador
 window.addEventListener('popstate', (e) => {
   if (e.state) {
     paginaActual = e.state.paginaActual;
@@ -223,8 +193,6 @@ window.addEventListener('popstate', (e) => {
     renderizar();
   }
 });
-
-// ── Filtros: event listeners ──────────────────────────────────────────────────
 
 function sincronizarDOM() {
   document.getElementById('filtro-tipo').value = filtros.tipo;
@@ -238,14 +206,13 @@ function initFiltros() {
   const selectPrecio = document.getElementById('filtro-precio');
   const btnLimpiar = document.getElementById('btn-limpiar');
 
-  // Sincronizar valores del DOM con el estado (cargado desde URL)
   sincronizarDOM();
 
   const alCambiar = () => {
     filtros.tipo = selectTipo.value;
     filtros.dormitorios = selectDorm.value;
     filtros.precio = selectPrecio.value;
-    paginaActual = 1; // los filtros siempre resetean a la primera página
+    paginaActual = 1;
     renderizar();
   };
 
@@ -261,7 +228,6 @@ function initFiltros() {
   });
 }
 
-// ── Arranque ──────────────────────────────────────────────────────────────────
-leerURLParams();   // lee estado desde la URL actual
-initFiltros();     // registra listeners y sincroniza DOM con el estado
-renderizar();      // primer render (usa replaceState para no romper historial)
+leerURLParams();
+initFiltros();
+renderizar();

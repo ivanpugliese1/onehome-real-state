@@ -1,25 +1,15 @@
-/* =========================================================
-   main.css — punto de entrada de todos los estilos
-   El orden importa: reset → variables → tipografía → componentes → páginas
-   ========================================================= */
-
-/* === BASE === */
 @import './base/reset.css';
 @import './base/variables.css';
 @import './base/typography.css';
 @import './base/animations.css';
 
-/* === COMPONENTS === */
 @import './components/theme-toggle.css';
 @import './components/header.css';
 @import './components/footer.css';
 @import './components/cards.css';
 
-/* === PAGES === */
 @import './pages/home.css';
-/* nosotros.css primero: define la base de .hero-interno (overlay + z-index) */
 @import './pages/nosotros.css';
-/* propiedades y vender sobreescriben solo el background-image del hero */
 @import './pages/propiedades.css';
 @import './pages/vender.css';
 @import './pages/ficha.css';

@@ -1,6 +1,3 @@
-// propiedades.js — fuente única de datos de todas las propiedades del sitio
-// Importar este módulo desde cualquier script que necesite acceder al listado
-
 export const propiedades = [
   {
     id: 1,

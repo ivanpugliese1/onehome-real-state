@@ -236,7 +236,6 @@
   padding: 0 var(--espacio-6);
 }
 
-/* Ícono inline en el h2 de la sección */
 .seccion-header__icono {
   display: inline-block;
   vertical-align: middle;
@@ -277,7 +276,6 @@
   border-left-color: var(--color-primario-hover);
 }
 
-/* Cuando son 3 en fila (desktop ≥1024px), el padding se achica un poco */
 @media (min-width: 1025px) {
   .ventaja {
     padding: var(--espacio-6);
@@ -317,9 +315,7 @@
   margin: 0;
 }
 
-
 @media (max-width: 1024px) {
-  /* En tablet reducimos a 2 columnas para que quepan bien */
   .por-que-elegirnos__lista {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -396,7 +392,6 @@
   text-align: center;
 }
 
-/* Ícono inline en el h2 de la sección contacto */
 .contacto__titulo-icono {
   display: inline-block;
   vertical-align: middle;
@@ -429,7 +424,6 @@
   min-width: 0;
 }
 
-/* En desktop las cards se apilan verticalmente dentro de cada celda */
 @media (min-width: 1025px) {
   .contacto__card {
     flex-direction: column;
@@ -570,7 +564,6 @@ a.contacto__card-valor:hover {
   margin: 0;
 }
 
-
 .contacto__formulario .boton {
   width: 100%;
 }
@@ -595,7 +588,6 @@ a.contacto__card-valor:hover {
     font-size: var(--texto-3xl);
   }
 
-  /* En mobile las cards vuelven a columna */
   .contacto__cards {
     flex-direction: column;
   }

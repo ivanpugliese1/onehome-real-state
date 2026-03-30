@@ -1,26 +1,13 @@
-/* =========================================================
-   nosotros.css — estilos específicos de la página Nosotros
-   ========================================================= */
-
-
-/* =========================================================
-   HERO INTERNO
-   Banner compacto con fondo oscuro, título centrado y breadcrumb.
-   Diferente al hero de home (más pequeño, sin imagen).
-   ========================================================= */
-
 .hero-interno {
   padding: var(--espacio-16) 0 var(--espacio-12);
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* Imagen de fondo por defecto (nosotros): equipo/oficina */
   background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80');
   background-size: cover;
   background-position: center;
 }
 
-/* Overlay oscuro semitransparente — mismo patrón que el hero del home */
 .hero-interno::before {
   content: '';
   position: absolute;
@@ -37,7 +24,6 @@
   flex-direction: column;
   align-items: center;
   gap: var(--espacio-5);
-  /* El contenido queda encima del overlay */
   position: relative;
   z-index: 2;
 }
@@ -51,7 +37,6 @@
   margin: 0;
 }
 
-/* La palabra destacada en champagne, igual que el hero de inicio */
 .hero-interno__titulo em {
   font-style: italic;
   color: var(--color-accent);
@@ -64,11 +49,6 @@
   max-width: 520px;
   margin: 0;
 }
-
-
-/* ---------------------------------------------------------
-   BREADCRUMB
---------------------------------------------------------- */
 
 .breadcrumb {
   width: 100%;
@@ -112,12 +92,6 @@
   user-select: none;
 }
 
-
-/* =========================================================
-   HISTORIA
-   Dos columnas: narrativa + imagen. Timeline horizontal abajo.
-   ========================================================= */
-
 .historia {
   background-color: var(--color-fondo);
   padding: var(--espacio-20) 0;
@@ -132,7 +106,6 @@
   gap: var(--espacio-16);
 }
 
-/* Grid texto + imagen */
 .historia__contenido {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -162,7 +135,6 @@
   margin: 0;
 }
 
-/* Imagen con radio asimétrico — mismo estilo que hero de home */
 .historia__imagen {
   margin: 0;
 }
@@ -176,13 +148,6 @@
   box-shadow: var(--sombra-xl);
 }
 
-
-/* ---------------------------------------------------------
-   TIMELINE HORIZONTAL
-   4 hitos conectados por una línea en desktop.
-   Cada item: año (pill) + punto + título + descripción.
---------------------------------------------------------- */
-
 .timeline {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -190,11 +155,9 @@
   padding-top: 0;
 }
 
-/* Línea horizontal que une los puntos */
 .timeline::before {
   content: '';
   position: absolute;
-  /* Se ubica a la altura del punto (dentro de .timeline__marcador) */
   top: calc(var(--espacio-8) + var(--espacio-5));
   left: 12.5%;
   width: 75%;
@@ -218,7 +181,6 @@
   margin-bottom: var(--espacio-6);
 }
 
-/* Pill con el año */
 .timeline__anio {
   display: inline-block;
   padding: var(--espacio-1) var(--espacio-4);
@@ -232,7 +194,6 @@
   letter-spacing: 0.04em;
 }
 
-/* Punto circular sobre la línea */
 .timeline__punto {
   display: block;
   width: 18px;
@@ -260,13 +221,6 @@
   color: var(--color-texto-suave);
   margin: 0;
 }
-
-
-/* =========================================================
-   MISIÓN Y VISIÓN
-   Dos cards grandes, fondo alternado.
-   La card de visión invierte los colores (dark).
-   ========================================================= */
 
 .mision-vision {
   background-color: var(--color-fondo-alt);
@@ -332,13 +286,6 @@
   color: var(--color-texto-suave);
   margin: 0;
 }
-
-
-
-/* =========================================================
-   EQUIPO
-   Grid de 3 cards. Foto circular en el tope, info abajo.
-   ========================================================= */
 
 .equipo {
   background-color: var(--color-fondo);
@@ -431,7 +378,6 @@
   flex: 1;
 }
 
-/* Íconos de redes sociales */
 .equipo__redes {
   display: flex;
   gap: var(--espacio-3);
@@ -469,13 +415,6 @@
 .equipo__red:hover svg {
   fill: var(--color-blanco);
 }
-
-
-/* =========================================================
-   VALORES
-   Grid 2x2 con descripción expandida. Fondo alternado.
-   Número decorativo grande como elemento editorial.
-   ========================================================= */
 
 .valores {
   background-color: var(--color-fondo-alt);
@@ -521,7 +460,6 @@
   border-left-color: var(--color-acento);
 }
 
-/* Número decorativo grande en el fondo — efecto editorial */
 .valor__numero {
   position: absolute;
   top: var(--espacio-4);
@@ -573,12 +511,6 @@
   margin: 0;
 }
 
-
-/* =========================================================
-   CTA FINAL
-   Sección de cierre con fondo oscuro y dos botones.
-   ========================================================= */
-
 .nosotros-cta {
   background-color: var(--color-fondo-alt);
   padding: var(--espacio-20) 0;
@@ -587,7 +519,6 @@
   overflow: hidden;
 }
 
-/* Decoración de fondo */
 .nosotros-cta::after {
   content: '';
   position: absolute;
@@ -639,7 +570,6 @@
   margin: 0;
 }
 
-/* Botón WhatsApp verde — igual al de las demás páginas */
 .nosotros-cta__btn-wa {
   display: inline-flex;
   align-items: center;
@@ -675,11 +605,6 @@
   flex-shrink: 0;
 }
 
-
-/* =========================================================
-   RESPONSIVE — TABLET (max 1024px)
-   ========================================================= */
-
 @media (max-width: 1024px) {
 
   .historia__contenido {
@@ -699,14 +624,8 @@
   }
 }
 
-
-/* =========================================================
-   RESPONSIVE — MOBILE (max 768px)
-   ========================================================= */
-
 @media (max-width: 768px) {
 
-  /* Hero interno */
   .hero-interno {
     padding: var(--espacio-12) 0 var(--espacio-10);
   }
@@ -719,7 +638,6 @@
     font-size: var(--texto-base);
   }
 
-  /* Historia */
   .historia {
     padding: var(--espacio-12) 0;
   }
@@ -739,13 +657,11 @@
     border-radius: 16px 48px 16px 16px;
   }
 
-  /* Timeline — pasa a vertical */
   .timeline {
     grid-template-columns: 1fr;
     gap: var(--espacio-6);
   }
 
-  /* Oculta la línea horizontal del desktop */
   .timeline::before {
     display: none;
   }
@@ -758,7 +674,6 @@
     padding: 0;
   }
 
-  /* En mobile el marcador va a la izquierda, vertical */
   .timeline__marcador {
     flex-direction: column;
     align-items: center;
@@ -772,7 +687,6 @@
     padding-top: var(--espacio-1);
   }
 
-  /* Misión y visión */
   .mision-vision {
     padding: var(--espacio-12) 0;
   }
@@ -790,7 +704,6 @@
     padding: var(--espacio-8);
   }
 
-  /* Equipo */
   .equipo {
     padding: var(--espacio-12) 0;
   }
@@ -805,7 +718,6 @@
     gap: var(--espacio-4);
   }
 
-  /* Valores */
   .valores {
     padding: var(--espacio-12) 0;
   }
@@ -828,7 +740,6 @@
     font-size: 3.5rem;
   }
 
-  /* CTA */
   .nosotros-cta {
     padding: var(--espacio-12) 0;
   }
