@@ -133,7 +133,6 @@
           </select>
         </div>
 
-        <!-- Precio (solo para ventas en USD) -->
         <div class="filtros__grupo">
           <label for="filtro-precio" class="filtros__label">Precio venta</label>
           <select id="filtro-precio" class="filtros__select" aria-label="Filtrar por rango de precio">
@@ -144,7 +143,6 @@
           </select>
         </div>
 
-        <!-- Limpiar filtros -->
         <button id="btn-limpiar" class="filtros__btn-limpiar" type="button" aria-label="Limpiar todos los filtros">
           Limpiar filtros
         </button>
@@ -152,22 +150,17 @@
       </div>
     </section>
 
-    <!-- ---- LISTADO DE PROPIEDADES ---- -->
     <section class="listado" id="listado" aria-labelledby="listado-titulo">
       <div class="listado__inner">
 
-        <!-- Encabezado con contador -->
         <div class="listado__header">
           <h2 id="listado-titulo" class="sr-only">Listado de propiedades</h2>
           <p id="contador-propiedades" class="listado__contador" aria-live="polite" aria-atomic="true"></p>
         </div>
 
-        <!-- Grid de cards (renderizado dinámicamente por JS) -->
         <ul id="grid-propiedades" class="propiedades-grid" role="list" aria-label="Propiedades disponibles">
-          <!-- Las cards se insertan acá por propiedades-page.js -->
         </ul>
 
-        <!-- Estado sin resultados (oculto por defecto) -->
         <div id="sin-resultados" class="sin-resultados" hidden aria-live="polite">
           <span class="sin-resultados__icono" aria-hidden="true">🏚️</span>
           <h3 class="sin-resultados__titulo">Sin resultados</h3>
@@ -180,7 +173,6 @@
           </button>
         </div>
 
-        <!-- Paginación (renderizada dinámicamente por JS) -->
         <nav id="paginacion" class="paginacion" aria-label="Paginación de propiedades" hidden></nav>
 
       </div>
@@ -188,7 +180,6 @@
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__marca">
@@ -258,7 +249,6 @@
 
     </div>
 
-    <!-- Barra inferior: copyright -->
     <div class="footer__legal">
       <p class="footer__copyright">
         &copy; 2026 OneHome Inmobiliaria. Todos los derechos reservados.
@@ -266,7 +256,6 @@
     </div>
   </footer>
 
-  <!-- ===================== NAV MOBILE ===================== -->
   <nav class="nav-mobile" aria-label="Navegación móvil">
     <ul class="nav-mobile__list" role="list">
 
@@ -312,7 +301,6 @@
     </ul>
   </nav>
 
-  <!-- Script de la página (reemplaza main.js, ya incluye initTheme/Scroll/etc.) -->
   <script type="module" src="../assets/js/pages/propiedades-page.js"></script>
 
 </body>
